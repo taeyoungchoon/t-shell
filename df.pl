@@ -8,4 +8,5 @@ __END__
 df -h
 df -i
 
-unix df
+not so pretty unix df
+windows without perl, clisp and df binary then powershell or without (powershell Get-PSDrive)
