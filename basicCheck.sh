@@ -6,4 +6,5 @@ df -h
 echo ""
 df -i
 echo ""
-sudo dmesg | tail -1
+dmesg | tail -3
+echo ""
