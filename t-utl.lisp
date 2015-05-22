@@ -1,5 +1,3 @@
-#!/usr/bin/env clisp
-
 (defun sep ()
   (format t "~%"))
 
