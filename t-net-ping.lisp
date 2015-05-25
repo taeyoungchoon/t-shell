@@ -1,19 +1,18 @@
-#!/usr/bin/env clisp
+(defparameter *ping-locations* '("/sbin/ping" "/usr/bin/ping"))
+(defparameter *google-dns* "8.8.8.8")
+(defparameter *ping-options* "-c 3")
 
-(load "t-utl.lisp")
+(defun file-exist (location)
+  (probe-file location))
 
-(start)
-(message "chk networkable")
-;(run-program "/usr/bin/uptime")
+(defun service-ping (locations)
+  (if locations
+      (progn
+	(if (file-exist (car locations))
+	    (run-program (car locations) :arguments (list *ping-options* *google-dns*)))
+    	(service-ping (cdr locations)))
+      nil))
 
-(setf ping-of-mac "/sbin/ping")
-(setf ping-of-linux "/usr/bin/ping")
-(setf google-dns "8.8.8.8")
+(service-ping *ping-locations*)
 
-;(probe-file ping-of-linux)
-;(run-program "/usr/bin/whereis" :arguments (list "uptime"))
-(if (probe-file ping-of-mac)
-    (run-program ping-of-mac :arguments (list "-c" "3" google-dns)))
-;(run-program "/usr/bin/ping" :arguments (list "-c" "3" "8.8.8.8"))
 
-(end)
