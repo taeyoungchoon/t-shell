@@ -1,20 +1,15 @@
 #!/bin/env perl
 
-#open(STDOUT, ">uname.out");
-#open(STDOUT, ">", "variable.out");
-#close(STDOUT);
-#open(STDOUT, ">", \$variable);
-system("uname");
-#close(STDOUT);
+my $uname = `uname`;
+my $platform;
 
-#print \$variable; 
-#print $variable;
-__END__
-
-$uname = `uname`;
-
-if ($uname =~ /darwin/i) {
-    print "mac";
+if ($uname =~ /darwin/i) { 
+    $platform = "mac"; 
 }
+if ($uname =~ /linux/i) { 
+    $platform = "linux"; 
+}
+
+print sprintf("%s\n", $platform);
 
 
