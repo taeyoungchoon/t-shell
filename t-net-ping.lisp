@@ -1,3 +1,12 @@
+#|
+
+* todo
+- support windows
+- if there is not ping program
+- ping to service chk
+
+|#
+
 (defparameter *ping-locations* '("/sbin/ping" "/usr/bin/ping" "/bin/ping"))
 (defparameter *google-dns* "8.8.8.8")
 (defparameter *ping-options* "-c 3")
