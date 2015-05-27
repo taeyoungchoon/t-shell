@@ -1,4 +1,4 @@
-(defparameter *ping-locations* '("/sbin/ping" "/usr/bin/ping"))
+(defparameter *ping-locations* '("/sbin/ping" "/usr/bin/ping" "/bin/ping"))
 (defparameter *google-dns* "8.8.8.8")
 (defparameter *ping-options* "-c 3")
 
