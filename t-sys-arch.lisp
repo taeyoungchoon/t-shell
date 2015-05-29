@@ -9,12 +9,14 @@
 ;;
 
 ;; probe-file first
-(with-open-stream (st (run-program "/bin/uname" :arguments '("-a") :output :stream))
+;;(with-open-stream (st (run-program "/usr/bin/uname" :arguments '("-a") :output :stream))
+;;(with-open-stream (st (run-program "/bin/uname" :arguments '("-a") :output :stream))
+(with-open-stream (st (run-program "uname" :arguments '("-a") :output :stream))
   (let ((arch (read st)))
     (cond ((eq arch 'linux)
-	   (format t "~a~%" arch))
+	   (format t "~a~%" 'linux))
 	  ((eq arch 'darwin)
-	   (format t "~a~%" arch)))))
+	   (format t "~a~%" 'mac)))))
 
 
 
