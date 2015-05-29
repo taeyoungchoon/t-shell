@@ -1,7 +1,15 @@
-#|
-run-program uname output stream
-with-open-stream
-cond Darwin then mac thenlinux
-|#
+;;
+;; arch detector
+;;
+;; written by taeyoungchoon
+;;
 
-(run-program "uname" :output stream)
+(with-open-stream (st (run-program "/bin/uname" :arguments '("-a") :output :stream))
+  (let ((arch (read st)))
+    (cond ((eq arch 'linux)
+	   (format t "~a~%" arch))
+	  ((eq arch 'darwin)
+	   (format t "~a~%" arch)))))
+
+
+
