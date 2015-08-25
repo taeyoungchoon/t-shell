@@ -16,7 +16,9 @@
     (cond ((eq arch 'linux)
 	   (format t "~a~%" 'linux))
 	  ((eq arch 'darwin)
-	   (format t "~a~%" 'mac)))))
+	   (format t "~a~%" 'mac))
+	  (t
+	   (format t "~a~%" 'unknown)))))
 
 
 
