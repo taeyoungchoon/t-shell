@@ -1,0 +1,3 @@
+watch0 is just a watch
+watch1 watch -n 1
+watch2 watch -n 1 -d
