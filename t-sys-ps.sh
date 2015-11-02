@@ -1,1 +1,2 @@
 pstree -A
+ps aux
