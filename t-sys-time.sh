@@ -1,0 +1,2 @@
+date
+ntpq -p
