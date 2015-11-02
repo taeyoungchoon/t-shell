@@ -1,2 +1,2 @@
+date
 ntpq -p
-sar

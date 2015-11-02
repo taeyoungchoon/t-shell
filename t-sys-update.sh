@@ -1,0 +1,3 @@
+yum check-update
+
+

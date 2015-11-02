@@ -1,0 +1,33 @@
+* type on (arch '(*nix windows)) or more
+
+- what kinds of operating system? or operating system like such emacs
+- (executable '(a.out ELF PE)) vs (script '(perl ruby python lisp))
+
+* script win
+
+- bash .sh
+- perl .pl
+- lisp .lisp
+
+* naming rule
+
+** format
+
+- t-(sys net sec lib)-(chain of command).(language)
+
+** ex
+
+- t-sys-arch.lisp (linux-debian windows)
+- t-sys-bit.lisp (x86-32 x86-64 IA-64 Power SPARC PA-RISC MIPS Alpha ARM 68000)
+- t-sys-kernel.sh
+- t-sys-kernel.lisp
+- t-sys-df.lisp (df-h df-i)
+- t-sys-ps.lisp
+- t-sys-uptime.lisp
+- t-sys-time.sh (date ntp)
+- t-sys-update.sh (linux '("apt-get update")) (windows '("windows update"))
+- t-sys-package-essential.sh (unix-like '(ntp sar)) (windows '())
+- t-sys-package-my.sh (unix-like '(emacs)) (windows '(emacs sysinternals truecrypt portableapps cygwin wireshark freemind))
+- t-net-ping.lisp ("8.8.8.8")
+- t-net-ping-on-windows.lisp
+- t-lib.lisp
