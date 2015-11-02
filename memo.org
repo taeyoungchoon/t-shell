@@ -8,6 +8,12 @@
 - bash .sh
 - perl .pl
 - lisp .lisp
+- expect .exp
+
+** what about capistrano
+
+- 제한을 두지 말자 
+- awk and more
 
 * naming rule
 
@@ -31,3 +37,4 @@
 - t-net-ping.lisp ("8.8.8.8")
 - t-net-ping-on-windows.lisp
 - t-lib.lisp
+  
