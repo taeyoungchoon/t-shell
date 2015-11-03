@@ -4,8 +4,8 @@
 # cap shell
 
 role :domains, "localhost"
-role :as, "as.foo.com"
-role :web, "web01.foo.com", "web02.foo.com"
+#role :as, "as.foo.com"
+#role :web, "web01.foo.com", "web02.foo.com"
 
 set :user, "USERID"
 set :password, "USER-PASSWORD"
