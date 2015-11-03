@@ -1,13 +1,14 @@
 # gem install capistrano
 # https://github.com/capistrano/capistrano/wiki/2.x-Getting-Started
+# cap list
 # cap shell
 
 role :domains, "localhost"
 role :as, "as.foo.com"
 role :web, "web01.foo.com", "web02.foo.com"
 
-set :user, "dareshare"
-set :password, "xxxx"
+set :user, "USERID"
+set :password, "USER-PASSWORD"
 
 task :list, :hosts => "localhost" do
   run "ls"
