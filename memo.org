@@ -7,12 +7,12 @@
 
 - bash .sh
 - perl .pl
-- lisp .lisp
+- lisp .lisp but clisp vs sbcl and more
 - expect .exp
 
 ** what about capistrano
 
-- 제한을 두지 말자 
+- do not limit
 - awk and more
 
 * naming rule
