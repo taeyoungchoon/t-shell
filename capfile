@@ -1,0 +1,24 @@
+# gem install capistrano
+# https://github.com/capistrano/capistrano/wiki/2.x-Getting-Started
+# cap shell
+
+role :domains, "localhost"
+role :as, "as.foo.com"
+role :web, "web01.foo.com", "web02.foo.com"
+
+set :user, "dareshare"
+set :password, "xxxx"
+
+task :list, :hosts => "localhost" do
+  run "ls"
+end
+
+task :uptime, :roles => :as do
+  run "uptime"
+end
+
+task :space, :roles => :web do
+  run "df -h"
+end
+
+
