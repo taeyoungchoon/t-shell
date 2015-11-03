@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 foreach $line (<>) {
-    print $line if $line =~ /(^Received: from|^From:|^To:|^Subject:)/;
+    print $line if $line =~ /(^Received: from|^by|^for|^From:|^To:|^Subject:|^X-Mailer:)/;
 }
 
 __END__
