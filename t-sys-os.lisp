@@ -11,7 +11,7 @@
 ;;
 
 (if (probe-file (pathname "/bin/uname"))
-    (with-open-stream (st (run-program "uname" :arguments '("-s") :output :stream))
+    (with-open-stream (st (run-shell-command "uname -a" :output :stream))
       (let ((arch (read st)))
 	(cond ((eq arch 'linux)
 	       (format t "~a~%" 'linux))
