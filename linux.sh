@@ -1,4 +1,3 @@
 uname -a
-cat /etc/redhat_*
-cat /etc/debian_*
-or others
+find /etc -name redhat* -type f -exec cat {} \; 2>/dev/null
+find /etc -name debian* -type f -exec cat {} \; 2>/dev/null
