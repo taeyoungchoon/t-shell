@@ -1,0 +1,16 @@
+#watchfor  /FAN_FAILED/
+#	mail=root,subject=Fan error again
+
+watchfor /apr/
+	 echo
+
+watchfor /AppDirector/
+	 echo = yellow
+
+watchfor /ISDN/
+	 echo = green
+
+watchfor /ILPOWER-3-CONTROLLER_PORT_ERR/
+	 echo = blue
+
+#end
