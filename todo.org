@@ -1,0 +1,48 @@
+* list
+
+** enable-nagios
+
+- install
+- config
+- download my sample
+
+** windows-or-not
+   
+- xp, 2003 server, 2008, 2012
+- and ver?
+
+** linux-or-not
+
+- debian, redhat, kali
+- and kinds of version
+
+** enable-
+** role-me
+
+- mysql
+- open port, 80
+
+** df ak diskspace
+
+- enough or not
+- df -i
+
+** dmseg | tail -10
+** tcpdump port 53 with host google.com
+** strace -e open ls and state
+** watch ls -tlr
+** uptime, net stats svr, netstat, route, ifconfig/ipconfig
+** loop date with powershell or others
+** mssql-or-not oracle-ornot
+** os-tell using nmap, p0f
+** git-on *-on adb-on
+** tcpdump with dot
+* and then
+
+- sqlite
+- log(text)
+- t-shell
+- cli
+- menu, grouping
+
+
