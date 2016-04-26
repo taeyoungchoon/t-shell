@@ -1,0 +1,44 @@
+#!/usr/bin/expect
+
+set timeout 10
+set now [clock seconds]
+set date [clock format $now -format {%Y/%m/%d}]
+
+set password [lindex $argv 0]
+
+if { $password < 1 } {
+    puts "Usage : command PASSWORD\n"
+    exit 1
+}
+
+spawn ssh admin@x.x.x.x
+
+expect "Password"
+send "$password\r"
+
+expect ">"
+send "set cli pager off\r"
+
+expect sleep 3
+send "show running resource-monitor | match \[0-9\]%\r"
+
+expect sleep 3
+send "show system disk-space\r"
+
+expect sleep 3
+send "show interface all | match 10000\r"
+
+expect sleep 3
+send "show session info | match \"Number of active sessions\"\r"
+
+expect sleep 3
+send "show system software status | except running\r"
+
+expect ">"
+send "show log system start-time equal $date@00:00:00 | except general\r"
+
+expect sleep 3
+send "quit\r"
+
+interact
+

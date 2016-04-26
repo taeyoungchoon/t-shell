@@ -1,0 +1,11 @@
+#!/usr/bin/expect
+
+spawn clish
+
+expect ">"
+send "show vrrp summary\r"
+
+expect ">"
+send "quit\r"
+
+interact

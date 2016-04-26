@@ -1,0 +1,27 @@
+#!/usr/bin/expect
+
+log_file -noappend ddos.config
+
+set target "x.x.x.x"
+set id "xxxx"
+set password "yyyy"
+
+spawn ssh $id@$target
+
+expect "password"
+send "$password\r"
+
+expect "#"
+send "manage terminal more-prompt set off\r"
+
+expect "#"
+send "system config immediate\r"
+
+expect "#"
+send "manage terminal more-prompt set on\r"
+
+expect "#"
+send \003
+
+interact
+

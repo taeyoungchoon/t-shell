@@ -1,0 +1,34 @@
+#!/usr/bin/expect
+
+log_file -noappend myfile.log
+send_log "This line goes into the log file"
+send_user "This line goes into both the log file and console\n"
+puts "This line goes to the console"
+
+set timeout 3
+set password [lindex $argv 0]
+
+if { $password < 1 } {
+    puts "Usage : command PASSWORD\n"
+    exit 1
+}
+
+spawn ssh admin@x.x.x.x
+
+expect "Password"
+send "$password\r"
+
+expect "xterm]"
+send "\r"
+
+expect sleep 3
+send "cd tscript\r"
+
+expect sleep 3
+send "sh go.do\r"
+
+expect sleep 3
+send "exit\r"
+
+interact
+
