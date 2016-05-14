@@ -1,4 +1,10 @@
 #
+# policy
+#
+# exclude oracle
+#
+
+#
 # linux
 #
 df -h

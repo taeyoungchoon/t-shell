@@ -1,0 +1,3 @@
+* cygwin with perl
+* cygwin with free(include in procps package)
+* sysinternals
