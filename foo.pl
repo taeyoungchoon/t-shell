@@ -1,4 +1,4 @@
-#!/usr/bin/perl
+#!/usr/bin/perl --
 
 foreach $line (<>) {
     $line =~ s/\r//g;

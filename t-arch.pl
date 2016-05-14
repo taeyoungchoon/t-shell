@@ -1,3 +1,3 @@
-#!/usr/bin/perl -w
+#!/usr/bin/perl
 
 print $arch = `uname -s`;
