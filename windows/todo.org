@@ -1,3 +1,14 @@
 * cygwin with perl
-* cygwin with free(include in procps package)
+* DONE cygwin with free(include in procps package)
+
+- uptime
+- free -m
+- df -h
+
 * sysinternals
+* HP System Management Homepage (SMH) 
+
+- The HP System Management Homepage Command Line Interface
+* remote wmic
+
+- wmimgmt.msc
