@@ -1,0 +1,12 @@
+* config
+
+- identity
+- ?
+
+* so
+
+- ip
+- route
+- ping
+- nslookup
+- enough?

@@ -1,0 +1,18 @@
+* role
+  
+** web/was
+
+- rc
+
+** db/rep
+
+- nfs
+
+* status
+* so
+
+- enabled, not default
+
+* result/output
+
+- pstree with enabled, not default

@@ -1,0 +1,8 @@
+* green/yellow/red
+* 80/90
+* +tablespace
+* so
+
+- dmesg or errpt
+- ls /var/log or /var/adm
+- even oracle

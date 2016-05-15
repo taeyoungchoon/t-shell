@@ -1,6 +1,0 @@
-* type
-
-- svrmon
-- secmgr
-- sysadm
-- netusr

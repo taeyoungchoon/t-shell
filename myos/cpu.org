@@ -1,0 +1,15 @@
+* usage
+* intel
+* bit
+* so
+
+- based on operating system, arch first then
+- cpu type
+- bit?
+- usage but not trend
+
+* result/output
+
+- uname -a or
+- uptime to show loadavg
+- %?

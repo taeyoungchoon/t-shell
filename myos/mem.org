@@ -1,0 +1,9 @@
+* free -m
+* so
+
+- physical
+- %
+
+* result/output
+
+- free -m 

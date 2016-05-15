@@ -1,0 +1,18 @@
+* add disc/volume/filesystem
+* so
+
+- lvm : pv, vg, lv > file
+- mounted
+- used
+- %
+- Filesystem, Size, Used, Avail, Capacity(%) aka Used(%), Mounted on
+- Gi, Bi, Ki, Mi
+- inode
+- +oracle tablespace
+
+* result
+
+- df -h
+- df -Pk
+- bdf
+- using perl

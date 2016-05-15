@@ -1,0 +1,15 @@
+* type
+
+- svrmon
+- secmgr
+- sysadm
+- netusr
+
+* so
+
+- add?
+- view
+
+* result/output
+
+- cat /etc/passwd
