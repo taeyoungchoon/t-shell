@@ -1,1 +1,2 @@
 vparboot -p hostname
+/usr/sbin/parstatus
