@@ -1,0 +1,5 @@
+* hostname (ip:1.1.1.1 loc:r3-1 model:dl380g5) : c drive 7%(3.2g) left, stat
+* hostname : c drive 7%(3.2g) left, status
+* hostname : tablespace 2% left, status
+* hostname : disk 1EA fault, status
+* hostname : power supply 1EA fault, analysis
