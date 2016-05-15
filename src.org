@@ -1,0 +1,2 @@
+* perl/sh/lisp
+* emacs/vi
