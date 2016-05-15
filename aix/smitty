@@ -1,0 +1,6 @@
+smitty chlv log lv size
+smitty chfs filesystem size
+# with IBM Disk Storage > VG + LUN
+smitty lvm
+smitty fs
+smitty jfs2

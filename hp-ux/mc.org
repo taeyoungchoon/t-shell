@@ -1,0 +1,22 @@
+* telnet
+
+MP login: Admin
+MP password: Admin
+
+rp8440's Management Processor
+
+* co : consoles
+
+- Ctrl-b : return
+- 0,1,2.. : connect to nPar
+- Ctrl-a : rotate vPar
+
+* vfp : virtual front panel
+* cm : command menu
+
+- ma : return
+- pe : power control
+
+* cl : console logs
+* sl : show event logs
+* x : exit

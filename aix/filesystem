@@ -1,0 +1,6 @@
+lsdev -Ccdisk
+lspv
+lsvg
+lsvg rootvg
+mount all
+df -k

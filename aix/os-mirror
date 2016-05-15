@@ -1,0 +1,4 @@
+lspv
+extendvg -f rootvg hdisk1
+mirrorvg -S rootvg hdisk0 hdisk1
+lsvg -l rootvg
