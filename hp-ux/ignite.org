@@ -1,0 +1,34 @@
+* Ignite-UX at /opt/ignite
+** build ignite server, not sure
+
+/opt/ignite/lbin/setup_server -n
+cat /etc/rc.config.d/nfsconf
+cat /etc/inetd.conf
+inetd -c
+ls -l /var/adm/syslog/syslog.log
+cat /etc/bootptab
+
+** config ignite server, NFS
+
+cat /etc/hosts
+cat /etc/dfs/dfstab
+shareall -F nfs
+share
+
+*** optional?
+
+cat /etc/exports
+exportfs -av
+
+** log files at
+
+ls /var/opt/ignite/clients/HOSTNAME/recovery/latest/
+
+** backup files at
+
+ls /osbackup/HOSTNAME/
+
+** ignite client, NFS
+
+cat /etc/hosts
+/opt/ignite/bin/make_net_recovery -x inc_entire=vg00 -a ignite:/osbackup/`hostname` -s ignite

@@ -1,0 +1,15 @@
+* DONE Could not open/read file:///etc/pki/rpm-gpg/RPM-GPG-KEY-webtatic-andy
+  CLOSED: [2016-05-17 화 13:10]
+
+** gg(googling)
+
+rpm --import http://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-6
+
+** dig
+
+https://webtatic.com/projects/yum-repository/
+
+Webtatic EL6 for CentOS/RHEL 6:
+
+rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm
+rpm -Uvh https://mirror.webtatic.com/yum/el6/latest.rpm
