@@ -1,1 +1,2 @@
 ifconfig
+route -n
