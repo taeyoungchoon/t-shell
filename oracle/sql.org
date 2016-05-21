@@ -1,0 +1,14 @@
+* on table? like
+
+- sys.dual
+- v$parameter
+- dba_data_files
+- dba_free_space
+
+* crud only?
+
+- create
+- insert
+- select
+- update
+- delete

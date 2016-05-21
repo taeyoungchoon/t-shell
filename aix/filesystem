@@ -4,3 +4,5 @@ lsvg
 lsvg rootvg
 mount all
 df -k
+chfs
+df -g 
