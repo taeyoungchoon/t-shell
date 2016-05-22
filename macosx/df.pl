@@ -1,4 +1,5 @@
 #!/usr/bin/perl -w
+use Term::ANSIColor;
 
 my $line;
 my ($filesystem, $total, $used, $available, $capacity, $mount);
@@ -26,7 +27,8 @@ foreach $line (`df -Pk -l`) {
 	
 	if ($left < 10) {
 	    $condition = "warn";
-	    printf("%s %s %d%s (%s) left\n",$stamp, $mount, $left, "%", $available);
+	    $out = sprintf("%s %s %d%s (%s) left\n",$stamp, $mount, $left, "%", $available);
+	    print color("yellow"), $out, color("reset");
 	}
     }
     
