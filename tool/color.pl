@@ -1,4 +1,5 @@
 use Term::ANSIColor;
 
-print color("red"), "Stop!\n", color("reset");
-print color("green"), "Go!\n", color("reset");
+print color("red"), "Error : \n", color("reset");
+print color("yellow"), "Warn :\n", color("reset");
+print color("green"), "Info : \n", color("reset");
