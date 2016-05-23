@@ -16,5 +16,5 @@ if ( $numberOfArg == 0 ) {
 $ip = $ARGV[0];
 $community = $ARGV[1];
 
-print $out = sprintf("snmpwalk -v 2c -c %s %s", $community, $ip);
-# system($out);
+$out = sprintf("snmpwalk -v 2c -c %s %s", $community, $ip);
+system($out);
