@@ -9,8 +9,6 @@ my $out;
 
 my $numberOfArg = $#ARGV + 1;
 
-print $numberOfArg;
-
 if ( $numberOfArg == 0 ) {
     exit;
 }
