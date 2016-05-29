@@ -6,6 +6,8 @@ my ($total, $free, $shared, @items);
 $total = $free = $shared = 0;
 my $leftp;
 
+system("free -m");
+
 foreach $line (`free -m`) {
     if ($line =~ /^Mem/) {
 	@items = split(/\s+/,$line);
@@ -18,7 +20,7 @@ foreach $line (`free -m`) {
     }
 }
 
-printf("total : %d, free : %d, shared : %d \n", $total, $free, $shared);
+printf("\ntotal : %d, free : %d, shared : %d \n", $total, $free, $shared);
 $leftp = int(($free + $shared) * 100 / $total);
 
 if ($leftp < 20) {
