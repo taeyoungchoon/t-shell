@@ -1,3 +1,4 @@
 https://docs.oracle.com/cd/B19306_01/server.102/b14357/ch6.htm
 Formatting SQL*Plus Reports
 
+sqlplus system/manager@name
