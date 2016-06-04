@@ -1,3 +1,5 @@
+use POSIX;
+
 my %cmds = ( "linux" => "df -Pk | grep -v ^tmpfs | grep -v ^udev",
 	     "hp-ux" => "df -Pk",
 	     "aix" => "df -Pk",
@@ -23,11 +25,11 @@ sub pressing {
     my $out = "";
 
     if ( $len >= 7 ) {
-	$out = sprintf("%d%s" , int($in/1024/1024) , "g");
+	$out = sprintf("%d%s" , ceil($in/1024/1024) , "g");
     } elsif ( $len >= 4 ) {
-	$out = sprintf("%d%s" , int($in/1024) , "m");
+	$out = sprintf("%d%s" , ceil($in/1024) , "m");
     } else {
-	$out = sprintf("%d%s" , int($in) , "k");
+	$out = sprintf("%d%s" , ceil($in) , "k");
     }
     
     return $out;
