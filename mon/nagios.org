@@ -1,9 +1,29 @@
-* nagios
+* nagios agent
 
-* NSClient++
+- NSClient++
+- nrpe?
+- lots of more
 
-* check_by_ssh
+* check_by_ssh , but the nagios_plugins need to compile from AIX and HP-UX
 
 su - nagios
 ssh nagios@1.1.1.1 uptime
 ssh nagios@1.1.1.1 /home/nagios/plugins/check_oracle --tablespace XX sysmon sysmon YY 98 95
+
+* plugin programming
+
+Nagios Plugin Development Guidelines
+
+* with storage
+
+- check_netapp
+
+* with server, hp
+
+- check_hp
+* nagtail
+
+https://exchange.nagios.org/directory/Addons/Frontends-%28GUIs-and-CLIs%29/Linux-Interfaces/nagtail/details
+
+* nagiosmobile
+* nagios + sms

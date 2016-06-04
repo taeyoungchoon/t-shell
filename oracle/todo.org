@@ -1,0 +1,31 @@
+* script
+
+@script on directory and on dbmon user or sysman user
+
+* oracle's toad or orange or oracle developer
+
+* oracle client
+
+* tnsnames.org
+
+* 환경 설정 파일
+
+* ASM
+
+* 9, 10, i, RAC
+
+* nagios
+
+check_tablespace , nagios에서 제공하다. linux는 되는데 , aix/hp-unix는 컴파일을 해야 되고! , windows는 어떻게 되지?
+사실 로컬에서 원격으로 접근하면 되는데 이런거 필요없다는 사실 ㅋ
+
+* alert log+
+
+로그 로그는 말이다 syslog다
+
+* role
+
+1. ps -ef , 오라클이 사용되나?
+2. account , 그럼 사용자 계정 그리고
+3. SID , 환경을 보면 
+4. account? dbmon , nagios , nagmon(x) , 그런데 계정 없이는  show/view 할 수 없다

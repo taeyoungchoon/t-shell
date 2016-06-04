@@ -1,0 +1,6 @@
+* binary log
+
+expire
+과연 필요한가? replication을 하지 않는다면 말입니다
+
+* process

@@ -1,0 +1,21 @@
+** svr
+
+- cpu
+- mem
+- dsk
+
+** +
+
+- os
+- net
+- mon
+- log
+
+** svc
+
+** usr
+
+
+
+
+
