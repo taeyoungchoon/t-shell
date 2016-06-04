@@ -1,3 +1,5 @@
+#!/usr/bin/perl -w
+use strict;
 use POSIX;
 
 my %cmds = ( "linux" => "df -Pk | grep -v ^tmpfs | grep -v ^udev",
@@ -5,17 +7,21 @@ my %cmds = ( "linux" => "df -Pk | grep -v ^tmpfs | grep -v ^udev",
 	     "aix" => "df -Pk",
 	     "unknown" => "df -Pk",
 	     "macosx" => "df -Pk -l" );
+my $arch = "";
 
-my $kernelname = readpipe("uname -s");
-
-if ( $kernelname =~ m/linux/i ) {
-    $arch = "linux";
-} elsif ( $kernelname =~ m/darwin/i ) {
-    $arch = "macosx";
-} else {
-    $arch = "unknown";
+sub arching {
+    my($kernelname) = shift;
+    if ( $kernelname =~ m/linux/i ) {
+	$arch = "linux";
+    } elsif ( $kernelname =~ m/darwin/i ) {
+	$arch = "macosx";
+    } else {
+	$arch = "unknown";
+    }
+    return $arch;
 }
 
+$arch = &arching(readpipe("uname -s"));
 my $cmd =  $cmds{ $arch };
 
 sub pressing {
@@ -31,18 +37,15 @@ sub pressing {
     } else {
 	$out = sprintf("%d%s" , ceil($in) , "k");
     }
-    
     return $out;
 }
 
-@out = readpipe($cmd);
+my @out = readpipe($cmd);
 
-$numberofline = $#out;
-
-printf("%-20s %8s %8s %8s %8s %-20s\n", "Filesystem", "Size", "Used", "Avail", "Capacity", "Mounted on");
-
-foreach $line (@out) {
-    if ( $line !~ /^F/ ) {	
+foreach my $line (@out) {
+    if ( $line =~ /^F/ ) {
+	printf("%-20s %8s %8s %8s %8s %-20s\n", "Filesystem", "Size", "Used", "Avail", "Capacity", "Mounted on");
+    } else {
 	my ($fs, $size, $used, $avail, $capacity, $mount) = split(/\s+/, $line);
 	printf("%-20s %8s %8s %8s %8s %-20s\n", $fs, &pressing($size), &pressing($used), &pressing($avail), $capacity, $mount);
     }
