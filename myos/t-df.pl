@@ -5,6 +5,7 @@ use POSIX;
 my %cmds = ( "linux" => "df -Pk | grep -v ^tmpfs | grep -v ^udev",
 	     "hp-ux" => "df -Pk",
 	     "aix" => "df -Pk",
+	     "cygwin" => "df -Pk",
 	     "unknown" => "df -Pk",
 	     "macosx" => "df -Pk -l" );
 my $arch = "";
@@ -15,6 +16,8 @@ sub arching {
 	$arch = "linux";
     } elsif ( $kernelname =~ m/darwin/i ) {
 	$arch = "macosx";
+    } elsif ( $kernelname =~ m/cygwin/i ) {
+	$arch = "cygwin";
     } else {
 	$arch = "unknown";
     }
