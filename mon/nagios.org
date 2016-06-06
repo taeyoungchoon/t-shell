@@ -1,10 +1,6 @@
-* nagios agent
+* agentless
 
-- NSClient++
-- nrpe?
-- lots of more
-
-* check_by_ssh , but the nagios_plugins need to compile from AIX and HP-UX
+** check_by_ssh , but the nagios_plugins need to compile from AIX and HP-UX
 
 su - nagios
 ssh nagios@1.1.1.1 uptime
@@ -21,9 +17,22 @@ Nagios Plugin Development Guidelines
 * with server, hp
 
 - check_hp
+
 * nagtail
 
 https://exchange.nagios.org/directory/Addons/Frontends-%28GUIs-and-CLIs%29/Linux-Interfaces/nagtail/details
 
-* nagiosmobile
 * nagios + sms
+* addon
+** n2rrd
+* view
+** nagiosmobile
+* config
+** TODO group
+** nconf
+* nagios agent
+
+** NSClient++
+** nrpe +hp-ux +aix
+** with snmpd +all
+** with snmp trap
