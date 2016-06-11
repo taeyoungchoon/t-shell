@@ -12,3 +12,14 @@
 - select
 - update
 - delete
+
+* sample
+
+show parameter cluster
+show parameter dump
+select from v$version
+
+* archive
+
+archive log list
+ORA-01031: insufficient privileges
