@@ -1,0 +1,3 @@
+$ sh check_hpux_mem.sh x.x.x.x 80 90 public
+Mem: 19.1641  GB / 32.3899  GB (59.16%)|used=20577398784B size=34778406912B
+OK
