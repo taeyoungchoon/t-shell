@@ -1,0 +1,17 @@
+* client
+
+oracle client
+oracle instant client, instant client for microsoft windows (32bit)
+
+* tool
+
+eclipse database plugin
+oracle sql developer
+
+* env
+
+PATH, c:\oracle\instantclient_10_2
+ORACLE_HOME, c:\oracle\instantclient_10_2
+TNS_ADMIN, c:\oracle\instantclient_10_2
+NLS_LANG, KOREAN_KOREA.KO16MSWIN949 (windows)
+NLS_LANG, KOREAN_KOREA.KSC5601

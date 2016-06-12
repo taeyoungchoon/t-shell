@@ -8,7 +8,9 @@ ls /home/sysman/app/sysman/product/11.2.0/client_1/network/admin/tnsnames.org
 * start
 
 sqlplus system/manager@name
+sqlplus system/manager@ip:1521/orcl
 sqlplus system/manager
+SQL> conn system/manager@ip:1521/orcl
 
 * config
 
