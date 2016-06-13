@@ -5,10 +5,7 @@
 - dba_data_files
 - dba_free_space
 
-* crud only?
+* sample
 
-- create
-- insert
-- select
-- update
-- delete
+- select * from v$instance;
+
