@@ -1,0 +1,2 @@
+$ UNIX95=1 ps -eHf
+$ UNIX95=1 ps -H -u theuser
