@@ -1,0 +1,48 @@
+ioscan -funC fc
+ioscan -funC disk
+ioscan -funC tape
+man ioscan
+
+diskfinfo /dev/rdisk/c0t5d0
+lssf /dev/rdisk/c0t5d0
+
+strings /etc/lvmtab
+
+vgdisplay -v /dev/vg00
+lvdisplay -v /dev/vg00/lvol1
+pvdisplay -v /dev/dsk/c0t5d0
+
+* new
+
+pvcreate -f /dev/rdisk/c0t5d0
+mkdir /dev/vg01
+mknod /dev/vg01/group c 64 0x010000
+vgcreate /dev/vg01 /dev/dsk/c0t5d0
+lvcreate -l 250 /dev/vg01
+newfs -F vxfs /dev/vg01/rvol1
+
+mkdir /disk1
+vi /etc/fstab
+mount -a
+
+vgdisplay -v /dev/vg01
+strings /etc/lvmtab
+
+* extend
+
+vgdisplay /dev/vg01
+umount /dev/vg01/lvol1
+lvextend -l 508 /dev/vg01/lvol1
+vgdisplay -v /dev/vg01
+extendfs -F vxfs /dev/vg01/rlvol1
+vi /etc/fstab
+mount -a
+
+* reduce
+
+tar, cpio, fbackup
+umount
+lvreduce -l 250 /dev/vg01/lvol1
+newfs -F vxfs /dev/vg01/rlvol1
+
+* alternative pass

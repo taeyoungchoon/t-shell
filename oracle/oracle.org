@@ -1,0 +1,18 @@
+ps -ef | grep -i pmon | grep -v pmon
+
+select * from v$logfile
+select * from v$log
+alter database add logfile group 4 ('/data1/redo04.log') size 1024m;
+alter database add logfile group 5 ('/data1/redo05.log') size 1024m;
+alter database add logfile group 6 ('/data1/redo065.log') size 1024m;
+
+alter system switch logfile;
+alter system switch logfile;
+alter system switch logfile;
+
+alter database drop logfile group 1, group 2, group 3;
+select group#, bytes from v$log;
+
+set underline =
+col member format a30
+select * from v$logfile

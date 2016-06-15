@@ -1,0 +1,16 @@
+putty log enable
+
+. oraenv
+
+sqlplus
+/as sysdba
+
+select * from scott.dept
+delete from dept where deptno in (60,70,80);
+commit;
+select to_char(sysdate,'DD-MM-YY HH24:MI') from dual;
+expdp system dumpfile=table.bkp logfile=exp_table.log directory=EXPDP tables=scott.dept
+alter table scott.dept enable row movement;
+flashbackup table scott.dept to timestamp to_timestamp('09-10-14 07:43','DD-MM-YY HH24:MI');
+impdp system dumpfile=table.bkp logfile=imp_table.log directory=EXPDP tables=scott.dept table_exists_action=replace
+select * from scott.dept

@@ -1,0 +1,35 @@
+https://docs.oracle.com/cd/B19306_01/server.102/b14357/ch6.htm
+Formatting SQL*Plus Reports
+
+* oracle client
+
+ls /home/sysman/app/sysman/product/11.2.0/client_1/network/admin/tnsnames.org
+
+* start
+
+sqlplus system/manager@name
+sqlplus system/manager@ip:1521/orcl
+sqlplus system/manager
+SQL> conn system/manager@ip:1521/orcl
+
+* config
+
+glogin.sql
+login.sql
+
+
+vi /home/sysman/app/sysman/product/11.2.0/client_1/sqlplus/admin/glogin.sql
+
+show linesize
+show numformat
+show pagesize
+show pause
+show sqlprompt
+show time
+
+set linesize 160
+set time on
+set underline =
+define _editor=vi
+
+col member clear

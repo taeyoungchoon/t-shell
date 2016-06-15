@@ -1,0 +1,11 @@
+rman target /
+RMAN>
+RMAN> crosscheck archivelog all;
+RMAN> delete noprompt archivelog all;
+
+RMAN> delete noprompt archivelog all completed before 'sysdata -3';
+
+run {
+	crosscheck archivelog all;
+	delete expired archivelog all;
+}
