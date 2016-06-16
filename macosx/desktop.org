@@ -1,0 +1,7 @@
+* input
+
+apple key + space
+
+* spotlight
+
+control key + space
