@@ -1,0 +1,56 @@
+* using depothelper
+
+* size, 500M
+
+#+BEGIN_SRC emacs-lisp
+
+  (let ((pre-available 33697088)
+        (post-available 33209488))
+    (- pre-available post-available))
+
+#+END_SRC
+
+#+RESULTS:
+: 487600
+
+** log
+
+#+BEGIN_EXAMPLE
+[iskywas2:root:/home/sysman] df -Pk | egrep "(^File|/$)"
+Filesystem          1024-blocks  Used  Available Capacity Mounted on
+/dev/vg00/lvol3       52163520 18466432 33697088    36%   /
+
+[iskywas2:root:/home/sysman] depothelper git                   
+=============================================================================
+Package-version      Comment              Download        Instal
+=============================================================================
+ia64-11.23           Package list         Using cache     OK                  
+bzip2-1.0.6          Dependency (01/22)   OK              OK                  
+curl-7.34.0          Dependency (02/22)   OK              OK                  
+cyrus_sasl-2.1.26    Dependency (03/22)   OK              OK                  
+db-6.0.20            Dependency (04/22)   OK              OK                  
+editline-2.9         Dependency (05/22)   OK              OK                  
+expat-2.1.0          Dependency (06/22)   OK              OK                  
+flex-2.5.37          Dependency (07/22)   OK              OK                  
+fontconfig-2.11.0    Dependency (08/22)   OK              OK                  
+freetype-2.5.2       Dependency (09/22)   OK              OK                  
+gdbm-1.10            Dependency (10/22)   OK              OK                  
+heimdal-1.5.2        Dependency (11/22)   OK              OK                  
+libXft-2.3.1         Dependency (12/22)   OK              OK                  
+libXrender-0.9.8     Dependency (13/22)   OK              OK                  
+libidn-1.28          Dependency (14/22)   OK              OK                  
+libpng-1.6.8         Dependency (15/22)   OK              OK                  
+m4-1.4.17            Dependency (16/22)   OK              OK                  
+openldap-2.4.38      Dependency (17/22)   OK              OK                  
+openssl-1.0.2h       Dependency (18/22)   OK              OK                  
+perl-5.10.1          Dependency (19/22)   OK              OK                  
+tcltk-8.5.15         Dependency (20/22)   OK              OK                  
+termcap-1.3.1        Dependency (21/22)   OK              OK                  
+zlib-1.2.8           Dependency (22/22)   OK              OK                  
+git-1.8.5.3          Requested            OK              OK                 
+============================================================================= 
+
+[iskywas2:root:/home/sysman] df -Pk | egrep "(^File|/$)"
+Filesystem          1024-blocks  Used  Available Capacity Mounted on
+/dev/vg00/lvol3       52167384 18957896 33209488    37%   /
+#+END_EXAMPLE

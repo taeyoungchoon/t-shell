@@ -1,0 +1,12 @@
+tvi () {
+    columnSize=`tput cols`;
+    stty columns 160;
+    /usr/bin/vi $1;
+    stty columns $columnSize;
+    echo "hello";
+}
+alias vi=tvi
+
+set -o emacs
+
+export PATH=$PATH:/usr/local/bin
