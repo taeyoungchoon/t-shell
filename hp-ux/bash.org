@@ -1,0 +1,8 @@
+depothelper bash
+locate bash
+echo "add bash to PATH"
+
+#
+# if not installed
+# install from hp-ux
+#

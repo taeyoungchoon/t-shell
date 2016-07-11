@@ -1,3 +1,6 @@
 * cli
 
-- useradd?
+useradd sysman
+mkdir /home/sysman
+chown sysman:users /home/sysman
+su - sysman

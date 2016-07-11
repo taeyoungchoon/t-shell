@@ -54,3 +54,4 @@ git-1.8.5.3          Requested            OK              OK
 Filesystem          1024-blocks  Used  Available Capacity Mounted on
 /dev/vg00/lvol3       52167384 18957896 33209488    37%   /
 #+END_EXAMPLE
+   
