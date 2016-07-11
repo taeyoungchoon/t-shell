@@ -1,0 +1,1 @@
+whois pantechservice.co.kr | egrep -i "(host|server|date)"
