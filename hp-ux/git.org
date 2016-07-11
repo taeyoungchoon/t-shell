@@ -16,11 +16,11 @@
 ** log
 
 #+BEGIN_EXAMPLE
-[iskywas2:root:/home/sysman] df -Pk | egrep "(^File|/$)"
+[was2:root:/home/sysman] df -Pk | egrep "(^File|/$)"
 Filesystem          1024-blocks  Used  Available Capacity Mounted on
 /dev/vg00/lvol3       52163520 18466432 33697088    36%   /
 
-[iskywas2:root:/home/sysman] depothelper git                   
+[was2:root:/home/sysman] depothelper git                   
 =============================================================================
 Package-version      Comment              Download        Instal
 =============================================================================
@@ -50,7 +50,7 @@ zlib-1.2.8           Dependency (22/22)   OK              OK
 git-1.8.5.3          Requested            OK              OK                 
 ============================================================================= 
 
-[iskywas2:root:/home/sysman] df -Pk | egrep "(^File|/$)"
+[was2:root:/home/sysman] df -Pk | egrep "(^File|/$)"
 Filesystem          1024-blocks  Used  Available Capacity Mounted on
 /dev/vg00/lvol3       52167384 18957896 33209488    37%   /
 #+END_EXAMPLE
