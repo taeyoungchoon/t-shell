@@ -1,0 +1,9 @@
+* todo
+
+- query ip,password to login to the system
+- login then do sth, git, wget
+
+* not todo
+
+- windows
+- not using wmi but other
