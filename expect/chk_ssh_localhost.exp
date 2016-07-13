@@ -1,0 +1,10 @@
+#!/usr/bin/expect -f
+spawn ssh localhost
+expect {
+    "yes/no" {
+	send "yes\r"
+    }
+}
+#expect "telnet>"
+#send "quit\r"
+interact
