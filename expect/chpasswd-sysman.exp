@@ -1,0 +1,18 @@
+#!/usr/bin/expect -f
+
+set timeout 3
+
+set oldPassword [lindex $argv 0]
+set newPassword [lindex $argv 1]
+
+spawn passwd sysman
+expect "Old Password:"
+send "$oldPassword\n"
+expect "New Password:"
+send "$newPassword\n"
+expect "Retype New Password:"
+send "$newPassword\n"
+expect "$"
+send "\n"
+interact
+

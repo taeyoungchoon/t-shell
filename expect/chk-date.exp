@@ -1,0 +1,11 @@
+#!/usr/bin/expect -f
+
+set timeout 3
+
+spawn date
+expect { 
+    "PDT" { send "PDT have to KST\n" }
+    "KST" { send "KST is good\n" }
+    timeout { send "have to sync time\n" }
+}
+interact
