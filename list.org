@@ -13,11 +13,7 @@
 
 * agent
 
-- emacs, can it be?
 - mon
-- perl
-- expect, remoting
-- tool
 - tmp
 
 * one more thing
