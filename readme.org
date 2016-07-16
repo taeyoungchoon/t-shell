@@ -1,8 +1,24 @@
 * what, what, why?
 
-t-shell, shell, taeyoungchoon's shell, t-, t-shell
-shell, 아마 운영체제를 접하게 되면서 보게 되는 가장 처음이 아닐까? 알지 못하는 것은 daemon으로 돌지만 말입니다
-그리고 두려움이 엄습합니다. shell 프로그래밍을 해야 하나? 무슨 문법이 이렇게 까칠하지 아니 그럼 perl을 해야 하나? 
-shell이라 껍질이라 운영체제라 어플리케이션이라 데몬 타입과 유틸 타입이라
-type-p
-아니 하나의 가벼운 운영체계일 수 도 있지 않을까? myos 뭐 어쨌거나 말이다
+- 윈도우 환경에도 쉘은 있다 쉘은 있다 
+- cmd, command, powershell
+- csh, ksh, bash
+- t-shell
+
+* so
+
+#+BEGIN_EXAMPLE
+$ t-[tab]
+t-cpu
+t-bit
+t-memory
+t-repo
+t-df
+t-du
+t-dig
+t-os
+t-box
+t-ip
+t-pkg
+#+END_EXAMPLE
+
