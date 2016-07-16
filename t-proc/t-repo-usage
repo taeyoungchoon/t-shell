@@ -1,0 +1,6 @@
+Filesystem                        1024-blocks     Used Available Capacity  Mounted on
+/dev/disk0s2                         58404936 49651680   8497256    86%    /
+devfs                                     179      179         0   100%    /dev
+map -hosts                                  0        0         0   100%    /net
+map auto_home                               0        0         0   100%    /home
+ftp://ftp.kaist.ac.kr/pub/cygwin/     1048576  1048576         0   100%    /Volumes/cygwin

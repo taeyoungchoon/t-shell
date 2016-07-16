@@ -1,0 +1,28 @@
+#!/usr/bin/expect -f
+
+set target [lindex $argv 0]
+set id [lindex $argv 1]
+set password [lindex $argv 2]
+
+# telnet or ssh
+# set method [lindex $argv 3]
+
+# send command to target:/tmp/[random].extension
+# set command [lindex $argv 4]
+
+#
+# telnet -l user target
+# ssh -l user target
+#
+spawn ssh -o StrictHostKeyChecking=no $id@$target
+
+send "export PS1=\"### \"\n"
+expect "$"
+
+send "perl --version | grep version\n"
+expect "$"
+
+send "exit\n"
+expect "$"
+
+interact
