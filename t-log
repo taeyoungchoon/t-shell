@@ -1,4 +1,0 @@
-(cond (info i)
-      (warn w)
-      (error e)
-      (critical c))

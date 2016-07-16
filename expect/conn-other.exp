@@ -1,0 +1,33 @@
+#!/usr/bin/expect
+
+set target [lindex $argv 0]
+set id [lindex $argv 1]
+set password [lindex $argv 2]
+
+spawn ssh $id@$target
+expect {
+	"Are you sure you want to continue connecting (yes/no)?" {
+		send "yes\n"
+		exp_continue
+	}
+	"Password:" {
+		send "$password\n"
+	}
+}
+
+send "clear\n"
+expect "$"
+
+send "perl foo.pl\n"
+expect "$"
+
+send "perl --version | grep version\n"
+expect "$"
+
+send "git --version\n"
+expect "$"
+
+send "exit\n"
+expect "$"
+
+interact

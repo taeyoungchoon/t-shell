@@ -1,7 +1,0 @@
-t-state --role weblogc,oracle,os
-
-(state
-	(role
-		(weblogic 7001)
-		(oracle (tablespace listen)
-		(os (space cpu memory)))))

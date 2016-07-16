@@ -1,5 +1,0 @@
-t-time --sync
-t-time --check
-
-ntpdate -q time.bora.net
-ntpq -p | grep ^\*
