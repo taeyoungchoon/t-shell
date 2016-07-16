@@ -1,1 +1,0 @@
-t-arch.pl

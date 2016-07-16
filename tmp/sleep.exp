@@ -1,5 +1,0 @@
-#!/usr/bin/expect -f
-
-send "this is it\n"
-sleep 3
-send "sleep well\n"
