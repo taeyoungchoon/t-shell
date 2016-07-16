@@ -1,0 +1,26 @@
+* windows 2000
+
+http://stackoverflow.com/questions/34861728/how-do-i-setup-cygwin-1-7-on-a-windows-2000-machine
+
+Updated: Cygwin 1.7.19
+
+- Drop support for Windows 2000 and Windows XP pre-SP3.
+
+setup-x86.exe -X
+
+Cygwin Time Machine
+
+* cli
+
+-q --quiet-mode
+
+* with ssh
+
+https://docs.oracle.com/cd/E24628_01/install.121/e22624/preinstall_req_cygwin_ssh.htm#EMBSC150
+
+set CYGWIN=binmode ntsec
+ssh-host-config
+/bin/mkpasswd -l –u sysman >> /etc/passwd
+/usr/sbin/sshd
+
+set CYGWIN=binmode ntsec nodosfilewarning
