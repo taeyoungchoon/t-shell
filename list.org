@@ -1,0 +1,26 @@
+* operating system
+
+- linux
+- hp-ux
+- aix
+- windows
+- macosx
+- myos, ideal? but real
+
+* app
+
+- oracle
+
+* agent
+
+- emacs, can it be?
+- mon
+- perl
+- expect, remoting
+- tool
+- tmp
+
+* one more thing
+
+- github-clone.sh
+- list.org
