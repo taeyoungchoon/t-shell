@@ -1,0 +1,20 @@
+* say
+
+* manager
+
+- nmap
+- perl
+- expect
+- username and password
+- ip, os, ssh/telnet/rdp/vnc
+- ftp
+
+* clinet
+
+- telnet or ssh
+- ftpd
+- cygwin
+- perl
+- git?
+- nagios client
+- puppet and cfengine
