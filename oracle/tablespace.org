@@ -1,7 +1,10 @@
+
 echo "1. oracle tablespace on oracle data directory"
 
 http://www.databasejournal.com/features/oracle/monitoring-tablespace-usage-in-oracle.html
 
+sqlplus "/as sysdba" @tablespace.sql
+su - oracle -c "sqlplus '/ as sysdba' @/tablespace.sql"
 
 set linesize 132 tab off trimspool on
 set pagesize 105
