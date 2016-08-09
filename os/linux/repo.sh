@@ -1,4 +1,7 @@
 vgdisplay
+vgdisplay -v | grep "PV Name" | grep -v Alter
+ioscan -funC disk
+ioscan -funC fc
 lvdisplay
 pvdisplay
 fdisk -l
