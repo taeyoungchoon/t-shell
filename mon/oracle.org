@@ -1,0 +1,6 @@
+* point
+
+- tablespace and autoextend the filesystem, df
+- alert.log
+- using dual
+- through listener
