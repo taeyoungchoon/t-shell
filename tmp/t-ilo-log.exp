@@ -1,0 +1,21 @@
+#!/usr/bin/expect
+
+set target [lindex $argv 0]
+set id [lindex $argv 1]
+set password [lindex $argv 2]
+
+spawn ssh $id@$target "show /system1/log1"
+expect {
+	"Are you sure you want to continue connecting (yes/no)?" {
+		send "yes\n"
+		exp_continue
+	}
+	"password:" {
+		send "$password\n"
+	}
+}
+
+#expect "$"
+#send "exit\n"
+
+interact
