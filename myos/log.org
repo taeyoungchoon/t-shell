@@ -1,8 +1,36 @@
+* read
+
+swatch, logwatch, nagios, perl
+Win32::EventLog
+syslog.exe comes with cygwin
+http://docstore.mik.ua/orelly/perl3/perlnut/ch22_04.htm
+
 * green/yellow/red
 * 80/90
 * +tablespace
+* location
+
+** windows
+
+eventvwr
+
+** linux
+
+/var/log/syslog
+
+** mac
+
+/var/log/system.log
+
+** hp-ux
+
+/var/adm/syslog.log 
+
+** aix 
+
+/var/adm/syslog/syslog.log
+
 * so
 
 - dmesg or errpt
-- ls /var/log or /var/adm
 - even oracle
