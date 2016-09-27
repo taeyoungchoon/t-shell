@@ -1,0 +1,16 @@
+ftp> ls
+200 PORT command successful
+150 Opening ASCII mode data connection for file list
+-r-xr-xr-x   1 archive  archive     23700 Feb  9  2010 depothelper-2.00-hppa-11.11.depot.gz
+-r-xr-xr-x   1 archive  archive     23698 Feb  9  2010 depothelper-2.00-hppa-11.23.depot.gz
+-r-xr-xr-x   1 archive  archive     23697 Feb  9  2010 depothelper-2.00-hppa-11.31.depot.gz
+-r-xr-xr-x   1 archive  archive     23699 Feb  9  2010 depothelper-2.00-ia64-11.23.depot.gz
+-r-xr-xr-x   1 archive  archive     23709 Feb  9  2010 depothelper-2.00-ia64-11.31.depot.gz
+-r-xr-xr-x   1 archive  archive     22902 Feb  9  2010 depothelper-2.00-src-11.11.tar.gz
+-r-xr-xr-x   1 archive  archive      2300 Feb  9  2010 depothelper-2.00.README
+-r-xr-xr-x   1 archive  archive     10744 Feb  9  2010 depothelper-2.00.README.html
+-r-xr-xr-x   1 archive  archive      2227 Feb  9  2010 depothelper-2.00.man.gz
+-r-xr-xr-x   1 archive  archive      7821 Feb  9  2010 depothelper-2.00.man.html
+226 Transfer complete.
+ftp>
+
