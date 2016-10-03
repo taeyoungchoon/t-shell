@@ -1,8 +1,21 @@
-#!/usr/bin/perl -w
+#!/usr/bin/perl
 
-my $uname = `uname -s`;
+use strict;
+use warnings;
 
-if ( $uname =~ /darwin/i )	{ print "macosx" . "\n"; }
-if ( $uname =~ /linux/i )	{ print "linux"  . "\n"; }
-if ( $uname =~ /hp-ux/i )	{ print "hp-ux"  . "\n"; }
-if ( $uname =~ /aix/i )		{ print "aix"    . "\n"; }
+sub os {
+    my %tbl = ( 
+	"darwin" => "macosx",
+	"linux" => "linux",
+	"hp-ux" => "hp-ux",
+	"aix" => "aix",
+	);
+    
+    my $uname;
+    chomp($uname = `uname -s`);
+    $uname = lc($uname);
+    my $os = $tbl{$uname};
+    return $os;
+}
+
+print "you are using " . &os() . ".\n";
