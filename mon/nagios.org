@@ -2,6 +2,11 @@
 
 http://sharadchhetri.com/2013/06/11/how-to-install-and-configure-nagios-nrpe-client-in-ubuntu-with-apt-get-command/
 nrpe on debian
+테스트 요함
+
+http://www.bennyvision.com/projects/nagios/
+nrpe on hp-ux
+테스트 요함
 
 * agentless
 
