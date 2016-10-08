@@ -1,0 +1,28 @@
+* conf
+
+/cygdrive/c/TmaxSoft/WebtoB4.1/config
+wscfl -i http.m
+ls wsconfig
+wsboot
+
+/cygdrive/c/TmaxSoft/WebtoB4.1/bin
+wsdown
+
+srvinstall
+srvremove
+
+wsadmin -version
+ps -ef | grep "hth|htl|wsm"
+netstat -an | grep :80 | grep LISTEN
+
+wsadmin
+st -p
+st -s
+ci -s
+st -v
+
+* license
+
+wsadmin -i /cygdrive/c/TmaxSoft/WebtoB4.1/license/license.dat
+wsadmin
+>wi

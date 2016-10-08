@@ -1,0 +1,27 @@
+* config
+
+/cygdrive/c/TmaxSoft/JEUS6.0/config/foo-pc/foo-pc-servlet_engine1
+WEBMain.xml
+/cygdrive/c/TmaxSoft/JEUS6.0/bin
+jeus
+
+http://localhost:9744/webadmin/app , administrator / password
+
+jeusp -xml -Uadministrator -Ppassword
+jeusadmin hostname jeusexit -Uadministrator -Ppassword
+
+jeusadmin
+>boot
+>allenglist
+
+>down
+>jeusexit
+>exit
+
+>downeng foo_ejb_engine1
+>starteng foo_ejb_engine1
+
+* license
+
+jeusadmin -licenseinfo
+jeusadmin -licensedue
