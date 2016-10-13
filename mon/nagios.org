@@ -42,7 +42,7 @@ https://exchange.nagios.org/directory/Addons/Frontends-%28GUIs-and-CLIs%29/Linux
 
 ** nagiosmobile
 
-* config
+* configa
 
 ** TODO group
 ** nconf
@@ -50,6 +50,10 @@ https://exchange.nagios.org/directory/Addons/Frontends-%28GUIs-and-CLIs%29/Linux
 * nagios agent
 
 ** NSClient++
+
+- silent
+
+** nrpe for windows
 ** nrpe +hp-ux +aix
 ** with snmpd +all
 ** with snmp trap
