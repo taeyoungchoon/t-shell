@@ -28,6 +28,18 @@ ls /var/opt/ignite/clients/HOSTNAME/recovery/latest/
 
 ls /osbackup/HOSTNAME/
 
+** nfs server stop /start
+
+/sbin/init.d/nfs.server stop
+/sbin/init.d/nfs.server start
+
+/sbin/init.d/nfs.core stop
+/sbin/init.d/nfs.core start
+
+** nfs log at
+
+tail -f /var/nfs/mountd.log
+
 ** ignite client, NFS
 
 cat /etc/hosts
