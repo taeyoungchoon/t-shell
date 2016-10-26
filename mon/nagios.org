@@ -42,7 +42,7 @@ https://exchange.nagios.org/directory/Addons/Frontends-%28GUIs-and-CLIs%29/Linux
 
 ** nagiosmobile
 
-* configa
+* config
 
 ** TODO group
 ** nconf
