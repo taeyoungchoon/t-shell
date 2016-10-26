@@ -2,6 +2,11 @@
 
 http://sharadchhetri.com/2013/06/11/how-to-install-and-configure-nagios-nrpe-client-in-ubuntu-with-apt-get-command/
 nrpe on debian
+테스트 요함
+
+http://www.bennyvision.com/projects/nagios/
+nrpe on hp-ux
+테스트 요함
 
 * agentless
 
@@ -37,7 +42,7 @@ https://exchange.nagios.org/directory/Addons/Frontends-%28GUIs-and-CLIs%29/Linux
 
 ** nagiosmobile
 
-* config
+* configa
 
 ** TODO group
 ** nconf
@@ -45,6 +50,10 @@ https://exchange.nagios.org/directory/Addons/Frontends-%28GUIs-and-CLIs%29/Linux
 * nagios agent
 
 ** NSClient++
+
+- silent
+
+** nrpe for windows
 ** nrpe +hp-ux +aix
 ** with snmpd +all
 ** with snmp trap

@@ -1,3 +1,22 @@
+* word
+
+https://downloads.linux.hpe.com/SDR/
+software delivery repository
+
+ssp, service pack for proliant for enterprise dist(suse, redhat)
+mcp, management component pack for community dist(ubuntu, debian)
+
+http://www8.hp.com/us/en/products/server-software/product-detail.html?oid=344313#!tab=features
+SMH, System Management Homepage
+
+http://www8.hp.com/us/en/products/server-software/product-detail.html?oid=489496#!tab=models
+SIM, System Insight Manager
+
+http://h20564.www2.hpe.com/hpsc/doc/public/display?docId=mmr_kc-0123572
+GOAL:Download Array Utility, Firmware and Drivers for HP Smart Array Controllers
+
+* enable hp monitor(hp-health > hpasmcli) and storage management cli(hpssacli) on ubuntu
+
 http://downloads.linux.hpe.com/SDR/project/mcp/
 
 # tail -50 /etc/apt/sources.list | tail -1

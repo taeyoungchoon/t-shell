@@ -1,0 +1,12 @@
+* config
+
+TOMCAT-HOME/conf/server.xml
+TOMCAT-HOME/conf/web.xml
+
+tomcat/bin/
+startup.sh
+shutdown.sh
+
+localhost:8080
+
+ps -ef | grep tomcat
