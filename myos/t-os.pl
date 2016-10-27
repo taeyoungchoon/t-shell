@@ -3,6 +3,10 @@
 use strict;
 use warnings;
 
+printf "os: $^O\n";
+
+__END__
+
 sub os {
     my %tbl = ( 
 	"darwin" => "macosx",
