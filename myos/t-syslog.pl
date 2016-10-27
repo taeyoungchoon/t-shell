@@ -1,3 +1,18 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+
+my $os = $^O;
+my %paths = ( 'darwin', '/var/log/system.log',
+	      'linux', '/var/log/syslog.log',
+	      'aix', '/var/adm/syslog.log',
+	      'hpux', '/var/adm/syslog/syslog.log' );
+
+system( "tail -5 $paths{$os}" );
+
+__END__
+
 use Switch;
 
 my $uname = `uname -s`;
@@ -39,22 +54,6 @@ http://docstore.mik.ua/orelly/perl3/perlnut/ch22_04.htm
 ** windows
 
 eventvwr
-
-** linux
-
-/var/log/syslog
-
-** mac
-
-/var/log/system.log
-
-** hp-ux
-
-/var/adm/syslog.log 
-
-** aix 
-
-/var/adm/syslog/syslog.log
 
 * so
 
