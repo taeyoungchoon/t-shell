@@ -22,17 +22,17 @@ http://downloads.linux.hpe.com/SDR/project/mcp/
 # tail -50 /etc/apt/sources.list | tail -1
 deb http://downloads.linux.hpe.com/SDR/repo/mcp trusty/current non-free
 
+curl http://downloads.linux.hpe.com/SDR/hpPublicKey1024.pub | apt-key add -
+curl http://downloads.linux.hpe.com/SDR/hpPublicKey2048.pub | apt-key add -
+curl http://downloads.linux.hpe.com/SDR/hpPublicKey2048_key1.pub | apt-key add -
+curl http://downloads.linux.hpe.com/SDR/hpePublicKey2048_key1.pub | apt-key add -
+
 apt-get update
 
-  123  curl http://downloads.linux.hpe.com/SDR/hpPublicKey1024.pub | apt-key add -
-  124  curl http://downloads.linux.hpe.com/SDR/hpPublicKey2048.pub | apt-key add -
-  125  curl http://downloads.linux.hpe.com/SDR/hpPublicKey2048_key1.pub | apt-key add -
-  126  curl http://downloads.linux.hpe.com/SDR/hpePublicKey2048_key1.pub | apt-key add -
+apt-get install hp-health
+apt-get install hpssacli
 
-  132  apt-get install hp-health
-  139  apt-get install hpssacli
-
-  146  hpssacli controller all show status
+hpssacli controller all show status
 
 hpasmcli
 hpasmcli -s "show iml"
