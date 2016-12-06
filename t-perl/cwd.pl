@@ -1,3 +1,5 @@
+# use Expect;
+
 foreach my $file (`ls`) {
   print $file;
   my @stat = stat($file);
