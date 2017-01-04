@@ -55,9 +55,16 @@ deb http://downloads.linux.hpe.com/SDR/repo/mcp squeeze/current non-free
 apt-get install hpacucli
 
 hpacucli controller all show status
+
+Controller Status: OK
+Cache Status: OK
+
 hpacucli controller all show config
 
 logicaldrive 1 (68.3 GB, RAID 1, OK)
-logicaldrive 2 (410.1 GB, RAID 1+0, Interim Recovery Mode
 
+logicaldrive 2 (410.1 GB, RAID 1+0, Interim Recovery Mode
 physicaldrive 2I:1:4 (port 2I:box 1:bay 4, SAS, 146 GB, Failed)
+
+logicaldrive 2 (410.1 GB, RAID 1+0, Recovering, 40% complete)
+physicaldrive 2I:1:4 (port 2I:box 1:bay 4, SAS, 146 GB, Rebuilding)
