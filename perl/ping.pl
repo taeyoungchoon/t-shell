@@ -2,7 +2,7 @@ use Net::Ping;
 use POSIX qw(strftime);
 
 $host = shift;
-$timeout = 1;
+$timeout = 3;
 
 while ( 1 ) {
     &ping();
