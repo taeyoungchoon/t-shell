@@ -34,6 +34,24 @@ apt-get update
 apt-get install hp-health
 apt-get install hpssacli
 
+#+BEGIN_EXAMPLE
+[mcp]
+name=Management Component Pack
+baseurl=http://downloads.linux.hpe.com/SDR/repo/mcp/CentOS/5.5/x86_64/current
+enabled=1
+gpgcheck=0
+gpgkey=file:///etc/pki/rpm-gpg/GPG-KEY-mcp
+#+END_EXAMPLE
+
+#+BEGIN_EXAMPLE
+
+http://h20564.www2.hpe.com/hpsc/swd/public/detail?swItemId=MTX_b6a6acb9762443b182280db805#tab-history
+HP Smart Storage Administrator (HP SSA) CLI for Linux 64-bit
+
+hpssacli-1.50-4.0.x86_64.rpm (9.1 MB)
+
+#+END_EXAMPLE
+
 ** chk
 
 hpssacli controller all show status
