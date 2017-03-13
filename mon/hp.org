@@ -34,6 +34,8 @@ apt-get update
 apt-get install hp-health
 apt-get install hpssacli
 
+/etc/yum.repos.d/mcp.repo
+
 #+BEGIN_EXAMPLE
 [mcp]
 name=Management Component Pack
