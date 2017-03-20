@@ -17,6 +17,8 @@ GOAL:Download Array Utility, Firmware and Drivers for HP Smart Array Controllers
 
 * enable hp monitor(hp-health > hpasmcli) and storage management cli(hpssacli) on ubuntu
 
+lsb_release -a
+
 ** install
 
 http://downloads.linux.hpe.com/SDR/project/mcp/
