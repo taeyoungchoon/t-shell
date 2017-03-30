@@ -19,7 +19,7 @@ GOAL:Download Array Utility, Firmware and Drivers for HP Smart Array Controllers
 
 lsb_release -a
 
-** install
+** install debian type(ubuntu 14, code name trusty)
 
 http://downloads.linux.hpe.com/SDR/project/mcp/
 
@@ -35,6 +35,8 @@ apt-get update
 
 apt-get install hp-health
 apt-get install hpssacli
+
+** install on redhat type
 
 /etc/yum.repos.d/mcp.repo
 
