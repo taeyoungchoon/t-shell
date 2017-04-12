@@ -1,4 +1,20 @@
-* agent-based
+* agent-based or agentless
+** NSClient++
+
+#+BEGIN_SRC 
+set | findstr /i arch
+sc query nsclientpp
+pause
+#+END_SRC
+
+#+BEGIN_SRC 
+msiexec /i nscx32.msi ALLOWED_HOSTS=192.168.0.101 CONF_CHECKS=1 CONF_NSCLIENT=1 CONF_NRPE=1 CONF_WMI=1 /quiet
+sc start nsclientpp
+sc query nsclientpp
+pause
+#+END_SRC
+
+** nrpe for windows, hp-ux, aix
 
 http://sharadchhetri.com/2013/06/11/how-to-install-and-configure-nagios-nrpe-client-in-ubuntu-with-apt-get-command/
 nrpe on debian
@@ -8,52 +24,27 @@ http://www.bennyvision.com/projects/nagios/
 nrpe on hp-ux
 테스트 요함
 
-* agentless
-
 ** check_by_ssh , but the nagios_plugins need to compile from AIX and HP-UX
 
 su - nagios
 ssh nagios@1.1.1.1 uptime
 ssh nagios@1.1.1.1 /home/nagios/plugins/check_oracle --tablespace XX sysmon sysmon YY 98 95
 
-* plugin programming
-
-Nagios Plugin Development Guidelines
-
-* with storage
-
-- check_netapp
-
-* with server, hp
-
-- check_hp
-
-* nagtail
-
-https://exchange.nagios.org/directory/Addons/Frontends-%28GUIs-and-CLIs%29/Linux-Interfaces/nagtail/details
-
-* nagios + sms
-
-* addon
-
-** n2rrd
-
-* view
-
-** nagiosmobile
-
+** check_netapp
+** check_hp
+** with snmpd +all
+** with snmp trap
 * config
 
 ** TODO group
 ** nconf
+* on more thing
+** nagtail
 
-* nagios agent
+https://exchange.nagios.org/directory/Addons/Frontends-%28GUIs-and-CLIs%29/Linux-Interfaces/nagtail/details
 
-** NSClient++
+** nagios + sms
+** n2rrd
+** nagiosmobile
 
-- silent
 
-** nrpe for windows
-** nrpe +hp-ux +aix
-** with snmpd +all
-** with snmp trap
