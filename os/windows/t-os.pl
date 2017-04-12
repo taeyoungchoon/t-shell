@@ -4,8 +4,8 @@ use warnings;
 # my $os = $^O;
 
 # if ($os =~ /darwin/) {
-if ($^O eq 'darwin') {
-    print "I am a mac." . "\n";
+if ($^O eq 'MSWin32') {
+    print "I am a windows." . "\n";
 }
     
 __END__

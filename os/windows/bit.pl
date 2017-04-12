@@ -1,1 +1,0 @@
-set | findstr /i arch
