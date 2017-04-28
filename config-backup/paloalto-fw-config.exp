@@ -1,0 +1,23 @@
+#!/usr/bin/expect
+
+log_file -noappend fw.config
+
+set target "192.168.1.100"
+set id "admin"
+set password "xxxx"
+
+spawn ssh $id@$target
+
+expect "Password"
+send "$password\r"
+
+expect ">"
+send "set cli pager off\r"
+
+expect ">"
+send "show config running\r"
+
+expect ">"
+send "quit\r"
+
+interact

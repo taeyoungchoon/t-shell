@@ -1,0 +1,32 @@
+#!/usr/bin/expect
+
+#set hostname "core_6509"
+#set target "192.168.0.100"
+set target [lindex $argv 0]
+set hostname [lindex $argv 1]
+
+if { $argc != 2 } {
+        puts "Usage : command ip hostname\n"
+        exit 1
+}
+
+set password "xxxx"
+set datestring [exec date +%Y%d%m]
+set timestring [exec date +%H%M%S]
+set logpath "~/tscript/network/log"
+set logfile "$logpath/$hostname.out-$datestring.$timestring"
+
+log_file -noappend $logfile
+spawn telnet $target
+expect "Password:"
+send "$password\n"
+expect ">"
+send "en\n"
+expect "Password:"
+send "$password\n"
+expect "#"
+send "term len 0\n"
+expect "#"
+send "show running-config\n"
+send "exit\n"
+interact

@@ -1,0 +1,26 @@
+#!/usr/bin/expect
+
+log_file -noappend ddos.config
+
+set target "192.168.1.100"
+set id "admin"
+set password "xxxx"
+
+spawn ssh $id@$target
+
+expect "password"
+send "$password\r"
+
+expect "#"
+send "manage terminal more-prompt set off\r"
+
+expect "#"
+send "system config immediate\r"
+
+expect "#"
+send "manage terminal more-prompt set on\r"
+
+expect "#"
+send \003
+
+interact
