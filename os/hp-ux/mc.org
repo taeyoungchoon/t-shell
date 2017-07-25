@@ -19,4 +19,8 @@ rp8440's Management Processor
 
 * cl : console logs
 * sl : show event logs
+* rs : reset 
 * x : exit
+* ref
+
+http://h20564.www2.hpe.com/hpsc/doc/public/display?docId=emr_na-c00041236&sp4ts.oid=88837
