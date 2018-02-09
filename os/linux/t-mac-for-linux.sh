@@ -45,7 +45,7 @@ netsh int ipv4 show route | findstr x.x.x.x
 netstat -rn | findstr x
 ipconfig /all | findstr /c:Desc /c:Phys /c:IPv4
 
-# linux work
+# linux work #####
 hn=`hostname`
 echo -n $hn
 echo -n " "
@@ -62,6 +62,23 @@ echo -n " "
          mac=`ifconfig $interface | grep HWaddr | awk '{ print $5 }'`
          echo -n $mac
 echo -n " "
+done
+
+echo ""
+
+# aix works #####
+hn=`hostname`
+echo "$hn \c"
+
+for interface in `netstat -rn -f inet | grep ^[0-9] | awk '{ print $6 }' | grep -v lo | sort | uniq`
+do
+         echo "$interface \c"
+
+         ip=`ifconfig $interface | grep inet | awk '{ print $2 }'`
+         echo "$ip \c"
+
+         mac=`entstat $interface | grep -i hardware | awk '{ print $3 }'`
+         echo "$mac \c"
 done
 
 echo ""
