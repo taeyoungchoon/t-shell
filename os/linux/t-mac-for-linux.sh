@@ -3,26 +3,6 @@
 # todo : ip, nmcli, /proc
 #
 
-# old
-hn=`hostname`
-int=`netstat -rn | grep UG | awk '{ print $8 }'`
-ip=`ifconfig $int | grep -v inet6 | grep inet | awk '{ print $2 }'`
-mac=`ifconfig $int | grep ether | awk '{ print $2 }'`
-echo $hn $int $ip $mac
-
-# anyway new
-hn=`hostname`
-int=`netstat -rn | grep UG | awk '{ print $8 }'`
-ip=`ifconfig $int | grep -v inet6 | grep inet | awk '{ print $2 }' | cut -d ':' -f 2`
-mac=`ifconfig $int | grep HWaddr | awk '{ print $5 }'`
-echo $hn $int $ip $mac
-
-# but two
-hostname
-netstat -rn | grep ^[0-9] | awk '{ print $8 }' | grep -v usb | grep -v lo | sort | uniq | wc -l
-netstat -rn | grep ^[0-9] | awk '{ print $8 }' | sort | uniq | sed 's/^/ifconfig /' | sh | egrep "(HWaddr|inet)" | grep -v inet6
-
-# linux work #####
 hn=`hostname`
 echo -n $hn
 echo -n " "
@@ -42,3 +22,29 @@ echo -n " "
 done
 
 echo ""
+
+
+#
+# old : ether
+#
+#hn=`hostname`
+#int=`netstat -rn | grep UG | awk '{ print $8 }'`
+#ip=`ifconfig $int | grep -v inet6 | grep inet | awk '{ print $2 }'`
+#mac=`ifconfig $int | grep ether | awk '{ print $2 }'`
+#echo $hn $int $ip $mac
+
+#
+# anyway new : HWaddr
+#
+#hn=`hostname`
+#int=`netstat -rn | grep UG | awk '{ print $8 }'`
+#ip=`ifconfig $int | grep -v inet6 | grep inet | awk '{ print $2 }' | cut -d ':' -f 2`
+#mac=`ifconfig $int | grep HWaddr | awk '{ print $5 }'`
+#echo $hn $int $ip $mac
+
+#
+# but two
+#
+#hostname
+#netstat -rn | grep ^[0-9] | awk '{ print $8 }' | grep -v usb | grep -v lo | sort | uniq | wc -l
+#netstat -rn | grep ^[0-9] | awk '{ print $8 }' | sort | uniq | sed 's/^/ifconfig /' | sh | egrep "(HWaddr|inet)" | grep -v inet6
