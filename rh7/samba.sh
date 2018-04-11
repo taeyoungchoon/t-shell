@@ -16,3 +16,7 @@ fi
 systemctl status smb nmb
 
 yum install samba-client telnet nmap -y
+
+firewall-cmd --permanent --add-service=samba
+firewall-cmd --reload
+firewall-cmd --list-all

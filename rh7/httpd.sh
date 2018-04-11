@@ -25,4 +25,9 @@ ps -eZ | grep httpd
 
 ss -lntp | grep httpd
 
+firewall-cmd --permanent --add-service=http --add-service=https
+firewall-cmd --reload
+firewall-cmd --list-all
+
 nmap localhost -p80,443
+
