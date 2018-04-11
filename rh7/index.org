@@ -1,0 +1,14 @@
+nmcli
+teaming
+firewalld
+selinux
+samba
+nfs
+iscsi
+mariadb
+postfix
+httpd
+bash
+lvm
+parted
+ipv6
