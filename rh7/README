@@ -1,0 +1,3 @@
+nmcli connection mod team0 config '{ "runner" : { "name" : "activebackup" }}'
+is not working on rh7.0
+error msg : xx
