@@ -3,6 +3,13 @@
 disk=$1
 cmd=$2
 
+function msg ()
+{
+	echo =========================================
+	echo $*
+	echo =========================================
+}
+
 if test $# -ne 2; then 
 	echo $0 DISK COMMAND
 	echo list of COMMAND :
@@ -10,12 +17,11 @@ if test $# -ne 2; then
 	exit 1; 
 fi
 
-function msg ()
-{
-	echo =========================================
-	echo $*
-	echo =========================================
-}
+rpm -qi gdisk 1>/dev/null 2>/dev/null
+if test $? -ne 0; then
+	yum install gdisk -y  1>/dev/null 2>/dev/null
+	msg "gdisk downloaded and installed"
+fi
 
 case $cmd in 
 	print)
@@ -50,16 +56,12 @@ case $cmd in
 		end=$( echo ${end_number}MiB )
 
 		parted $disk unit MiB mkpart primary $start $end
-		sgdisk $disk -t ${next}:8300
+		sgdisk $disk -t ${next}:8e00
 		gdisk -l $disk
-		msg "Linux FileSystem partion(100MiB) is made"
+		# msg "Linux FileSystem partion ( 8e00, 100MiB ) is made"
+		msg "LVM partion ( 8e00, 100MiB ) is made"
 		;;
 	clear)
-		rpm -qi gdisk 1>/dev/null 2>/dev/null
-		if test $? -ne 0; then
-			yum install gdisk -y  1>/dev/null 2>/dev/null
-			msg "gdisk downloaded and installed"
-		fi
 		sgdisk -Z $disk
 		msg "clear, done"
 		;;
