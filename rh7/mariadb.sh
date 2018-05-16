@@ -17,6 +17,8 @@ systemctl status mariadb
 
 yum install telnet nmap -y
 
+read -p "Press enter to continue"
+
 ps -ef | grep mariadb
 ps -eZ | grep mariadb
 

@@ -17,6 +17,8 @@ systemctl status target
 
 yum install telnet -y
 
+read -p "Press enter to continue"
+
 firewall-cmd --permanent --add-port=3260/tcp
 firewall-cmd --reload
 firewall-cmd --list-all

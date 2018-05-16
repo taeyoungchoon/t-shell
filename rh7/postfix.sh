@@ -17,6 +17,8 @@ systemctl status postfix
 
 yum install telnet mailx mutt -y
 
+read -p "Press enter to continue"
+
 firewall-cmd --permanent --add-service=smtp
 firewall-cmd --reload
 firewall-cmd --list-all

@@ -15,6 +15,8 @@ fi
 
 systemctl status nfs-server
 
+read -p "Press enter to continue"
+
 yum install telnet -y
 
 firewall-cmd --permanent --add-service=nfs --add-service=rpc-bind --add-service=mountd
