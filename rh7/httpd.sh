@@ -15,7 +15,9 @@ fi
 
 systemctl status httpd
 
-yum install mod_ssl mod_wsgi curl elinks telnet nmap -y
+yum install mod_ssl mod_wsgi curl elinks telnet nmap -q -y
+
+read -p "Press enter to continue"
 
 httpd -t
 httpd -t -D DUMP_VHOSTS

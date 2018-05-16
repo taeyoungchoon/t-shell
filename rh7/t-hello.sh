@@ -3,8 +3,6 @@
 #	exit 1
 #fi
 
-msg start, world
-
 function msg ()
 {
 	echo ==================================
