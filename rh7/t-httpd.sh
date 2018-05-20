@@ -33,3 +33,7 @@ firewall-cmd --list-all
 
 nmap localhost -p80,443
 
+# and more
+echo "hello" > /var/www/html/index.html
+mkdir /var/www/html/owndir
+echo "hello sub" > /var/www/html/owndir/index.html
