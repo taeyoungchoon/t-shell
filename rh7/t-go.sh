@@ -1,5 +1,5 @@
 sh t-up2date.sh
-sh t-firewall.sh enable
+sh t-firewalld.sh enable
 sh t-base.sh
 sh t-chrony.sh
 sh t-forward.sh
