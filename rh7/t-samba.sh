@@ -1,6 +1,6 @@
 rpm -qi samba >/dev/null 2>/dev/null
 if test $? -ne 0; then
-	yum install samba
+	yum install samba -y
 fi
 
 systemctl is-enabled smb nmb >/dev/null 2>/dev/null

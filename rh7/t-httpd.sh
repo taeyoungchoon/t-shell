@@ -1,6 +1,6 @@
 rpm -qi httpd >/dev/null 2>/dev/null
 if test $? -ne 0; then
-	yum install httpd
+	yum install httpd -y
 fi
 
 systemctl is-enabled httpd >/dev/null 2>/dev/null
@@ -17,7 +17,7 @@ systemctl status httpd
 
 yum install mod_ssl mod_wsgi curl elinks telnet nmap -q -y
 
-read -p "Press enter to continue"
+#read -p "Press enter to continue"
 
 httpd -t
 httpd -t -D DUMP_VHOSTS

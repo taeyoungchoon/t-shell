@@ -1,6 +1,6 @@
 rpm -qi nfs-utilZ >/dev/null 2>/dev/null
 if test $? -ne 0; then
-	yum install nfs-utils
+	yum install nfs-utils -y
 fi
 
 systemctl is-enabled nfs-server >/dev/null 2>/dev/null
@@ -15,7 +15,7 @@ fi
 
 systemctl status nfs-server
 
-read -p "Press enter to continue"
+#read -p "Press enter to continue"
 
 yum install telnet -y
 
