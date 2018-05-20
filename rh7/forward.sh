@@ -1,3 +1,6 @@
+firewall-cmd --permanent --add-rich-rule='rule family=ipv4 forward-port port=8080 protocol=tcp to-port=80'
+firewall-cmd --reload
+firewall-cmd --list-all
 <<COMMENT
 route -n
 ip route
