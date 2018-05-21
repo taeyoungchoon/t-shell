@@ -1,1 +1,1 @@
-yum install -q -y psmisc net-tools bind-utils 
+yum install -q -y psmisc net-tools bind-utils policycoreutils-python

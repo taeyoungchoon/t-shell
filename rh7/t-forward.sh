@@ -1,4 +1,4 @@
-firewall-cmd --permanent --add-rich-rule='rule family=ipv4 forward-port port=8080 protocol=tcp to-port=80'
+firewall-cmd --permanent --add-rich-rule='rule family=ipv4 source address=192.168.33.200 forward-port port=8080 protocol=tcp to-port=80'
 firewall-cmd --reload
 firewall-cmd --list-all
 <<COMMENT

@@ -37,3 +37,6 @@ nmap localhost -p80,443
 echo "hello" > /var/www/html/index.html
 mkdir /var/www/html/owndir
 echo "hello sub" > /var/www/html/owndir/index.html
+
+mkdir -p /srv/vh1/www
+mkdir -p /srv/vh2/www
