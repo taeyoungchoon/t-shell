@@ -20,3 +20,15 @@ yum install samba-client telnet nmap -y
 firewall-cmd --permanent --add-service=samba
 firewall-cmd --reload
 firewall-cmd --list-all
+
+ls -lZ / | grep smbs
+[ ! -e /smbshare ] && mkdir /smbshare
+chgrp sales /smbshare
+chmod g+rwx /smbshare
+ls -l / | grep smbshare
+echo "samba home" > /smbshare/samba-home.text
+semanage fcontext -a -t samba_share_t /smbshare
+restorecon -Rv /smbshare
+ls -lZ / | grep smbs
+
+systemctl restart smb nmb

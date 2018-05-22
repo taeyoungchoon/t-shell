@@ -34,9 +34,11 @@ firewall-cmd --list-all
 nmap localhost -p80,443
 
 # and more
-echo "hello" > /var/www/html/index.html
+echo "server1.f.com" > /var/www/html/index.html
 mkdir /var/www/html/owndir
-echo "hello sub" > /var/www/html/owndir/index.html
+echo "server1.f.com then sub" > /var/www/html/owndir/index.html
 
 mkdir -p /srv/vh1/www
-mkdir -p /srv/vh2/www
+echo "vh1.f.com" > /srv/vh1/www/index.html
+
+cp myapp.wsgi /srv/vh1/www/
