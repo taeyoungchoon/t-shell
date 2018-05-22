@@ -1,0 +1,6 @@
+#!/usr/bin/env expect
+
+spawn ssh root@192.168.33.200
+expect "password:"
+send "redhat\n"
+interact
