@@ -25,6 +25,19 @@ if [ $(which timedatectl) ] && timedatectl >/dev/null 2>/dev/null; then
 	fi
 fi
 
+<<<<<<< HEAD
 
 <<COMMENT
 COMMENT
+=======
+sourcing=`chronyc sources | grep "\^\*" | wc -l`
+if test $sourcing -ne 1; then
+	systemctl restart chronyd
+	sleep 3
+fi
+
+gap=`chronyc tracking | grep ^System | awk '{ print $4 }' |  cut -d "." -f 1`
+if test $gap -ne 0; then
+	chronyc makestep
+fi
+>>>>>>> e8c0646da95e9fe9b5e325173d5de44e64f02a05
