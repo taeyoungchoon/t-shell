@@ -13,9 +13,9 @@ if test $? -ne 0; then
 	systemctl start chronyd
 fi
 
-if [ $(which timedatectl) ] && timedatectl >/dev/null 2>/dev/null; then
-	timedatectl | grep "NTP enabled"
-fi
+# if [ $(which timedatectl) ] && timedatectl >/dev/null 2>/dev/null; then
+# 	timedatectl | grep "NTP enabled"
+# fi
 
 # one more thing
 if [ $(which timedatectl) ] && timedatectl >/dev/null 2>/dev/null; then
@@ -23,5 +23,8 @@ if [ $(which timedatectl) ] && timedatectl >/dev/null 2>/dev/null; then
 	if test $? -ne 0; then
 		timedatectl set-timezone Asia/Seoul
 	fi
-	timedatectl | grep Local
 fi
+
+
+<<COMMENT
+COMMENT
