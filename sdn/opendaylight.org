@@ -1,0 +1,70 @@
+* notice
+
+- odl-dlux-core and odl-restconf is not enough
+- you have to install one of the odl-dluxapps-x like odl-dluxapps-nodes
+- odl-l2switch-switch-ui installed with odl-dluxapps-topologies
+
+* install
+
+#+BEGIN_SRC 
+yum install java-1.8.0-openjdk -y
+yum install java-1.8.0-openjdk-devel -y
+wget https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/karaf/0.8.4/karaf-0.8.4.tar.gz
+tar xvfz karaf-0.8.4.tar.gz
+cd karaf-0.8.4/bin/
+./status
+./start
+./client
+feature:install odl-dlux-core odl-dluxapps-nodes 
+feature:install odl-dluxapps-topology 
+feature:install odl-dluxapps-yangui odl-dluxapps-yangvisualizer odl-dluxapps-yangman
+feature:install odl-l2switch-switch odl-l2switch-switch-ui
+curl http://localhost:8181/index.html
+#+END_SRC
+
+* legacy
+
+- [X] feature:install odl-dlux-core 
+- [X] feature:install odl-restconf
+- [X] feature:install odl-l2switch-switch 
+- feature:install odl-l2switch-switch-ui
+- feature:install odl-mdsal-apidocs 
+- feature:install odl-mdsal-apidocs
+- feature:install odl-dlux-yangui
+- feature:install odl-dlux-all
+- feature: install odl-restconf-all
+- curl -u "admin:admin" http://$ODL_IP:8181/restconf/modules
+
+* more 
+
+- unable to login
+- karaf: JAVA_HOME not set; results may vary
+
+* karaf cli
+
+- feature:install system
+- system:shutdown
+- halt
+- log:clear
+- log:display
+- log:tail
+- karaf clean
+
+* ovs
+
+yum install openvswitch -y
+systemctl start openvswitch
+systemctl status openvswitch
+ovs-vsctl show
+ovs-vsctl add-br br-test
+ip l
+ip a
+ovs-vsctl add-port br-test enp3s0f1
+ovs-vsctl add-port br-test enp4s0f0
+ovs-vsctl add-port br-test enp4s0f1
+ovs-vsctl show
+ovs-vsctl set-controller br-test tcp:127.0.0.1:6633
+
+* history
+
+- [2019-01-22 화 11:01] it works
