@@ -1,0 +1,5 @@
+[local/7/x86_64]
+name=CentOS-7 - Local Mirror
+baseurl=http://192.168.25.150/cobbler/repo_mirror/CentOS/
+enabled=1
+gpgcheck=0
