@@ -1,0 +1,4 @@
+* real world, not the thinker
+
+- [ ] package installation howto
+- [ ] server directory and files
