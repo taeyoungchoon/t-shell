@@ -9,6 +9,21 @@ use File::Temp qw/ tempfile /;
 my $date_version = "20190523_1";
 my $pure_version = "v0.01";
 
+sub _help {
+    print<<ENDOFUSAGE;
+    
+    $0 x -h
+    $0 x -c "command1;command2"
+    $0 x -s script.sh
+
+ENDOFUSAGE
+}
+
+if ($#ARGV == -1) {
+    _help();
+    exit(0);
+}
+
 my %options;
 getopts('hvc:s:', \%options);
 
@@ -17,13 +32,7 @@ getopts('hvc:s:', \%options);
 # }
     
 if ( defined $options{h} ) {
-    print<<ENDOFUSAGE;
-    
-    $0 x -h
-    $0 x -c "command1;command2"
-    $0 x -s script.sh
-
-ENDOFUSAGE
+    _help();
     exit(0);
 }
 
@@ -45,4 +54,3 @@ if ( defined $options{s} ) {
     say "cons -q -T x < $options{s}";
     exit;
 }
-
