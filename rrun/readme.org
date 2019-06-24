@@ -1,0 +1,26 @@
+* what? 
+
+- rrun is remote run using something like ssh maybe
+
+* arch
+
+1. pack req
+2. push req
+3. run req at remote
+4. pull resp
+
+* target
+* pack req
+
+** make
+
+- make
+- make all
+- make config
+- make check
+- make clean
+
+** output
+
+- out
+- [ ] run, run and run
