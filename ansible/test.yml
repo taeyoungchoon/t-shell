@@ -1,0 +1,5 @@
+---
+- hosts: localhost
+  tasks:
+    - debug: msg="Ansible is working!"
+    - debug: msg="Ansible is working2!"
