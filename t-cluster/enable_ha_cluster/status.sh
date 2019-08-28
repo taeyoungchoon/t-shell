@@ -1,0 +1,1 @@
+pcs cluster status

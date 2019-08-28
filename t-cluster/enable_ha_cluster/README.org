@@ -1,0 +1,9 @@
+* site
+
+https://www.golinuxcloud.com/ste-by-step-configure-high-availability-cluster-centos-7/
+
+* process
+
+pre.sh
+step1.sh
+step2.sh
