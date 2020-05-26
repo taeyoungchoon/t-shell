@@ -1,0 +1,61 @@
+---
+- hosts: all
+  gather_facts: true
+
+  tasks:
+  - name: pkg
+    yum:
+      name:
+        - bash-completion
+        - sysstat
+        - vim
+        - emacs-nox
+        - nmap
+        - tcpdump
+        - git
+        - psmisc
+        - lsof
+        - strace
+        - ruby
+        - openvswitch
+      state: present
+
+  - name: pkg for over rh7.4
+    yum:
+      name:
+        - fping
+        - monit
+      state: present
+    when: ansible_os_family == 'Redhat' and ansible_lsb.minor_release >= 4
+
+  - name: tz
+    timezone:
+      name: Asia/Seoul
+
+  - name: systemd
+    systemd:
+      name: "{{ item }}"
+      state: started
+      enabled: yes
+    with_items:
+      - rc-local
+      - chronyd
+      - sysstat
+      - openvswitch
+      
+  - name: t-shell check
+    stat: path=/root/t-shell
+    register: tstat
+    
+  - name: t-shell pull
+    command: git pull https://github.com/taeyoungchoon/t-shell.git chdir=/root/t-shell
+    when: tstat.stat.exists
+    
+  - name: git clone t-shell
+    command: git clone https://github.com/taeyoungchoon/t-shell.git chdir=/root
+    when: not tstat.stat.exists
+
+  - name: debug
+    debug:
+      msg: debug
+    
