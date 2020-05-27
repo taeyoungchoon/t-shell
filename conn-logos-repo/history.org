@@ -1,4 +1,4 @@
-* steps
+* kvm with virsh and more
 
 - kvm
 - virt-manager
@@ -21,10 +21,12 @@
 - nmcli connection modify ens3 ipv4.gateway 192.168.99.1
 - nmcli connection modify ens3 ipv4.method manual
 
-* ansible
+- sudo virsh list --name | sed '/^$/d' | sed 's/^/sudo virsh shutdown /'
 
+* ansible
+  
 - ansible-playbook test.yml -K 
 - ansible-playbook test.yml --extra-vars "ansible_sudo_pass=1113"
 - ansible-playbook test.yml -K -u jack
-
+  
 * ansible with hosts
