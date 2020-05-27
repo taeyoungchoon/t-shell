@@ -1,3 +1,8 @@
+* desktop with hyperv vs virtualbox
+
+- nmcli connection down "Wired connection 1"
+- nmcli connection up "Wired connection 1"
+
 * kvm with virsh and more
 
 - kvm
