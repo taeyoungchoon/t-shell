@@ -1,0 +1,14 @@
+[clr:vars]
+ansible_user=jack
+ansible_become=yes
+ansible_become_method=sudo
+ansible_become_pass=1113
+
+[clr]
+192.168.99.110
+192.168.99.120
+192.168.99.130
+
+## www[001:006].example.com
+## db-[99:101]-node.example.com
+
