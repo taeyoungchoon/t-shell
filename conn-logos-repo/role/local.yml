@@ -7,18 +7,18 @@
     yum:
       name:
       - psmisc
+      - sysstat
 
   - name: tz
     timezone:
       name: Asia/Seoul
 
-  # - name: systemd
-  #   systemd:
-  #     name: "{{ item }}"
-  #     state: started
-  #     enabled: yes
-  #   with_items:
-  #     - rc-local
-  #     - chronyd
-  #     - sysstat
-  #     - openvswitch
+  - name: systemd
+    systemd:
+      name: "{{ item }}"
+      state: started
+      enabled: yes
+    with_items:
+      - rc-local
+      - chronyd
+      - sysstat
