@@ -1,15 +1,18 @@
 ---
 - hosts: conn
   tasks:
-  - name: pkg
-    yum:
-      name:
-      - psmisc
-      - sysstat
+  - name: ping and pong
+    ping:
+    
+  # - name: pkg installation only not configure
+  #   dnf:
+  #     name:
+  #     - psmisc
+  #     - sysstat
 
-  - name: tz
-    timezone:
-      name: Asia/Seoul
+  # - name: try to debug
+  #   debug:
+  #     msg: "hi"
 
   - name: systemd
     systemd:
@@ -20,7 +23,22 @@
       - rc-local
       - chronyd
       - sysstat
+
   - name: debug
     debug:
       msg: debug
+
+  # - name: tz
+  #   timezone:
+  #     name: Asia/Seoul
+
+  # - name: systemd
+  #   systemd:
+  #     name: "{{ item }}"
+  #     state: started
+  #     enabled: yes
+  #   with_items:
+  #     - rc-local
+  #     - chronyd
+  #     - sysstat
 

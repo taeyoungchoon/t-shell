@@ -42,15 +42,15 @@
       - chronyd
       - sysstat
       - openvswitch
-      
+
   - name: t-shell check
     stat: path=/root/t-shell
     register: tstat
-    
+
   - name: t-shell pull
     command: git pull https://github.com/taeyoungchoon/t-shell.git chdir=/root/t-shell
     when: tstat.stat.exists
-    
+
   - name: git clone t-shell
     command: git clone https://github.com/taeyoungchoon/t-shell.git chdir=/root
     when: not tstat.stat.exists
@@ -58,4 +58,4 @@
   - name: debug
     debug:
       msg: debug
-    
+

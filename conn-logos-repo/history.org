@@ -35,3 +35,9 @@
 - ansible-playbook test.yml -K -u jack
   
 * ansible with hosts
+
+* ansible with role then that tree
+
+* ansible-console
+
+ansible-console -i hosts --become  -u root

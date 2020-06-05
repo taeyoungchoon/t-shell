@@ -1,0 +1,32 @@
+---
+- hosts: localhost
+  become: yes
+  gather_facts: no
+
+  tasks:
+  - debug:
+      msg: "Ansible is working!"
+
+  - name: tz
+    timezone:
+      name: Asia/Seoul
+
+  - name: pkg
+    yum:
+      name:
+        - psmisc
+        - sysstat
+        - vim
+        - wget
+
+  - name: systemd
+    systemd:
+      name: "{{ item }}"
+      state: started
+      enabled: yes
+    with_items:
+      - rc-local
+      - chronyd
+      - sysstat
+
+
