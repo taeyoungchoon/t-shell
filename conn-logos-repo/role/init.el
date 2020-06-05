@@ -29,6 +29,7 @@
 (add-hook 'yaml-mode-hook #'highlight-indentation-mode)
 
 ;; https://salishsea-meopar-docs.readthedocs.io/en/latest/work_env/emacs_config.html
+;; wget https://raw.github.com/yoshiki/yaml-mode/master/yaml-mode.el
 (global-font-lock-mode 1)
 
 (line-number-mode 1)
