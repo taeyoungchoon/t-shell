@@ -1,5 +1,5 @@
 ---
-- hosts: all
+- hosts: conn
   tasks:
   - name: pkg
     yum:
@@ -20,4 +20,7 @@
       - rc-local
       - chronyd
       - sysstat
+  - name: debug
+    debug:
+      msg: debug
 
