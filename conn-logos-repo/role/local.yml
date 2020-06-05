@@ -5,7 +5,11 @@
 
   tasks:
   - debug:
-      msg="Ansible is working!"
+      msg: "Ansible is working!"
+
+  - name: tz
+    timezone:
+      name: Asia/Seoul
 
   - name: pkg
     yum:
@@ -14,10 +18,6 @@
         - sysstat
         - vim
         - wget
-
-  - name: tz
-    timezone:
-      name: Asia/Seoul
 
   - name: systemd
     systemd:
@@ -28,3 +28,5 @@
       - rc-local
       - chronyd
       - sysstat
+
+
