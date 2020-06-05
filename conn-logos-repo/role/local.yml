@@ -13,9 +13,6 @@
         - psmisc
         - sysstat
         - vim
-        - httpd
-        - nginx
-        - mariadb
         - wget
 
   - name: tz
