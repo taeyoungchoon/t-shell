@@ -1,0 +1,95 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+  
+  config.vm.synced_folder ".", "/vagrant", disabled: true
+
+  # c7: CentOS 7
+  config.vm.define "c7" do |c7|
+    c7.vm.box = "centos/7"
+    c7.vm.hostname = "c7"
+    c7.vm.network "private_network", ip: "172.20.6.100"
+  end
+
+  # c8: CentOS 7
+  config.vm.define "c8" do |c8|
+    c8.vm.box = "generic/centos8"
+    c8.vm.hostname = "c8"
+    c8.vm.network "private_network", ip: "172.20.6.110"
+  end
+ 
+  # c8: CentOS 7
+  config.vm.define "c81" do |c81|
+    c81.vm.box = "generic/centos8"
+    c81.vm.hostname = "c81"
+    c81.vm.network "private_network", ip: "172.20.6.111"
+  end
+
+  # c8: CentOS 7
+  config.vm.define "c82" do |c82|
+    c82.vm.box = "generic/centos8"
+    c82.vm.hostname = "c82"
+    c82.vm.network "private_network", ip: "172.20.6.112"
+  end
+
+  # zeus
+  config.vm.define "zeus" do |zeus|
+    zeus.vm.box = "generic/centos8"
+    zeus.vm.hostname = "zeus"
+    zeus.vm.network "private_network", ip: "192.168.99.100"
+  end
+
+  # conn1
+  config.vm.define "conn1" do |conn1|
+    conn1.vm.box = "generic/centos8"
+    conn1.vm.hostname = "conn1"
+    conn1.vm.network "private_network", ip: "192.168.99.110"
+  end
+  
+  # logos1
+  config.vm.define "logos1" do |logos1|
+    logos1.vm.box = "generic/centos8"
+    logos1.vm.hostname = "logos1"
+    logos1.vm.network "private_network", ip: "192.168.99.120"
+  end
+  
+  # repo1
+  config.vm.define "repo1" do |repo1|
+    repo1.vm.box = "generic/centos8"
+    repo1.vm.hostname = "repo1"
+    repo1.vm.network "private_network", ip: "192.168.99.130"
+  end
+
+  #---
+  
+  config.vm.define "d10" do |d10|
+    d10.vm.box = "generic/debian10"
+    d10.vm.hostname = "d10"
+    d10.vm.network "private_network", ip: "172.20.6.150"
+  end
+ 
+  config.vm.define "a310" do |a310|
+    a310.vm.box = "generic/alpine310"
+    a310.vm.hostname = "a310"
+    a310.vm.network "private_network", ip: "172.20.6.160"
+  end
+ 
+  config.vm.define "b12" do |b12|
+    b12.vm.box = "generic/freebsd12"
+    b12.vm.hostname = "b12"
+    b12.vm.network "private_network", ip: "172.20.6.170"
+  end
+ 
+  # config.vm.provision "shell", path: "bootstrap.sh"
+
+  config.vm.provision "ansible" do |ansible|
+    ansible.playbook = "vagrant.yml"
+    ansible.become = true
+  end
+
+  # config.vm.provider "virtualbox" do |vb|
+  #   vb.memory = "1024"
+  # end
+
+end

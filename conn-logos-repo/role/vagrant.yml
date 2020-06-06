@@ -1,0 +1,76 @@
+---
+- hosts: all
+  gather_facts: false
+
+  tasks:
+  - name: timezone set
+    timezone:
+      name: Asia/Seoul
+
+  - name: add user jack
+    user:
+      name: jack
+      password: "{{ '1113' | password_hash('sha512') }}"
+      groups: wheel        
+
+  - name: package installation
+    yum:
+      name:
+        - bash-completion
+        - vim
+        - emacs-nox
+        - git
+        - ansible
+      state: present
+
+  - name: permit password login
+    lineinfile:
+      path: /etc/ssh/sshd_config
+      regexp: ^PasswordAuthentication no
+      line: PasswordAuthentication yes
+
+  - name: restart sshd
+    command: systemctl restart sshd
+
+  # - name: pkg for over rh7.4
+  #   yum:
+  #     name:
+  #       - fping
+  #       - monit
+  #     state: present
+  #   when: ansible_os_family == 'Redhat' and ansible_lsb.minor_release >= 4
+
+  # - name: enable services
+  #   systemd:
+  #     name: "{{ item }}"
+  #     state: started
+  #     enabled: yes
+  #   with_items:
+  #     - rc-local
+  #     - chronyd
+  #     - sysstat
+  #   when: ansible_os_family == 'Redhat' and ansible_lsb.major_release >= 7
+      
+  - name: t-shell directory check
+    stat: path=/home/jack/t-shell
+    register: tstat
+    
+  # - name: t-shell pull
+  #   command: git pull https://github.com/taeyoungchoon/t-shell.git chdir=/home/jack
+  #   when: tstat.stat.exists
+    
+  - name: git clone t-shell
+    command: git clone https://github.com/taeyoungchoon/t-shell.git chdir=/home/jack
+    when: not tstat.stat.exists
+
+  - name: t-shell file permission
+    file:
+      path: /home/jack
+      state: directory
+      owner: jack
+      group: jack
+      recurse: yes
+      
+  # - name: debug
+  #   debug:
+  #     msg: debug
