@@ -2,17 +2,17 @@
 - hosts: localhost
   become: yes
   gather_facts: no
-
   tasks:
-  - name: tz
-    timezone:
-      name: Asia/Seoul
+  # - name: tz
+  #   timezone:
+  #     name: Asia/Seoul
 
   # - name: pkg
   #   yum:
   #     name:
   #       - psmisc
   #       - sysstat
+  #       - emacs-nox
   #       - vim
   #       - wget
 
@@ -29,3 +29,23 @@
   # - debug:
   #     msg: "Ansible is working!"
 
+  - name: try to debug
+    debug:
+      msg: "hello, world"
+
+  - name: package installation
+    systemd:
+      name: "{{ item }}"
+      state: started
+      enabled: yes
+    with_items:
+      - sysstat
+
+  - name: uptime
+    command: >
+      uptime
+    register: uptime
+
+  - name: echoing
+    debug:
+      msg: "{{ uptime }}"
