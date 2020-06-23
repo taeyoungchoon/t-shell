@@ -1,5 +1,5 @@
 ---
-- hosts: conn
+- hosts: lor
   tasks:
   - name: ping and pong
     ping:
