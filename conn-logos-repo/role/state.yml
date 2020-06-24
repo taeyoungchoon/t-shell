@@ -1,58 +1,58 @@
 ---
 - hosts: lor
   tasks:
-  - name: ping and pong
-    ping:
+    - name: ping and pong
+      ping:
 
-  # - name: user jack
-  #   user:
-  #     name: jack
-  #     groups: wheel
+    - name: user jack
+      user:
+        name: jack
+        groups: wheel
     
-  # - name: pkg installation
-  #   dnf:
-  #     name:
-  #     - tmux
-  #     - emacs-nox
-  #     - cockpit
+    - name: pkg installation
+      dnf:
+        name:
+          - tmux
+          - emacs-nox
+          - cockpit
 
-  # - name: set permission to rc.local
-  #   file:
-  #     path: /etc/rc.d/rc.local
-  #     mode: +x
+    - name: set permission to rc.local
+      file:
+        path: /etc/rc.d/rc.local
+        mode: +x
 
-  - name: state of rc.local
-    stat:
-      path: /etc/rc.d/rc.local
-    register: p
+    - name: state of rc.local
+      stat:
+        path: /etc/rc.d/rc.local
+      register: p
 
-  - name: check permission of rc.local
-    debug:
-      msg: rc.local is executable
-    when: p.stat.executable is defined and p.stat.executable == True
+    - name: check permission of rc.local
+      debug:
+        msg: rc.local is executable
+      when: p.stat.executable is defined and p.stat.executable == True
 
-  - name: set permission to rc.local if not executable
-    file:
-      path: /etc/rc.d/rc.local
-      mode: +x
-    when: p.stat.executable is defined and p.stat.executable == False
+    - name: set permission to rc.local if not executable
+      file:
+        path: /etc/rc.d/rc.local
+        mode: +x
+      when: p.stat.executable is defined and p.stat.executable == False
     
-  # - name: systemd
-  #   systemd:
-  #     name: "{{ item }}"
-  #     state: started
-  #     enabled: yes
-  #   with_items:
-  #     - chronyd
-  #     - sysstat
-  #     - rc-local
-  #     - cockpit
+    - name: systemd
+      systemd:
+        name: "{{ item }}"
+        state: started
+        enabled: yes
+      with_items:
+        - chronyd
+        - sysstat
+        - rc-local
+        - cockpit
 
-  # - name: tz
-  #   timezone:
-  #     name: Asia/Seoul
+    - name: tz
+      timezone:
+        name: Asia/Seoul
 
-  # - name: debug
-  #   debug:
-  #     msg: debug
+    - name: debug
+      debug:
+        msg: debug
   
