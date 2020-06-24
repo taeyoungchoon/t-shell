@@ -3,42 +3,56 @@
   tasks:
   - name: ping and pong
     ping:
+
+  # - name: user jack
+  #   user:
+  #     name: jack
+  #     groups: wheel
     
-  # - name: pkg installation only not configure
+  # - name: pkg installation
   #   dnf:
   #     name:
-  #     - psmisc
-  #     - sysstat
+  #     - tmux
+  #     - emacs-nox
+  #     - cockpit
 
-  # - name: try to debug
-  #   debug:
-  #     msg: "hi"
+  # - name: set permission to rc.local
+  #   file:
+  #     path: /etc/rc.d/rc.local
+  #     mode: +x
 
-  - name: systemd
-    systemd:
-      name: "{{ item }}"
-      state: started
-      enabled: yes
-    with_items:
-      - rc-local
-      - chronyd
-      - sysstat
+  - name: state of rc.local
+    stat:
+      path: /etc/rc.d/rc.local
+    register: p
 
-  - name: debug
+  - name: check permission of rc.local
     debug:
-      msg: debug
+      msg: rc.local is executable
+    when: p.stat.executable is defined and p.stat.executable == True
 
-  # - name: tz
-  #   timezone:
-  #     name: Asia/Seoul
-
+  - name: set permission to rc.local if not executable
+    file:
+      path: /etc/rc.d/rc.local
+      mode: +x
+    when: p.stat.executable is defined and p.stat.executable == False
+    
   # - name: systemd
   #   systemd:
   #     name: "{{ item }}"
   #     state: started
   #     enabled: yes
   #   with_items:
-  #     - rc-local
   #     - chronyd
   #     - sysstat
+  #     - rc-local
+  #     - cockpit
 
+  # - name: tz
+  #   timezone:
+  #     name: Asia/Seoul
+
+  # - name: debug
+  #   debug:
+  #     msg: debug
+  

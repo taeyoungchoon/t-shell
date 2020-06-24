@@ -1,0 +1,24 @@
+---
+- hosts: frodo
+  tasks:
+    
+  - name: pkg installation
+    dnf:
+      name:
+      - dhcp-server
+
+  - name: copy dhcpd.conf
+    copy:
+      src: dhcpd.conf
+      dest: /etc/dhcp/dhcpd.conf
+      
+  - name: systemd
+    systemd:
+      name: "{{ item }}"
+      # state: started
+      enabled: yes
+      state: restarted
+      daemon_reload: yes
+    with_items:
+      - dhcpd
+
