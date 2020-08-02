@@ -1,3 +1,3 @@
 all:
 clean:
-	rm *~
+	find . -name *~ -exec rm {} \;
