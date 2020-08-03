@@ -1,0 +1,8 @@
+https://docs.github.com/en/github/authenticating-to-github/removing-sensitive-data-from-a-repository
+
+$ git filter-branch --force --index-filter \
+  "git rm --cached --ignore-unmatch PATH-TO-YOUR-FILE-WITH-SENSITIVE-DATA" \
+  --prune-empty --tag-name-filter cat -- --all
+  > Rewrite 48dc599c80e20527ed902928085e7861e6b3cbe6 (266/266)
+  > Ref 'refs/heads/master' was rewritten
+
