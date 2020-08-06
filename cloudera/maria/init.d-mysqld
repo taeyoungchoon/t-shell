@@ -1,0 +1,8 @@
+
+# diff mariadb-10.2.32/support-files/mysql.server /etc/init.d/mysqld
+45,46c45,46
+< basedir=
+< datadir=
+---
+> basedir=/usr/local/mariadb
+> datadir=/u01/mariadb
