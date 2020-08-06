@@ -1,0 +1,112 @@
+  157  cp mariadb-10.2.32-linux-x86_64.tar.gz /usr/local/
+  158  cp my* /usr/local
+  159  cd /usr/local
+  160  ll
+  161  groupadd maria
+  162  useradd -g maria maria
+  163  tar -xvzf mariadb-10.2.32-linux-x86_64.tar.gz
+  164  ll
+  165  mv mariadb-10.2.32-linux-x86_64 mariadb-10.2.32
+  166  ln -s mariadb-10.2.32 mariadb
+  167  ll
+  168  cp my.cnf /etc/my.cnf
+  169  vi /etc/my.cnf
+  170  ll
+  171  cd /u01/
+  172  ll
+  173  cd /usr/local
+  174  ll
+  175  cd mariadb
+  176  ll
+  177  ./scripts/mysql_install_db --defaults-file=/etc/my.cnf
+  178  cd /u01/mariadb/
+  179  ll
+  180  cat mysql_error.log
+  181  cd /usr/local
+  182  ll
+  183  cd mariadb
+  184  ll
+  185  cd support-files/
+  186  ll
+  187  cp mysql.server /etc/init.d/mysqld
+  188  vi /etc/init.d/mysqld
+  189  chown -R maria.maria /u01/mariadb/
+  190  chown -R maria.maria /usr/local/mariadb
+  191  chown -R maria.maria /usr/local/mariadb-10.2.32
+  192  chown -R maria.maria /etc/init.d/mysqld
+  193  chown -R maria.maria /etc/my.cnf
+  194  cd /u01/mariadb/
+
+  200  cp mysqld.service /etc/systemd/system/mariadb.service
+  201  vi /etc/systemd/system/mariadb.service
+  202  ll
+  203  visudo
+  204  vi /etc/security/limits.
+  205  vi /etc/security/limits.conf
+  206  su - maria
+  207  cd /
+  208  ll
+  209  chown -R maria.maria dbbackup/
+  210  su - maria
+
+    1  vi .bash_profile
+    2  . .bash_profile
+    3  sudo systemctl start mariadb.service
+    4  sudo systemctl status mariadb.service
+    5  cd /u01/mariadb/
+    6  ll
+    7  cat mysql_error.log
+    8  mysql -u root -p
+    9  mysql_secure_installation --basedir=/usr/local/mariadb
+   10  mysql -u root -p
+   11  cd /mnt
+   12  ll
+   13  cd /u
+   14  cd /u01
+   15  ll
+   16  cd /
+   17  ll
+   18  cd dbbackup/
+   19  ll
+   20  cd ..
+   21  mariabackup --defaults-file=/etc/my.cnf --user=root --password='456$qwer' --target-dir=/dbbackup --backup
+   22  cd /
+   23  ll
+   24  exit
+   25  ll
+   26  mariabackup --defaults-file=/etc/my.cnf --user=root --password='456$qwer' --target-dir=/dbbackup --backup
+   27  cd /
+   28  ll
+   29  cd dbbackup/
+   30  ll
+   31  cat xtrabackup_checkpoints
+   32  mariabackup --defaults-file=/etc/my.cnf --user=root --password='456$qwer' --target-dir=/dbbackup --prepare
+   33  ll
+   34  cat xtrabackup_checkpoints
+   35  ]
+   36  ll
+   37  history
+   38  history  | grep mariaback
+   39  history  | grep mariaback | grep -v grep | tail -1
+   40  history  | grep mariaback | grep -v grep | tail -1 . backup.sh
+   41  history  | grep mariaback | grep -v grep | tail -1 > backup.sh
+   42  cat backup
+   43  vi backup.sh
+   44  history  | grep mariaback | grep -v grep > backup.sh
+   45  vi backup.sh
+   46  clear
+   47  sl
+   48  ls
+   49  mv backup.sh /root
+   50  ls
+   51  pwd
+   52  ls -al
+   53  ls -tlr
+   54  date
+   55  df -h
+   56  umount /mnt
+   57  exit
+   58  mysql -u root -p
+   59  exit
+   60  history
+
