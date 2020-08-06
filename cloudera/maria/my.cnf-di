@@ -1,0 +1,57 @@
+# diff my.cnf /etc/my.cnf
+9,10c9,10
+< basedir            = /usr/local/mysql
+< datadir            = /data
+---
+> basedir            = /usr/local/mariadb
+> datadir            = /u01/mariadb
+41,42c41,42
+< max_heap_table_size = 32M
+< tmp_table_size      = 32M
+---
+> max_heap_table_size = 512M
+> tmp_table_size      = 512M
+45,46c45,46
+< key_buffer_size        = 32M
+< myisam-recover-options = backup,force
+---
+> #key_buffer_size        = 32M
+> #myisam-recover-options = backup,force
+49c49
+< #aria_pagecache_buffer_size = 128M #mariadb일 경우 주석해제
+---
+> aria_pagecache_buffer_size = 128M
+56c56
+< innodb_data_home_dir        = /data
+---
+> innodb_data_home_dir        = /u01/mariadb
+64c64
+< innodb_buffer_pool_size      = 256M
+---
+> innodb_buffer_pool_size      = 70G
+66c66
+< innodb_log_file_size         = 128M
+---
+> innodb_log_file_size         = 512M
+68c68
+< innodb_open_files       = 40960
+---
+> innodb_open_files       = 4096
+83c83
+< slow_query_log_file       = /log/mysql_slow.log
+---
+> slow_query_log_file       = /u01/mariadb/mysql_slow.log
+85c85
+< log-error                 = /log/mysql_error.log
+---
+> log-error                 = /u01/mariadb/mysql_error.log
+91c91
+< log-bin                         = /log/mysql-bin.log
+---
+> log-bin                         = /u01/mariadb/mysql-bin.log
+108c108
+< open_files_limit  = 8192
+\ No newline at end of file
+---
+> open_files_limit  = 8192
+
