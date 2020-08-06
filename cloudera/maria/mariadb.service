@@ -1,0 +1,14 @@
+[Unit]
+Description = MySQL Server
+After = network.target
+
+[Service]
+Type = forking
+User = maria
+ExecStart = /etc/init.d/mysqld start
+ExecStop = /etc/init.d/mysqld stop
+LimitNOFILE=65536
+
+[Install]
+WantedBy = multi-user.target
+
