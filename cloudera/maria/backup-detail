@@ -1,0 +1,49 @@
+
+with maria user
+
+
+$ mariabackup --defaults-file=/etc/my.cnf --user=root --password='456$qwer' --target-dir=/dbbackup --backup
+
+]$ ls -tlr
+합계 102448
+drwx------. 2 maria maria      4096  8월  5 14:26 mysql
+drwx------. 2 maria maria        20  8월  5 14:26 performance_schema
+-rw-rw----. 1 maria maria        52  8월  5 14:26 aria_log_control
+-rw-rw----. 1 maria maria     16384  8월  5 14:26 aria_log.00000001
+-rw-rw----. 1 maria maria        29  8월  5 14:26 xtrabackup_binlog_info
+-rw-rw----. 1 maria maria       938  8월  5 14:26 ib_buffer_pool
+-rw-rw----. 1 maria maria       326  8월  5 14:26 backup-my.cnf
+-rw-rw----. 1 maria maria       552  8월  5 14:26 xtrabackup_info
+-rw-rw----. 1 maria maria 104857600  8월  5 14:27 ibdata1
+-rw-rw----. 1 maria maria         0  8월  5 14:27 ib_logfile0
+-rw-rw-r--. 1 maria maria       213  8월  5 14:29 backup.sh
+-rw-rw----. 1 maria maria        75  8월  6 11:22 xtrabackup_checkpoints
+
+$ mariabackup --defaults-file=/etc/my.cnf --user=root --password='456$qwer' --target-dir=/dbbackup --prepare
+mariabackup based on MariaDB server 10.2.32-MariaDB Linux (x86_64)
+[00] 2020-08-06 11:23:09 cd to /dbbackup/
+[00] 2020-08-06 11:23:09 This target seems to be already prepared.
+[00] 2020-08-06 11:23:09 mariabackup: using the following InnoDB configuration for recovery:
+[00] 2020-08-06 11:23:09 innodb_data_home_dir = .
+[00] 2020-08-06 11:23:09 innodb_data_file_path = ibdata1:100M:autoextend
+[00] 2020-08-06 11:23:09 innodb_log_group_home_dir = .
+[00] 2020-08-06 11:23:09 InnoDB: Using Linux native AIO
+[00] 2020-08-06 11:23:09 Starting InnoDB instance for recovery.
+[00] 2020-08-06 11:23:09 mariabackup: Using 104857600 bytes for buffer pool (set by --use-memory parameter)
+2020-08-06 11:23:09 140501391693632 [Note] InnoDB: Mutexes and rw_locks use GCC atomic builtins
+2020-08-06 11:23:09 140501391693632 [Note] InnoDB: Uses event mutexes
+2020-08-06 11:23:09 140501391693632 [Note] InnoDB: Compressed tables use zlib 1.2.11
+2020-08-06 11:23:09 140501391693632 [Note] InnoDB: Using Linux native AIO
+2020-08-06 11:23:09 140501391693632 [Note] InnoDB: Number of pools: 1
+2020-08-06 11:23:09 140501391693632 [Note] InnoDB: Using SSE2 crc32 instructions
+2020-08-06 11:23:09 140501391693632 [Note] InnoDB: Initializing buffer pool, total size = 100M, instances = 1, chunk size = 100M
+2020-08-06 11:23:09 140501391693632 [Note] InnoDB: Completed initialization of buffer pool
+2020-08-06 11:23:09 140501159237376 [Note] InnoDB: If the mysqld execution user is authorized, page cleaner thread priority can be changed. See the man page of setpriority().
+[00] 2020-08-06 11:23:09 completed OK!
+
+$ cat xtrabackup_checkpoints
+backup_type = log-applied
+from_lsn = 0
+to_lsn = 1615521
+last_lsn = 1615530
+
