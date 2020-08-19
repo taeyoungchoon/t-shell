@@ -1,33 +1,25 @@
 ---
 - hosts: localhost
   become: yes
-  gather_facts: no
+  gather_facts: yes
   tasks:
-  # - name: tz
-  #   timezone:
-  #     name: Asia/Seoul
+  - name: tz
+    timezone:
+      name: Asia/Seoul
 
-  # - name: pkg
-  #   yum:
-  #     name:
-  #       - psmisc
-  #       - sysstat
-  #       - emacs-nox
-  #       - vim
-  #       - wget
+  - name: pkg
+    yum:
+      name:
+        - psmisc
+        - sysstat
+        - emacs-nox
+        - vim
+        - python-ethtool
+        - tree
+        - wget
 
-  # - name: systemd
-  #   systemd:
-  #     name: "{{ item }}"
-  #     state: started
-  #     enabled: yes
-  #   with_items:
-  #     - rc-local
-  #     - chronyd
-  #     - sysstat
-
-  # - debug:
-  #     msg: "Ansible is working!"
+  - debug:
+      msg: "Ansible is working!"
 
   - name: try to debug
     debug:
@@ -46,6 +38,6 @@
       uptime
     register: uptime
 
-  - name: echoing
-    debug:
-      msg: "{{ uptime }}"
+  # - name: echoing
+  #   debug:
+  #     msg: "{{ uptime }}"
