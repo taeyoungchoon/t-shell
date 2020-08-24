@@ -9,8 +9,8 @@ DATADIR=/u01/mariadb
 cp -f mariadb-limits.conf /etc/security/limits.d
 
 ### if ONLINE
-# wget -O mariadb-10.2.32-linux-x86_64.tar.gz \
-# https://downloads.mariadb.org/interstitial/mariadb-10.2.32/bintar-linux-x86_64/mariadb-10.2.32-linux-x86_64.tar.gz
+wget -O mariadb-10.2.32-linux-x86_64.tar.gz \
+https://downloads.mariadb.org/interstitial/mariadb-10.2.32/bintar-linux-x86_64/mariadb-10.2.32-linux-x86_64.tar.gz
 
 ### INSTALL
 mkdir -p $DATADIR
