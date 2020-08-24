@@ -1,12 +1,18 @@
-/usr/local/mariadb/bin/mysql_secure_installation --basedir=/usr/local/mariadb <<EOF &>/dev/null
+### ENV
+PASS='123$qwer'
+BASEDIR=/usr/local/mariadb
+
+### GO
+${BASEDIR}/bin/mysql_secure_installation --basedir=${BASEDIR} <<EOF &>/dev/null
 
 y
-123\$qwer
-123\$qwer
+secret
+secret
 y
 y
 y
 y
 EOF
 
+${BASEDIR}/bin/mysqladmin -uroot -psecret password ${PASS}
 echo being secure complete.
