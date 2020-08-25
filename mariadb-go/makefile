@@ -2,6 +2,8 @@ index:
 	@grep ^[a-z] makefile
 check:
 	@systemctl status mariadb
+download:
+	@sh download.sh
 install:
 	@sh install.sh
 secure:
