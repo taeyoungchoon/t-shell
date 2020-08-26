@@ -10,9 +10,9 @@ mkdir -p /home/maria/bin
 chown -R maria.maria /home/maria/bin
 
 ### BACKUP
-echo -e 'mariabackup --defaults-file=/etc/my.cnf --user=root --password="123$qwer" --target-dir=/dbbackup --backup' > /home/maria/bin/1.backup.sh
-echo -e 'mariabackup --defaults-file=/etc/my.cnf --user=root --password="123$qwer" --target-dir=/dbbackup --prepare' > /home/maria/bin/2.prepare.sh
-echo -e 'cat /dbbackup/xtrabackup_checkpoints' > /home/maria/bin/3.check.sh
+echo "mariabackup --defaults-file=/etc/my.cnf --user=root --password='123\$qwer' --target-dir=/dbbackup --backup" > /home/maria/bin/1.backup.sh
+echo "mariabackup --defaults-file=/etc/my.cnf --user=root --password='123\$qwer' --target-dir=/dbbackup --prepare" > /home/maria/bin/2.prepare.sh
+echo 'cat /dbbackup/xtrabackup_checkpoints' > /home/maria/bin/3.check.sh
 
 ### LAST
 echo build backup script complete.
