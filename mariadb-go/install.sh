@@ -34,9 +34,26 @@ grep maria /home/maria/.bash_profile &>/dev/null || echo 'PATH=$PATH:/usr/local/
 
 ### SERVICE
 cd - &>/dev/null
-cp mysql.server /etc/init.d/mysqld
+# cp mysql.server /etc/init.d/mysqld
+cp ${BASEDIR}/support-files/mysql.server /etc/init.d/mysqld
 chown maria.maria /etc/init.d/mysqld
-cp mysqld.service /etc/systemd/system/mariadb.service
+#cp mysqld.service /etc/systemd/system/mariadb.service
+ls /etc/systemd/system/mariadb.service &>/dev/null || cat >> /etc/systemd/system/mariadb.service <<EOF
+[Unit]
+Description = MySQL Server
+After = network.target
+
+[Service]
+Type = forking
+User = maria
+ExecStart = /etc/init.d/mysqld start
+ExecStop = /etc/init.d/mysqld stop
+LimitNOFILE=65536
+
+[Install]
+WantedBy = multi-user.target
+EOF
+
 systemctl start mariadb.service
 # /usr/local/mariadb/bin/mysqladmin ping
 

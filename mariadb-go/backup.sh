@@ -16,6 +16,6 @@ echo 'cat /dbbackup/xtrabackup_checkpoints' > /home/maria/bin/3.check.sh
 
 ### LAST
 echo build backup script complete.
-echo --- 
-echo "sudo su - maria -c 'ls bin'"
-sudo su - maria -c 'ls bin'
+# echo --- 
+# echo "sudo su - maria -c 'ls bin'"
+# sudo su - maria -c 'ls bin'
