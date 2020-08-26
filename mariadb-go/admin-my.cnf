@@ -6,8 +6,8 @@ socket                      = /tmp/mysql.sock
 ###### General ######
 port                        = 3306
 socket                      = /tmp/mysql.sock
-basedir                     = /usr/local/mysql
-datadir                     = /data
+basedir                     = /usr/local/mariadb
+datadir                     = /u01/mariadb
 tmpdir                      = /tmp
 
 character-set-server        = utf8
@@ -36,22 +36,22 @@ sort_buffer_size            = 1M
 join_buffer_size            = 1M
 read_buffer_size            = 1M
 read_rnd_buffer_size        = 1M
-max_heap_table_size         = 32M
-tmp_table_size              = 32M
+max_heap_table_size         = 512M
+tmp_table_size              = 512M
 
 ###### MyISAM Engine ######
-key_buffer_size            = 32M
-myisam-recover-options     = backup,force
+#key_buffer_size            = 32M
+#myisam-recover-options     = backup,force
 
 ###### Aria Engine ######
-#aria_pagecache_buffer_size  = 128M 
+aria_pagecache_buffer_size  = 128M 
 
 ###### InnoDB Engine ######
 innodb_file_format          = Barracuda
 innodb_file_format_max      = Barracuda
 innodb_file_per_table       = 1
 innodb_data_file_path       = ibdata1:100M:autoextend
-innodb_data_home_dir        = /data
+innodb_data_home_dir        = /u01/mariadb
 innodb_write_io_threads     = 4
 innodb_read_io_threads      = 4
 innodb_io_capacity          = 200
@@ -59,9 +59,9 @@ innodb_thread_concurrency   = 0
 innodb_max_dirty_pages_pct  = 90
 innodb_stats_on_metadata    = 0
 innodb_lock_wait_timeout    = 50
-innodb_buffer_pool_size     = 256M
+innodb_buffer_pool_size     = 70G
 innodb_log_buffer_size      = 32M
-innodb_log_file_size        = 128M
+innodb_log_file_size        = 512M
 innodb_log_files_in_group   = 3
 innodb_open_files           = 4096
 innodb_flush_log_at_trx_commit  = 1
@@ -78,15 +78,15 @@ innodb_doublewrite          = 1
 #general_log                = 1
 #general_log_file           = /log/mysql_general.log
 slow_query_log              = 1
-slow_query_log_file         = /log/mysql_slow.log
+slow_query_log_file         = /u01/mariadb/mysql_slow.log
 long_query_time             = 1
-log-error                   = /log/mysql_error.log
+log-error                   = /u01/mariadb/mysql_error.log
 expire_logs_days            = 7
 #min_examined_row_limit     = 0
 
 ###### Replication ######
 server_id                   = 1
-log-bin                     = /log/mysql-bin.log
+log-bin                     = /u01/mariadb/mysql-bin.log
 binlog_format               = MIXED
 #relay_log                  = /log/mysql-relay.log
 #sync_binlog                = 1

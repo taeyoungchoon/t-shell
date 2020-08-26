@@ -7,7 +7,13 @@ BASEDIR=/usr/local/mariadb
 DATADIR=/u01/mariadb
 
 ### PRE : LIMIT
-cp -f mariadb-limits.conf /etc/security/limits.d
+#cp -f mariadb-limits.conf /etc/security/limits.d
+grep maria /etc/security/limits.conf &>/dev/null || cat >> /etc/security/limits.conf <<EOF
+maria      soft    nproc     65536
+maria      hard    nproc     65536
+maria      soft    nofile    65536
+maria      hard    nofile    65536
+EOF
 
 ### INSTALL
 mkdir -p $DATADIR

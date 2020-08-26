@@ -19,3 +19,4 @@ rm -f /etc/systemd/system/mariadb.service
 rm -f /etc/init.d/mysqld
 
 sed -i '/^maria/d' /etc/sudoers
+sed -i '/^maria/d' /etc/security/limits.conf
