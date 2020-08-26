@@ -1,5 +1,5 @@
 index:
-	@grep ^[a-z] makefile
+	@grep ^[a-z] makefile | sed -e 's/://' -e 's/^/- /'
 check:
 	@systemctl status mariadb
 download:

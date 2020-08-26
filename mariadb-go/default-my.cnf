@@ -6,8 +6,8 @@ socket                      = /tmp/mysql.sock
 ###### General ######
 port                        = 3306
 socket                      = /tmp/mysql.sock
-basedir                     = /usr/local/mariadb
-datadir                     = /u01/mariadb
+basedir                     = /usr/local/mysql
+datadir                     = /data
 tmpdir                      = /tmp
 
 character-set-server        = utf8
@@ -51,7 +51,7 @@ innodb_file_format          = Barracuda
 innodb_file_format_max      = Barracuda
 innodb_file_per_table       = 1
 innodb_data_file_path       = ibdata1:100M:autoextend
-innodb_data_home_dir        = /u01/mariadb
+innodb_data_home_dir        = /data
 innodb_write_io_threads     = 4
 innodb_read_io_threads      = 4
 innodb_io_capacity          = 200
@@ -76,19 +76,19 @@ innodb_doublewrite          = 1
 
 ###### Logging ######
 #general_log                = 1
-#general_log_file           = /u01/mariadb/mysql_general.log
+#general_log_file           = /log/mysql_general.log
 slow_query_log              = 1
-slow_query_log_file         = /u01/mariadb/mysql_slow.log
+slow_query_log_file         = /log/mysql_slow.log
 long_query_time             = 1
-log-error                   = /u01/mariadb/mysql_error.log
+log-error                   = /log/mysql_error.log
 expire_logs_days            = 7
 #min_examined_row_limit     = 0
 
 ###### Replication ######
 server_id                   = 1
-log-bin                     = /u01/mariadb/mysql-bin.log
+log-bin                     = /log/mysql-bin.log
 binlog_format               = MIXED
-#relay_log                  = /u01/mariadb/mysql-relay.log
+#relay_log                  = /log/mysql-relay.log
 #sync_binlog                = 1
 #replicate_do_table         = t1.test
 #replicate_do_db            = t1
