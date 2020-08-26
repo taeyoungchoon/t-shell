@@ -1,43 +1,49 @@
-visudo
-vi /etc/security/limits.conf
+DATADIR=/u01/mariadb
+echo $DATADIR
 
-su - maria
-vi ~maria/.bash_profile
+# wget -O mariadb-10.2.32-linux-x86_64.tar.gz https://downloads.mariadb.org/interstitial/mariadb-10.2.32/bintar-linux-x86_64/mariadb-10.2.32-linux-x86_64.tar.gz
 
-vi support-files/mysql.server
-cp mysql.server /etc/init.d/mysqld
+# visudo
+# vi /etc/security/limits.conf
 
-cp mysqld.service /etc/systemd/system/mariadb.service
+# su - maria
+# vi ~maria/.bash_profile
 
-mkdir /u01/mariadb
+# vi support-files/mysql.server
+# cp mysql.server /etc/init.d/mysqld
+
+# cp mysqld.service /etc/systemd/system/mariadb.service
+
+mkdir -p /u01/mariadb
 groupadd maria
 useradd -g maria maria
-tar -xvzf mariadb-10.2.32-linux-x86_64.tar.gz -C /usr/local/mariadb-10.2.32
-cd /usr/local
-ln -s mariadb-10.2.32 mariadb
-cd mariadb
-./scripts/mysql_install_db --defaults-file=/etc/my.cnf
 
-chown -R maria.maria /u01/mariadb/
-chown -R maria.maria /usr/local/mariadb
-chown -R maria.maria /usr/local/mariadb-10.2.32
-chown -R maria.maria /etc/init.d/mysqld
-chown -R maria.maria /etc/my.cnf
-chown -R maria.maria dbbackup/
+tar xvfz mariadb-10.2.32-linux-x86_64.tar.gz -C /usr/local/mariadb-10.2.32
+# cd /usr/local
+# ln -s mariadb-10.2.32 mariadb
+# cd mariadb
+# ./scripts/mysql_install_db --defaults-file=/etc/my.cnf
 
-su - maria
- vi .bash_profile
-. .bash_profile
+# chown -R maria.maria /u01/mariadb/
+# chown -R maria.maria /usr/local/mariadb
+# chown -R maria.maria /usr/local/mariadb-10.2.32
+# chown -R maria.maria /etc/init.d/mysqld
+# chown -R maria.maria /etc/my.cnf
+# chown -R maria.maria dbbackup/
 
-sudo systemctl start mariadb.service
-sudo systemctl status mariadb.service
+# su - maria
+#  vi .bash_profile
+# . .bash_profile
 
-cd /u01/mariadb/
+# sudo systemctl start mariadb.service
+# sudo systemctl status mariadb.service
 
-mysql -u root -p
-mysql_secure_installation --basedir=/usr/local/mariadb
-mysql -u root -p
+# cd /u01/mariadb/
 
-mariabackup --defaults-file=/etc/my.cnf --user=root --password='456$qwer' --target-dir=/dbbackup --backup
-mariabackup --defaults-file=/etc/my.cnf --user=root --password='456$qwer' --target-dir=/dbbackup --prepare
-cat xtrabackup_checkpoints
+# mysql -u root -p
+# mysql_secure_installation --basedir=/usr/local/mariadb
+# mysql -u root -p
+
+# mariabackup --defaults-file=/etc/my.cnf --user=root --password='456$qwer' --target-dir=/dbbackup --backup
+# mariabackup --defaults-file=/etc/my.cnf --user=root --password='456$qwer' --target-dir=/dbbackup --prepare
+# cat xtrabackup_checkpoints
