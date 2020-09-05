@@ -1,0 +1,23 @@
+docker ps
+docker ps -a
+docker run ubuntu
+docker run centos
+docker pull alpine
+docker rm x
+docker rmi x
+docker stop ID
+docker stop x
+# interactive, -i and terminal?, -t
+docker run -it centos bash
+# detach, -d and key: C-p C-q
+docker run -d centos sleep 20
+docker exec ID cat /etc/*release*
+docker run centos sleep 20
+docker attach ID
+docker inspect ID
+
+docker run -p 8080:8080 jenkins
+mkdir data
+# volume, -v
+docker run -p 8080:8080 -v /root/data:/var/jenkins_home -u root jenkins
+
