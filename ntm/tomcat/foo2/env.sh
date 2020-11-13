@@ -1,1 +1,1 @@
-export NAME=foo1
+export NAME=foo2
