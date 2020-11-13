@@ -1,3 +1,2 @@
-export CATALINA_HOME=/opt/tomcat
-export CATALINA_BASE=/opt/instance/foo1
+source env.sh
 emacs $CATALINA_BASE/conf/server.xml
