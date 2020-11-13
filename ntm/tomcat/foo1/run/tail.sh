@@ -1,3 +1,2 @@
-export CATALINA_HOME=/opt/tomcat
-export CATALINA_BASE=/opt/instance/foo1
+source env.sh
 tail -f $CATALINA_BASE/logs/catalina.out
