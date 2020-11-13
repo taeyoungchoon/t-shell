@@ -1,0 +1,2 @@
+ip route add 228.0.0.4 dev eth1
+ip route add 224.0.0.0/4 dev eth1
