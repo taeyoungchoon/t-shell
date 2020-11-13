@@ -1,4 +1,4 @@
 all:
 
 install:
-	sh install.sh
+	sh install_rpm.sh
