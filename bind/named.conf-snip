@@ -1,0 +1,9 @@
+zone "example.com" IN {
+        type master;
+        file "example.com";
+};
+
+zone "foo.com" IN {
+        type master;
+        file "foo.com";
+};
