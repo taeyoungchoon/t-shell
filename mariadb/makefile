@@ -1,25 +1,17 @@
-ls:
-	cat makefile | grep ^[a-z]*:
-
-install:
-	yum install mariadb -y
+all:
+	@cat makefile | grep ^[a-z]*:
 
 check:
-	rpm -qa | grep mariadb
 	systemctl status mariadb
+
+install:
+	yum install mariadb-server mariadb -y
 
 uninstall:
-	yum remove mariadb -y
-
-clean:
-	yum remove mariadb -y
-
-status:
-	systemctl status mariadb
+	yum remove mariadb-server -y
 
 start:
 	systemctl start mariadb
-	systemctl status mariadb
+
 stop:
 	systemctl stop mariadb
-	systemctl status mariadb
