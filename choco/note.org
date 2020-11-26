@@ -1,0 +1,15 @@
+** progress
+
+- [X] acrobatreader not exist, adobereader and some KB 
+- camstudio pop browser, then just passthrough
+- clisp ask -y, 30s delay
+- dia possibly broken, but works
+- ghostscript diff version for emacs init, have to edit init
+- heidisql install vcredist
+- [X] nanumfont with --allow-empty-checksums, but interactive
+- [X] nanumfont-gothic-coding-font not installed. but red log
+- [X] virtualbox with upgrade but installed
+
+** log always
+
+c:\programdata\chocolatey\logs\chocolatey.log
