@@ -3,6 +3,7 @@ choco install -f adobereader
 choco install -f camstudio
 choco install -f clisp
 choco install -f dia
+choco install -f freemind
 choco install -f filezilla
 choco install -f ghostscript
 choco install -f gimp
