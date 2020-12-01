@@ -1,0 +1,13 @@
+* todo and more what I can do
+
+- [ ] build mirror server and then use it
+  1. yum install squid
+  2. config, size
+  3. systemctl start squid
+  4. systemctl enable squid
+  5. config, yum.conf
+
+* env
+
+- yum install centos-release-openstack-ussuri
+https://docs.openstack.org/install-guide/environment-packages-rdo.html
