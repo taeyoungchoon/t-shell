@@ -8,6 +8,7 @@ choco install filezilla
 choco install ghostscript
 choco install gimp
 choco install git
+choco install graphviz
 choco install googlechrome
 choco install firefox
 choco install heidisql
