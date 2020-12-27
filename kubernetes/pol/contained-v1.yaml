@@ -1,0 +1,6 @@
+apiVersion: contained/v1
+kind: Pod
+spec:
+  containers:
+    - name: web
+      image: nginx:1.14.2
