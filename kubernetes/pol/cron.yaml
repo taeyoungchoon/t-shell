@@ -1,0 +1,4 @@
+apiVersion: cron/v1
+kind: CronJob
+spec:
+  schedule: "* * * * *"
