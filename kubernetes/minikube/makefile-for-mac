@@ -1,0 +1,17 @@
+all:
+
+check:
+	brew list -1 --formula | grep -i minikube && minikube status
+install:
+	brew install kubernetes-cli minikube helm
+start:
+	minikube start
+go:
+	minikube ip
+	kubectl cluster-info
+stop:
+	minikube stop
+clean:
+	minikube delete
+distclean:
+	brew uninstall minikube kubernetes-cli helm
