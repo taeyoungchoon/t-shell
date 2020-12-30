@@ -1,5 +1,3 @@
-* cli
-
 yum install -y createrepo nginx
 mkdir -p /usr/share/nginx/html/repo/rpms
 cd /usr/share/nginx/html/repo/rpms
@@ -13,7 +11,7 @@ yum-config-manager --disable updates
 yum-config-manager --disable extras
 
 yum-config-manager --add-repo=http://localhost/repo
-echo 'gpgcheck=0' >> s/etc/yum.repos.d/localhost_repo.repo
+echo 'gpgcheck=0' >> /etc/yum.repos.d/localhost_repo.repo
 yum clean all
 yum repolist
 yum search nginx
