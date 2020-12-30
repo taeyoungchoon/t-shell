@@ -6,11 +6,11 @@ cd /usr/share/nginx/html/repo
 createrepo .
 
 yum repolist
-yum-config-manager --disable base
-yum-config-manager --disable updates
-yum-config-manager --disable extras
+yum-config-manager --disable base >/dev/null
+yum-config-manager --disable updates >/dev/null
+yum-config-manager --disable extras >/dev/null
 
-yum-config-manager --add-repo=http://localhost/repo
+yum-config-manager --add-repo=http://localhost/repo >/dev/null
 echo 'gpgcheck=0' >> /etc/yum.repos.d/localhost_repo.repo
 yum clean all
 yum repolist
