@@ -1,9 +1,9 @@
 rm -rf /usr/share/nginx/html/repo
 rm -f /etc/yum.repos.d/localhost_repo.repo
 
-yum-config-manager --enable base
-yum-config-manager --enable updates
-yum-config-manager --enable extras
+yum-config-manager --enable base >/dev/null
+yum-config-manager --enable updates >/dev/null
+yum-config-manager --enable extras >/dev/null
 
 yum clean all
 yum repolist
