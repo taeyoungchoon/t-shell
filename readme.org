@@ -1,6 +1,5 @@
 * what, what, why?
 
-- 윈도우 환경에도 쉘은 있다 쉘은 있다 
 - cmd, command, powershell
 - csh, ksh, bash
 - t-shell
