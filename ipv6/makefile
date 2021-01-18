@@ -8,8 +8,8 @@ check:
 	@echo 
 	@ip -6 a
 disable:
-	echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6
-	# sysctl -w net.ipv6.conf.all.disable_ipv6=1
+	# echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6
+	sysctl -w net.ipv6.conf.all.disable_ipv6=1
 enable:
-	echo 0 > /proc/sys/net/ipv6/conf/all/disable_ipv6
-	# sysctl -w net.ipv6.conf.all.disable_ipv6=0
+	# echo 0 > /proc/sys/net/ipv6/conf/all/disable_ipv6
+	sysctl -w net.ipv6.conf.all.disable_ipv6=0
