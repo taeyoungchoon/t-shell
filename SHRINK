@@ -1,0 +1,7 @@
+  249  git clone https://github.com/taeyoungchoon/t-shell.git
+  252  du -hs t-shell*
+  254  java -jar Downloads/bfg-1.13.2.jar --strip-blobs-bigger-than 10M t-shell.git
+  256  cd t-shell.git
+  257  git reflog expire --expire=now --all && git gc --prune=now --aggressive
+  258  du -hs
+  259  git push
