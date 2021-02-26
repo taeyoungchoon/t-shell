@@ -1,0 +1,12 @@
+cat /etc/pam.d/sshd
+
+auth       required     pam_sepermit.so
+auth       required     pam_tally2.so deny=5 unlock_time=900 
+# 15m
+
+account    required     pam_tally2.so
+
+make help
+
+pam_tally2 -u jack 
+pam_tally2 -u jack -r

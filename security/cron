@@ -1,0 +1,7 @@
+ls -l crontab
+ls -l /var/spool/cron
+
+touch cron.deny
+touch cron.allow
+
+

@@ -1,0 +1,3 @@
+grep TMOUT /etc/profile
+
+readonly TMOUT=600; export TMOUT

@@ -1,0 +1,2 @@
+grep wheel /etc/pam/*
+su:#auth                required        pam_wheel.so use_uid
