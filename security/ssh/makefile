@@ -1,6 +1,13 @@
+all:
+	@grep '^[a-z]' makefile | grep -v '^all'
 check:
-	sh check.sh
+	@sh check_config.sh
+	@sh check_proc.sh
 fix:
-	sh config_backup.sh
-	sh config_fix.sh
-	systemctl reload sshd
+	@sh backup_config.sh
+	@sh fix_config.sh
+	@sh reload_config.sh
+clean:
+	rm *~
+distclean:
+	rm -rf backup
