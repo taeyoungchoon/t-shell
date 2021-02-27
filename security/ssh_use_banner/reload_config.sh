@@ -1,2 +1,2 @@
 systemctl reload sshd
-systemctl is-active sshd
+systemctl is-active sshd &>/dev/null
