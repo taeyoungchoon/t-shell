@@ -1,3 +1,6 @@
 grep TMOUT /etc/profile
 
 readonly TMOUT=600; export TMOUT
+
+and more about the other shell, tcsh or the other
+or deny to change shell
