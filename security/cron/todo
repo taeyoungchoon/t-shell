@@ -1,0 +1,9 @@
+[root@jo cron]# stat -c %a /etc/crontab
+644
+[root@jo cron]# stat -c %A /etc/crontab
+-rw-r--r--
+
+to 640
+no permission to others!
+
+chmod o-r /etc/crontab

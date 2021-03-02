@@ -1,0 +1,10 @@
+mount --bind /some/where /else/where
+
+Unlike a hard link or symbolic link, a bind mount doesn't affect what is stored on the filesystem. It's a property of the live system.
+
+mount --bind /some/where /else/where
+mount -o bind /some/where /else/where
+
+/some/where /readonly/view none bind,ro
+
+Remapping users and groups

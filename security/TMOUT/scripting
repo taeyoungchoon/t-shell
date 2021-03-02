@@ -1,0 +1,4 @@
+umask
+cat /etc/profile.d/sh.local
+# 600s = 60s x 10m
+readonly TMOUT=600; export TMOUT
