@@ -2,3 +2,15 @@ ADMIN_PASSWORD=secret
 DATABASE_PASSWORD=$ADMIN_PASSWORD
 RABBIT_PASSWORD=$ADMIN_PASSWORD
 SERVICE_PASSWORD=$ADMIN_PASSWORD
+
+disable_service n-net
+enable_service q-svc
+enable_service q-agt
+enable_service q-dhcp
+enable_service q-l3
+enable_service q-meta
+
+# Optional, to enable tempest configuration as part of devstack
+enable_service tempest
+# cd /opt/stack/tempest
+# nosetests tempest/scenario/test_network_basic_ops.py
