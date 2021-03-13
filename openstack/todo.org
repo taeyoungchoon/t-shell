@@ -11,3 +11,9 @@
 
 - yum install centos-release-openstack-ussuri
 https://docs.openstack.org/install-guide/environment-packages-rdo.html
+
+* neutron only
+
+- https://wiki.openstack.org/wiki/NeutronDevstack
+
+* train
