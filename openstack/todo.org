@@ -17,3 +17,7 @@ https://docs.openstack.org/install-guide/environment-packages-rdo.html
 - https://wiki.openstack.org/wiki/NeutronDevstack
 
 * train
+
+* offline
+
+OFFLINE=True after 
