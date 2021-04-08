@@ -30,7 +30,7 @@ enable_service key
 #enable_service q-svc q-dhcp q-l3 q-agt q-meta
 
 # all required nova services
-#enable_service n-api n-cpu n-cond n-sch
+#enable_service n-api n-cpu n-cond n-sch placement-api
 
 # glance required for boot instances
 #enable_service g-reg g-api
