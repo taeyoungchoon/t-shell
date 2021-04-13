@@ -1,0 +1,4 @@
+http://fullyautolinux.blogspot.com/2018/01/openstack-tripleo-all-in-one-with.html
+https://blueprints.launchpad.net/tripleo/+spec/all-in-one
+
+openstack tripleo deploy --standalone --config all_in_one.yaml
