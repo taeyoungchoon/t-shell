@@ -1,0 +1,24 @@
+Vagrant.configure("2") do |config|
+
+  config.vm.synced_folder ".", "/vagrant", disabled: true
+  config.vm.provision "shell", path: "bootstrap.sh"
+  config.vm.provider "virtualbox" do |vb|
+    vb.cpus = 2
+    vb.memory = 4096
+  end
+  
+  config.vm.define "meg" do |meg|
+    meg.vm.box = "bento/centos-7"
+    meg.vm.hostname = "meg"
+    meg.vm.box_version = "202105.25.0"
+    meg.vm.network "private_network", ip: "172.20.99.100"
+  end
+
+  config.vm.define "jo" do |jo|
+    jo.vm.box = "bento/centos-7"
+    jo.vm.hostname = "jo"
+    jo.vm.box_version = "202105.25.0"
+    jo.vm.network "private_network", ip: "172.20.99.100"
+  end
+
+end
