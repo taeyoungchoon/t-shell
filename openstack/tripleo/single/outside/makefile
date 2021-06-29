@@ -1,3 +1,5 @@
+chk:
+	vagrant status
 up:
 	vagrant up meg
 	vagrant up jo

@@ -18,7 +18,7 @@ Vagrant.configure("2") do |config|
     jo.vm.box = "bento/centos-7"
     jo.vm.hostname = "jo"
     jo.vm.box_version = "202105.25.0"
-    jo.vm.network "private_network", ip: "172.20.99.100"
+    jo.vm.network "private_network", ip: "172.20.99.110"
   end
 
 end

@@ -1,1 +1,1 @@
-yum install -y bash-completion psmisc
+yum install -y bash-completion psmisc git
