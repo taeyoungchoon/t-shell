@@ -1,0 +1,19 @@
+* TODO git clone from EVERY place
+
+* step
+
+- mkdir tmp
+- cd tmp
+- git clone --mirror https://github.com/taeyoungchoon/t-shell.git
+- java -jar ~/Downloads/bfg-1.13.2.jar --delete-folders .vagrant --no-blob-protection t-shell.git
+- cd t-shell
+- git reflog expire --expire=now --all && git gc --prune=now --aggressive
+- git push
+
+* big file
+
+--strip-blobs-bigger-than 10M t-shell.git
+
+* directory
+
+--delete-folders .vagrant --no-blob-protection t-shell.git
