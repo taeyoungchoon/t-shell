@@ -4,7 +4,7 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", path: "bootstrap.sh"
   config.vm.provider "virtualbox" do |vb|
     vb.cpus = 4
-    vb.memory = 8192
+    vb.memory = 10240
   end
   
   config.vm.define "meg" do |meg|

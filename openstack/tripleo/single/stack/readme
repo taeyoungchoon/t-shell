@@ -6,3 +6,12 @@ A minimum of 8 GB is recommended. Only detected 5838 MB
 * libfacter was not found. Please make sure it was installed to the expected location
 https://www.programmersought.com/article/68485349963/
 yum downgrade leatherman
+
+* 1 packages excluded due to repository priority protections
+
+rdo-qemu-ev/x86_64/primary_db  FAILED 99% [==================================================================-]  11
+http://mirror.centos.org/centos/7/virt/x86_64/kvm-common/repodata/59fdb3e078ee7d351fd5b099b30f75661fde8fc5b3d38f6b3ec89825b179d769-primary.sqlite.bz2: [Errno 12] Timeout on http://mirror.centos.org/centos/7/vi
+/59fdb3e078ee7d351fd5b099b30f75661fde8fc5b3d38f6b3ec89825b179d769-primary.sqlite.bz2: (28, 'Operation too slow. Less than 1000 bytes/sec transferred the last 30 seconds')
+Trying other mirror.
+(7/7): rdo-qemu-ev/x86_64/primary_db
+1 packages excluded due to repository priority protections

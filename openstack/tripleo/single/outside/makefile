@@ -1,4 +1,4 @@
-chk:
+check:
 	vagrant status
 up:
 	vagrant up meg
