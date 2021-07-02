@@ -6,4 +6,9 @@
 #
 # containerized
 #
-cp /usr/share/python-tripleoclient/undercloud.conf.sample ~/undercloud.conf
+# cp /usr/share/python-tripleoclient/undercloud.conf.sample ~/undercloud.conf
+
+#
+# but
+#
+cp undercloud.conf ~/
