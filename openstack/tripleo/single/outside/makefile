@@ -8,7 +8,6 @@ check:
 	vagrant status
 up:
 	vagrant up meg
-	vagrant ssh meg
 ssh:
 	vagrant ssh meg
 clean:
