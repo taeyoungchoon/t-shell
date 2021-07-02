@@ -11,7 +11,7 @@ Vagrant.configure("2") do |config|
     meg.vm.box = "bento/centos-7"
     meg.vm.box_version = "202105.25.0"
     meg.vm.hostname = "meg"
-    meg.vm.network "private_network", ip: "172.20.99.100"
+    meg.vm.network "private_network", ip: "172.20.99.1"
   end
 
 end
