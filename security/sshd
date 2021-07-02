@@ -1,2 +1,30 @@
-AllowUsers
-AllowGroups
+-t-
+
+PasswordAuthentication no
+
+Match Address 1.2.3.4,172.20.99.0/24,192.168.99.*
+	PasswordAuthentication yes
+---
+
+https://askubuntu.com/questions/462968/take-changes-in-file-sshd-config-file-without-server-reboot
+systemctl reload sshd	: SIGHUP, 1	: reload config only
+systemctl restart sshd	: SIGTERM, 15
+
+-Z-
+
+# pstree -p | grep ssh
+           |-sshd(5798)---sshd(5801)---bash(5802)---sudo(5874)---su(5876)---bash(5877)-+-grep(6018)
+# systemctl restart sshd
+# pstree -p | grep ssh
+           |-sshd(5798)---sshd(5801)---bash(5802)---sudo(5874)---su(5876)---bash(5877)-+-grep(6028)
+           |-sshd(6026)
+# systemctl reload sshd
+# pstree -p | grep ssh
+           |-sshd(5798)---sshd(5801)---bash(5802)---sudo(5874)---su(5876)---bash(5877)-+-grep(6038)
+           |-sshd(6026)
+-t-
+
+? sshd -T
+Missing Match criteria for 172.20.99.0/24
+/etc/ssh/sshd_config line 144: Bad Match condition
+

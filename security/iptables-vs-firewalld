@@ -1,0 +1,6 @@
+iptables -I INPUT -s 2.3.4.5 -p tcp -m tcp --dport 22 -j ACCEPT
+iptables -I INPUT -s 3.4.5.6 -p tcp -m tcp --dport 22 -j ACCEPT
+iptables -I INPUT -p tcp -m tcp --dport 22 -j REJECT
+
+iptables-save
+

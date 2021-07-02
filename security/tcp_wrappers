@@ -3,3 +3,12 @@ ALL : ALL
 
 /etc/hosts.allow
 ALL : 192.168.0.0/255.255.0.0
+
+---
+/etc/hosts.deny
+sshd : ALL
+
+/etc/hosts.allow
+sshd : 192.168.0.0/255.255.0.0, 10.82.192.0/28
+sshd : 127.0.0.1
+
