@@ -1,4 +1,4 @@
-openstack undercloud install
+* openstack undercloud install, tasks 30m near
 
 * 2021-06-30 05:35:12,369 ERROR: At least 7680 MB of memory is required for undercloud installation.
 A minimum of 8 GB is recommended. Only detected 5838 MB
