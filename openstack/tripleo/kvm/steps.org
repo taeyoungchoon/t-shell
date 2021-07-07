@@ -1,0 +1,6 @@
+cd outside
+make env
+make ssh
+sudo su - stack
+cd stack
+make install
