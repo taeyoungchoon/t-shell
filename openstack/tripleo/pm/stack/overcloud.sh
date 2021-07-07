@@ -1,5 +1,9 @@
 ## image first
+# https://docs.openstack.org/project-deploy-guide/tripleo-docs/latest/deployment/install_overcloud.html
 # download images
+mkdir images
+https://images.rdoproject.org/centos7/queens/rdo_trunk/current-tripleo/ironic-python-agent.tar
+https://images.rdoproject.org/centos7/queens/rdo_trunk/current-tripleo/overcloud-full.tar
 # extract
 
 ## image upload
