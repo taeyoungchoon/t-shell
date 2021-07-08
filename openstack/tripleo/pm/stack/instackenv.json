@@ -1,0 +1,28 @@
+{
+        "nodes":[
+        {
+            "capabilities": "profile:control,boot_option:local",
+            "name": "s002",
+            "cpu":"2",
+            "memory":"64",
+            "disk":"300",
+            "arch":"x86_64",
+            "pm_type": "ipmi",
+            "pm_user": "administrator",
+            "pm_password": "hpinvent",
+            "pm_addr": "192.168.25.52"
+        },
+        {
+            "capabilities": "profile:compute,boot_option:local",
+            "name": "s003",
+            "cpu":"2",
+            "memory":"64",
+            "disk":"300",
+            "arch":"x86_64",
+            "pm_type": "ipmi",
+            "pm_user": "administrator",
+            "pm_password": "hpinvent",
+            "pm_addr": "192.168.25.53"
+        }
+    ]
+}

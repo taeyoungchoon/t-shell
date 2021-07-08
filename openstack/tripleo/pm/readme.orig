@@ -1,5 +1,10 @@
+* conflict with dnsmasq
+
 do not install virt-x
 
+* bash completion for openstack
+
+openstack complete | sudo tee /etc/bash_completion.d/osc.bash_completion > /dev/null
 
 *
 
@@ -13,4 +18,21 @@ make: *** [pkg] Error 1
 
 view nova-conductor.log
 2021-07-08 08:24:50.282 14115 ERROR nova.conductor.manager [req-462a5cd7-2309-4c85-adcd-0c9472b8f8e2 77ccbf731f644f59ab3b8299a687d3f7 3586904a47bd49a19fd4ee07feb706c9 - default default] Failed to schedule instances: NoValidHost_Remote: No valid host was found. There are not enough hosts available.
+
+(undercloud) [stack@s001 ~]$ openstack baremetal node list
++--------------------------------------+------+---------------+-------------+--------------------+-------------+
+| UUID                                 | Name | Instance UUID | Power State | Provisioning State | Maintenance |
++--------------------------------------+------+---------------+-------------+--------------------+-------------+
+| 863221ab-3a82-4d7b-802b-4de48aaf27da | s002 | None          | power off   | available          | False       |
+| 417ecd6f-55d4-4402-bab9-4f5708a0aa2e | s003 | None          | power off   | available          | False       |
++--------------------------------------+------+---------------+-------------+--------------------+-------------+
+(undercloud) [stack@s001 ~]$  openstack baremetal node show  863221ab-3a82-4d7b-802b-4de48aaf27da -c properties
++------------+---------------------------------------------------------+
+| Field      | Value                                                   |
++------------+---------------------------------------------------------+
+| properties | {u'capabilities': u'boot_option:local,profile:control'} |
++------------+---------------------------------------------------------+
+(undercloud) [stack@s001 ~]$ openstack flavor show control -c properties -f value
+capabilities:boot_option='local', capabilities:profile='control', resources:CUSTOM_BAREMETAL='1', resources:DISK_GB='0', resources:MEMORY_MB='0', resources:VCPU='0'
+
 
