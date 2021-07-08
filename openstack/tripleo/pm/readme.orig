@@ -13,6 +13,25 @@ Error downloading packages:
 
 make: *** [pkg] Error 1
 
+* introspection failure
+
+(undercloud) [stack@s001 ~]$ openstack overcloud node introspect --all-manageable --provide
+Waiting for introspection to finish...
+Started Mistral Workflow tripleo.baremetal.v1.introspect_manageable_nodes. Execution ID: 7c2d171f-7ecb-4b02-b7aa-5947
+Waiting for messages on queue 'tripleo' with no timeout.
+Introspection of node b930de2f-6a47-4e26-a994-c08fa57d0caf timed out.
+Introspection of node a7b08e88-f139-49db-bf42-ce78fa6445b8 timed out.
+Retrying 2 nodes that failed introspection. Attempt 2 of 3
+Introspection of node a7b08e88-f139-49db-bf42-ce78fa6445b8 timed out.
+Introspection of node b930de2f-6a47-4e26-a994-c08fa57d0caf timed out.
+Retrying 2 nodes that failed introspection. Attempt 3 of 3
+^[^[^[^[^[Introspection of node b930de2f-6a47-4e26-a994-c08fa57d0caf timed out.
+Introspection of node a7b08e88-f139-49db-bf42-ce78fa6445b8 timed out.
+Retry limit reached with 2 nodes still failing introspection
+{u'status': u'RUNNING', u'node_uuids': [u'a7b08e88-f139-49db-bf42-ce78fa6445b8', u'b930de2f-6a47-4e26-a994-c08fa57d0caf'], u'failed_introspection': [u'a7b08e88-f139-49db-bf42-ce78fa6445b8', u'b930de2f-6a47-4e26-a994-c08fa57d0caf'], u'result': None, u'introspected_nodes': {u'a7b08e88-f139-49db-bf42-ce78fa6445b8': {u'uuid': u'a7b08e88-f139-49db-bf42-ce78fa6445b8', u'links': [{u'href': u'http://172.20.99.1:5050/v1/introspection/a7b08e88-f139-49db-bf42-ce78fa6445b8', u'rel': u'self'}], u'finished_at': None, u'state': u'waiting', u'finished': False, u'error': None, u'started_at': u'2021-07-08T00:50:55'}, u'b930de2f-6a47-4e26-a994-c08fa57d0caf': {u'uuid': u'b930de2f-6a47-4e26-a994-c08fa57d0caf', u'links': [{u'href': u'http://172.20.99.1:5050/v1/introspection/b930de2f-6a47-4e26-a994-c08fa57d0caf', u'rel': u'self'}], u'finished_at': None, u'state': u'waiting', u'finished': False, u'error': None, u'started_at': u'2021-07-08T00:50:56'}}, u'message': u'Retrying 2 nodes that failed introspection. Attempt 2 of 3 ', u'introspection_attempt': 2}
+Exception introspecting nodes: {u'status': u'RUNNING', u'node_uuids': [u'a7b08e88-f139-49db-bf42-ce78fa6445b8', u'b930de2f-6a47-4e26-a994-c08fa57d0caf'], u'failed_introspection': [u'a7b08e88-f139-49db-bf42-ce78fa6445b8', u'b930de2f-6a47-4e26-a994-c08fa57d0caf'], u'result': None, u'introspected_nodes': {u'a7b08e88-f139-49db-bf42-ce78fa6445b8': {u'uuid': u'a7b08e88-f139-49db-bf42-ce78fa6445b8', u'links': [{u'href': u'http://172.20.99.1:5050/v1/introspection/a7b08e88-f139-49db-bf42-ce78fa6445b8', u'rel': u'self'}], u'finished_at': None, u'state': u'waiting', u'finished': False, u'error': None, u'started_at': u'2021-07-08T00:50:55'}, u'b930de2f-6a47-4e26-a994-c08fa57d0caf': {u'uuid': u'b930de2f-6a47-4e26-a994-c08fa57d0caf', u'links': [{u'href': u'http://172.20.99.1:5050/v1/introspection/b930de2f-6a47-4e26-a994-c08fa57d0caf', u'rel': u'self'}], u'finished_at': None, u'state': u'waiting', u'finished': False, u'error': None, u'started_at': u'2021-07-08T00:50:56'}}, u'message': u'Retrying 2 nodes that failed introspection. Attempt 2 of 3 ', u'introspection_attempt': 2}
+
+
 *
  204  openstack overcloud deploy --control-flavor control --control-scale 1 --compute-flavor compute --compute-scale 1 --templates
 
