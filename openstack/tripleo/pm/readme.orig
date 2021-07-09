@@ -54,4 +54,129 @@ view nova-conductor.log
 (undercloud) [stack@s001 ~]$ openstack flavor show control -c properties -f value
 capabilities:boot_option='local', capabilities:profile='control', resources:CUSTOM_BAREMETAL='1', resources:DISK_GB='0', resources:MEMORY_MB='0', resources:VCPU='0'
 
+* image_built
+
+https://docs.openstack.org/project-deploy-guide/tripleo-docs/latest/deployment/install_overcloud.html
+
+export DIB_YUM_REPO_CONF="/etc/yum.repos.d/delorean*"
+export STABLE_RELEASE="queens"
+
+mkdir image_built
+cd image_built
+
+[stack@s001 ~]$ openstack overcloud image build
+
+Running ['disk-image-create', '-a', 'amd64', '-o', './overcloud-full', '-t', 'qcow2', '-p', 'python-psutil,python-debtcollector,plotnetcfg,sos,ntp,device-mapper-multipath,openstack-heat-agents,os-net-config,jq,yum-plugin-priorities', '--min-tmpfs=7', '--mkfs-options', '-s size=4096', 'centos7', 'baremetal', 'dhcp-all-interfaces', 'openvswitch', 'overcloud-agent', 'overcloud-full', 'overcloud-controller', 'overcloud-compute', 'overcloud-ceph-storage', 'puppet-modules', 'stable-interface-names', 'grub2', 'element-manifest', 'dynamic-login', 'iptables', 'enable-packages-install', 'pip-and-virtualenv-override', 'dracut-regenerate', 'remove-machine-id', 'remove-resolvconf', 'openssh', 'selinux-permissive']
+
+Logging output to ./overcloud-full.log
+2021-07-09 04:56:26.684 | diskimage-builder version 2.16.1
+
+2021-07-09 04:56:26.687 | Building elements: base centos7 baremetal dhcp-all-interfaces openvswitch overcloud-agent overcloud-full overcloud-controller overcloud-compute overcloud-ceph-storage puppet-modules stable-interface-names grub2 element-manifest dynamic-login iptables enable-packages-install pip-and-virtualenv-override dracut-regenerate remove-machine-id remove-resolvconf openssh selinux-permissive
+
+2021-07-09 04:56:26.820 | Expanded element dependencies to: pip-and-virtualenv-override rpm-distro puppet-modules install-bin pip-manifest os-svc-install dhcp-all-interfaces selinux-permissive overcloud-base source-repositories manifests package-installs dib-python remove-machine-id sysprep dynamic-login centos7 grub2 enable-packages-install dib-init-system select-boot-kernel-initrd overcloud-agent iptables install-types install-static openssh-server stable-interface-names svc-map openvswitch element-manifest overcloud-opstools base overcloud-full dracut-regenerate overcloud-controller redhat-common overcloud-ceph-storage openssh runtime-ssh-host-keys baremetal cache-url pkg-map yum overcloud-compute puppet remove-resolvconf
+
+2021-07-09 04:56:26.933 | Building in /tmp/dib_build.Mf7TTnHN
+2021-07-09 04:56:26.938 | Searching elements for block-device[-amd64].yaml ...
+2021-07-09 04:56:26.945 | ... done
+2021-07-09 04:56:26.945 | Using default block-device fallback config
+2021-07-09 04:56:29.871 | INFO diskimage_builder.block_device.blockdevice [-] Wrote final block device config to [/tmp/dib_build.Mf7TTnHN/states/block-device/config.json]
+
+
+
+(undercloud) [stack@s001 ~]$ openstack image list
++--------------------------------------+------------------------+--------+
+| ID                                   | Name                   | Status |
++--------------------------------------+------------------------+--------+
+| caf4809d-1fca-4198-8484-e33239848ac1 | bm-deploy-kernel       | active |
+| 02caa14d-2941-4756-8461-8cebbe7a7746 | bm-deploy-ramdisk      | active |
+| 2ff532a7-c501-4a93-9d53-edc04647d135 | overcloud-full         | active |
+| 1ada94b6-752e-45d8-931b-29d4fa716074 | overcloud-full-initrd  | active |
+| 10c90934-6134-4bb4-8d45-0da2bbf0087d | overcloud-full-vmlinuz | active |
++--------------------------------------+------------------------+--------+
+
+(undercloud) [stack@s001 ~]$ openstack image delete $(openstack image list -c ID -f value)
+(undercloud) [stack@s001 ~]$ openstack image list
+
+(undercloud) [stack@s001 ~]$ ls -l images/
+total 2052272
+-rw-rw-r--. 1 stack stack  481531033 Mar 30 05:25 ironic-python-agent.initramfs
+-rwxr-xr-x. 1 stack stack    6769256 Mar 30 05:25 ironic-python-agent.kernel
+-rw-r--r--. 1 stack stack   55765073 Mar 30 05:15 overcloud-full.initrd
+-rw-r--r--. 1 stack stack 1550682624 Mar 30 05:19 overcloud-full.qcow2
+-rwxr-xr-x. 1 stack stack    6769256 Mar 30 05:15 overcloud-full.vmlinuz
+(undercloud) [stack@s001 ~]
+
+(undercloud) [stack@s001 ~]$ ls -al images_built/
+total 2052276
+drwxrwxr-x.  2 stack stack        164 Jul  7 21:38 .
+drwx------. 15 stack stack       4096 Jul  9 15:10 ..
+-rw-rw-r--.  1 stack stack  481531033 Mar 30 05:25 ironic-python-agent.initramfs
+-rwxr-xr-x.  1 stack stack    6769256 Mar 30 05:25 ironic-python-agent.kernel
+-rw-r--r--.  1 stack stack   55765073 Mar 30 05:15 overcloud-full.initrd
+-rw-r--r--.  1 stack stack 1550682624 Mar 30 05:19 overcloud-full.qcow2
+-rwxr-xr-x.  1 stack stack    6769256 Mar 30 05:15 overcloud-full.vmlinuz
+
+(undercloud) [stack@s001 images_built]$ openstack overcloud image upload
+
+(undercloud) [stack@s001 images_built]$ openstack overcloud image upload
+Image "overcloud-full-vmlinuz" was uploaded.
++--------------------------------------+------------------------+-------------+---------+--------+
+|                  ID                  |          Name          | Disk Format |   Size  | Status |
++--------------------------------------+------------------------+-------------+---------+--------+
+| 65fb94f4-6910-42a6-a74f-2d9a9efefcc5 | overcloud-full-vmlinuz |     aki     | 6769256 | active |
++--------------------------------------+------------------------+-------------+---------+--------+
+Image "overcloud-full-initrd" was uploaded.
++--------------------------------------+-----------------------+-------------+----------+--------+
+|                  ID                  |          Name         | Disk Format |   Size   | Status |
++--------------------------------------+-----------------------+-------------+----------+--------+
+| 5c477da9-f267-4a9a-9d81-e7d9432a7d8f | overcloud-full-initrd |     ari     | 55765073 | active |
++--------------------------------------+-----------------------+-------------+----------+--------+
+Image "overcloud-full" was uploaded.
++--------------------------------------+----------------+-------------+------------+--------+
+|                  ID                  |      Name      | Disk Format |    Size    | Status |
++--------------------------------------+----------------+-------------+------------+--------+
+| c80e1ed3-8440-4f32-a983-2bf03686d28e | overcloud-full |    qcow2    | 1550682624 | active |
++--------------------------------------+----------------+-------------+------------+--------+
+Image "bm-deploy-kernel" was uploaded.
++--------------------------------------+------------------+-------------+---------+--------+
+|                  ID                  |       Name       | Disk Format |   Size  | Status |
++--------------------------------------+------------------+-------------+---------+--------+
+| b4ca17f6-faf9-4a7a-811b-073d5050ac64 | bm-deploy-kernel |     aki     | 6769256 | active |
++--------------------------------------+------------------+-------------+---------+--------+
+Image "bm-deploy-ramdisk" was uploaded.
++--------------------------------------+-------------------+-------------+-----------+--------+
+|                  ID                  |        Name       | Disk Format |    Size   | Status |
++--------------------------------------+-------------------+-------------+-----------+--------+
+| ceb0703d-dba2-4880-9206-f95ccb14321a | bm-deploy-ramdisk |     ari     | 481531033 | active |
++--------------------------------------+-------------------+-------------+-----------+--------+
+Image file "/httpboot/agent.kernel" is up-to-date, skipping.
+Image file "/httpboot/agent.ramdisk" is up-to-date, skipping.
+
+(undercloud) [stack@s001 httpboot]$ ls -al
+total 476868
+drwxr-xr-x.  2 ironic           ironic                  86 Jul  7 21:54 .
+dr-xr-xr-x. 19 root             root                   274 Jul  7 15:01 ..
+-rwxr-xr-x.  1 root             root               6769256 Jul  7 21:54 agent.kernel
+-rw-r--r--.  1 root             root             481531033 Jul  7 21:54 agent.ramdisk
+-rw-r--r--.  1 ironic           ironic                 758 Jul  7 14:31 boot.ipxe
+-rw-r--r--.  1 ironic-inspector ironic-inspector       467 Jul  7 14:19 inspector.ipxe
+(undercloud) [stack@s001 httpboot]$ sudo mv agent.* /tmp
+
+(undercloud) [stack@s001 httpboot]$ ls -al
+total 476868
+drwxr-xr-x.  2 ironic           ironic                  86 Jul  9 15:17 .
+dr-xr-xr-x. 19 root             root                   274 Jul  7 15:01 ..
+-rwxr-xr-x.  1 root             root               6769256 Jul  9 15:17 agent.kernel
+-rw-r--r--.  1 root             root             481531033 Jul  9 15:17 agent.ramdisk
+-rw-r--r--.  1 ironic           ironic                 758 Jul  7 14:31 boot.ipxe
+-rw-r--r--.  1 ironic-inspector ironic-inspector       467 Jul  7 14:19 inspector.ipxe
+(undercloud) [stack@s001 httpboot]$
+
+(undercloud) [stack@s001 ~]$ openstack baremetal node list
++--------------------------------------+------+---------------+-------------+--------------------+-------------+
+| UUID                                 | Name | Instance UUID | Power State | Provisioning State | Maintenance |
++--------------------------------------+------+---------------+-------------+--------------------+-------------+
+| 3c448ad3-92d3-4822-834a-0a96fa0ce65b | s002 | None          | power on    | manageable         | False       |
++--------------------------------------+------+---------------+-------------+--------------------+-------------+
+(undercloud) [stack@s001 ~]$ openstack overcloud node introspect --all-manageable
 
