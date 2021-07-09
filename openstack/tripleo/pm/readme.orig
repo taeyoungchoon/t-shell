@@ -180,3 +180,25 @@ dr-xr-xr-x. 19 root             root                   274 Jul  7 15:01 ..
 +--------------------------------------+------+---------------+-------------+--------------------+-------------+
 (undercloud) [stack@s001 ~]$ openstack overcloud node introspect --all-manageable
 
+* fail again
+
+(undercloud) [stack@s001 ~]$ openstack baremetal node list
++--------------------------------------+------+---------------+-------------+--------------------+-------------+
+| UUID                                 | Name | Instance UUID | Power State | Provisioning State | Maintenance |
++--------------------------------------+------+---------------+-------------+--------------------+-------------+
+| 3c448ad3-92d3-4822-834a-0a96fa0ce65b | s002 | None          | power on    | manageable         | False       |
++--------------------------------------+------+---------------+-------------+--------------------+-------------+
+(undercloud) [stack@s001 ~]$ openstack overcloud node introspect --all-manageable
+Waiting for introspection to finish...
+Started Mistral Workflow tripleo.baremetal.v1.introspect_manageable_nodes. Execution ID: ab9826bf-0bf6-4261-a91d-45c91bbd8ab2
+Waiting for messages on queue 'tripleo' with no timeout.
+Introspection of node 3c448ad3-92d3-4822-834a-0a96fa0ce65b timed out.
+Retrying 1 nodes that failed introspection. Attempt 2 of 3
+Introspection of node 3c448ad3-92d3-4822-834a-0a96fa0ce65b timed out.
+Retrying 1 nodes that failed introspection. Attempt 3 of 3
+Introspection of node 3c448ad3-92d3-4822-834a-0a96fa0ce65b timed out.
+Retry limit reached with 1 nodes still failing introspection
+{u'status': u'RUNNING', u'node_uuids': [u'3c448ad3-92d3-4822-834a-0a96fa0ce65b'], u'failed_introspection': [u'3c448ad3-92d3-4822-834a-0a96fa0ce65b'], u'result': None, u'introspected_nodes': {u'3c448ad3-92d3-4822-834a-0a96fa0ce65b': {u'uuid': u'3c448ad3-92d3-4822-834a-0a96fa0ce65b', u'links': [{u'href': u'http://172.20.99.1:5050/v1/introspection/3c448ad3-92d3-4822-834a-0a96fa0ce65b', u'rel': u'self'}], u'finished_at': None, u'state': u'waiting', u'finished': False, u'error': None, u'started_at': u'2021-07-09T06:39:13'}}, u'message': u'Retrying 1 nodes that failed introspection. Attempt 3 of 3 ', u'introspection_attempt': 3}
+Exception introspecting nodes: {u'status': u'RUNNING', u'node_uuids': [u'3c448ad3-92d3-4822-834a-0a96fa0ce65b'], u'failed_introspection': [u'3c448ad3-92d3-4822-834a-0a96fa0ce65b'], u'result': None, u'introspected_nodes': {u'3c448ad3-92d3-4822-834a-0a96fa0ce65b': {u'uuid': u'3c448ad3-92d3-4822-834a-0a96fa0ce65b', u'links': [{u'href': u'http://172.20.99.1:5050/v1/introspection/3c448ad3-92d3-4822-834a-0a96fa0ce65b', u'rel': u'self'}], u'finished_at': None, u'state': u'waiting', u'finished': False, u'error': None, u'started_at': u'2021-07-09T06:39:13'}}, u'message': u'Retrying 1 nodes that failed introspection. Attempt 3 of 3 ', u'introspection_attempt': 3}
+(undercloud) [stack@s001 ~]$
+
