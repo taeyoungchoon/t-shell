@@ -35,3 +35,11 @@ inspector.py
 BOOTIF=10..:ee
 192.168.25.52
 192.168.25.1
+
+*
+
+[root@s001 ~]# biosdevname -i enp3s0f0
+em1
+[root@s001 ~]# biosdevname -i enp3s0f1
+em2
+
