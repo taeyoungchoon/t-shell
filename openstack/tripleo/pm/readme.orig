@@ -281,3 +281,31 @@ Jul 12 11:15:04 s001 dnsmasq-dhcp[10900]: 2623500141 sent size:  2 option: 26 mt
 Jul 12 11:15:04 s001 dnsmasq-dhcp[10900]: 2623500141 sent size:  4 option:  3 router  172.20.99.1
 
 
+* 
+
+2021-07-12 04:16:04Z [overcloud-Controller-7ds47rratosg-0-zag6tn4vamyc.Controller]: CREATE_FAILED  ResourceInError: resources.Controller: Went to status ERROR due to "Message: Exceeded maximum number of retries. Exhausted all hosts available for retrying build failures for instance 40fb2e16-cfc6-4fff-ab7a-4c83732a2aaa., Code: 500"
+2021-07-12 04:16:04Z [overcloud-Controller-7ds47rratosg-0-zag6tn4vamyc.Controller]: DELETE_IN_PROGRESS  state changed
+2021-07-12 04:16:05Z [overcloud-Compute-b6m4uuh7rbph-0-tiasdo4q4l35.NovaCompute]: CREATE_FAILED  ResourceInError: resources.NovaCompute: Went to status ERROR due to "Message: Exceeded maximum number of retries. Exhausted all hosts available for retrying build failures for instance 444f90ae-df6c-4d98-94b8-da5565a03448., Code: 500"
+2021-07-12 04:16:05Z [overcloud-Compute-b6m4uuh7rbph-0-tiasdo4q4l35.NovaCompute]: DELETE_IN_PROGRESS  state changed
+2021-07-12 04:16:08Z [overcloud-Controller-7ds47rratosg-0-zag6tn4vamyc.Controller]: DELETE_COMPLETE  state changed
+2021-07-12 04:16:09Z [overcloud-Compute-b6m4uuh7rbph-0-tiasdo4q4l35.NovaCompute]: DELETE_COMPLETE  state changed
+2021-07-12 04:16:13Z [overcloud-Controller-7ds47rratosg-0-zag6tn4vamyc.Controller]: CREATE_IN_PROGRESS  state changed
+2021-07-12 04:16:14Z [overcloud-Compute-b6m4uuh7rbph-0-tiasdo4q4l35.NovaCompute]: CREATE_IN_PROGRESS  state changed
+
+(undercloud) [stack@s001 ~]$ openstack server list
++--------------------------------------+-------------------------+--------+-----------------------+----------------+---------+
+| ID                                   | Name                    | Status | Networks              | Image          | Flavor  |
++--------------------------------------+-------------------------+--------+-----------------------+----------------+---------+
+| 08cde2a1-b1db-44ef-ac14-f87f030266aa | overcloud-controller-0  | BUILD  | ctlplane=172.20.99.9  | overcloud-full | control |
+| 61d743b7-dfd2-4b27-984c-bbe765cc1c92 | overcloud-novacompute-0 | BUILD  | ctlplane=172.20.99.14 | overcloud-full | compute |
+| ee3c4c0b-5b84-4fcb-a4da-d774c5416957 | overcloud-controller-0  | ERROR  |                       |                | control |
+| 34929a38-1e99-49ff-9437-384656b6b6c4 | overcloud-novacompute-0 | ERROR  |                       |                | compute |
+| 50c5138d-7fa7-4899-a7f7-23e09aaf2932 | overcloud-novacompute-0 | ERROR  |                       |                | compute |
+| 98556044-b9ec-4c13-8c88-73ead4c64d3f | overcloud-controller-0  | ERROR  |                       |                | control |
++--------------------------------------+-------------------------+--------+-----------------------+----------------+---------+
+
+(undercloud) [stack@s001 stack]$ sh delete.sh
+Deleting stack overcloud...
+Started Mistral Workflow tripleo.stack.v1.delete_stack. Execution ID: 10b2884d-eff0-4c47-a49b-6477a8e5439d
+Waiting for messages on queue 'tripleo' with no timeout.
+

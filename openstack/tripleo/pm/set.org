@@ -1,0 +1,40 @@
+* s001 will be director
+
+- hostname : s001.foo.com
+- network : 
+  - enp3s0f0 : 192.168.25.201/24 .1 8.8.88
+  - enp3s0f0 : 172.20.99.1/24
+- disk
+  - /boot : 1g
+  - / : all left behind, 278.36g
+- user
+  - root / 1234qwer
+  - jack / 1234qwer
+
+* s002 will be control
+
+- hostname : s002.foo.com
+- network : 
+  - enp3s0f0 : 192.168.25.202/24 .1 8.8.88
+  - enp3s0f0 : 172.20.99.202/24
+- disk
+  - /boot : 1g
+  - / : all left behind, 278.36g
+- user
+  - root / 1234qwer
+  - jack / 1234qwer
+
+
+
+* s003 will be compute
+
+- hostname : s003.foo.com
+- network : 
+  - enp3s0f0 : 192.168.25.203/24 .1 8.8.88
+  - enp3s0f0 : 172.20.99.203/24
+- disk
+  - /boot : 1g
+  - / : all left behind, 278.36g
+- user
+  - root / 1234qwer
+  - jack / 1234qwer
