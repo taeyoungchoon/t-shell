@@ -1,0 +1,19 @@
+{
+    "nodes":[
+        {
+            "pm_type":"ipmi",
+            "mac":[
+                "10:60:4b:9c:82:ee"
+            ],
+            "capabilities": "profile:control,boot_option:local",
+            "name": "s002",
+            "cpu":"2",
+            "memory":"64",
+            "disk":"300",
+            "arch":"x86_64",
+            "pm_user": "administrator",
+            "pm_password": "hpinvent",
+            "pm_addr": "192.168.25.52"
+        }
+    ]
+}
