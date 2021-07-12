@@ -13,3 +13,5 @@ deploy: overcloud
 
 overcloud:
 	echo 'not yet'
+clean:
+	rm *~
