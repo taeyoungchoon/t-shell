@@ -1,2 +1,2 @@
 clean:
-	rm *~
+	sh clean.sh

@@ -1,4 +1,4 @@
-* s001 will be director
+* DONE s001 will be director
 
 - hostname : s001.foo.com
 - network : 
@@ -11,8 +11,15 @@
   - root / 1234qwer
   - jack / 1234qwer
 
-* s002 will be control
+* DONE s002 will be control
 
+- F9(ROM-Based Setup Utitity)
+  - System Options
+    - Embedded NICs
+      - NIC 1 Boot Options : Disabled
+      - NIC 2 Boot Options : Network Boot
+      - NIC 3 Boot Options : Disabled
+      - NIC 4 Boot Options : Disabled
 - hostname : s002.foo.com
 - network : 
   - enp3s0f0 : 192.168.25.202/24 .1 8.8.88
@@ -24,10 +31,15 @@
   - root / 1234qwer
   - jack / 1234qwer
 
+* DONE s003 will be compute
 
-
-* s003 will be compute
-
+- F9(ROM-Based Setup Utitity)
+  - System Options
+    - Embedded NICs
+      - NIC 1 Boot Options : Disabled
+      - NIC 2 Boot Options : Network Boot
+      - NIC 3 Boot Options : Disabled
+      - NIC 4 Boot Options : Disabled
 - hostname : s003.foo.com
 - network : 
   - enp3s0f0 : 192.168.25.203/24 .1 8.8.88
@@ -38,3 +50,33 @@
 - user
   - root / 1234qwer
   - jack / 1234qwer
+
+* TODO s004 will be compute
+
+- F9(ROM-Based Setup Utitity)
+  - System Options
+    - Embedded NICs
+      - NIC 1 Boot Options : Disabled
+      - NIC 2 Boot Options : Network Boot
+      - NIC 3 Boot Options : Disabled
+      - NIC 4 Boot Options : Disabled
+- hostname : s004.foo.com
+- network : 
+  - enp3s0f0 : 192.168.25.204/24 .1 8.8.88
+  - enp3s0f0 : 172.20.99.204/24
+- disk
+  - /boot : 1g
+  - / : all left behind, 278.36g
+- user
+  - root / 1234qwer
+  - jack / 1234qwer
+    
+* TODO todo or to know
+
+- [ ] auto install using cobbler like
+- [ ] know about bios
+  - F1 : Continue
+  - F9 : ROM-Based Setup Utility, RBSU
+  - F11 : Boot Override
+- [ ] know about pxe, ipxe
+- [ ] know about ipmi
