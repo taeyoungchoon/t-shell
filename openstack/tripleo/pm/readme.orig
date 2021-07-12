@@ -202,3 +202,16 @@ Retry limit reached with 1 nodes still failing introspection
 Exception introspecting nodes: {u'status': u'RUNNING', u'node_uuids': [u'3c448ad3-92d3-4822-834a-0a96fa0ce65b'], u'failed_introspection': [u'3c448ad3-92d3-4822-834a-0a96fa0ce65b'], u'result': None, u'introspected_nodes': {u'3c448ad3-92d3-4822-834a-0a96fa0ce65b': {u'uuid': u'3c448ad3-92d3-4822-834a-0a96fa0ce65b', u'links': [{u'href': u'http://172.20.99.1:5050/v1/introspection/3c448ad3-92d3-4822-834a-0a96fa0ce65b', u'rel': u'self'}], u'finished_at': None, u'state': u'waiting', u'finished': False, u'error': None, u'started_at': u'2021-07-09T06:39:13'}}, u'message': u'Retrying 1 nodes that failed introspection. Attempt 3 of 3 ', u'introspection_attempt': 3}
 (undercloud) [stack@s001 ~]$
 
+* ironic.conf - pxe - pxe_append_params = biosdevname=0 net.ifnames=0
+
+https://docs.openstack.org/ironic/pike/install/include/kernel-boot-parameters.html
+
+inst.ks=http://172.22.215.6/anaconda-ks.cfg net.ifnames=0 biosdevname=0 
+
+https://unix.stackexchange.com/questions/637295/linux-kernel-parameters-what-is-the-difference-of-net-ifnames-0-and-biosdevname
+
+* pxe
+
+ipmitool -I lanplus -H hostip -U root -P password chassis bootdev pxe
+ipmitool -I lanplus -H hostip -U root -P password chassis bootparam set force_pxe
+
