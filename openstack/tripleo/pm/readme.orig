@@ -215,3 +215,17 @@ https://unix.stackexchange.com/questions/637295/linux-kernel-parameters-what-is-
 ipmitool -I lanplus -H hostip -U root -P password chassis bootdev pxe
 ipmitool -I lanplus -H hostip -U root -P password chassis bootparam set force_pxe
 
+* 
+
+[root@s001 httpboot]# pwd
+/httpboot
+[root@s001 httpboot]# cat inspector.ipxe
+#!ipxe
+
+:retry_boot
+imgfree
+kernel --timeout 60000 http://172.20.99.1:8088/agent.kernel ipa-inspection-callback-url=http://172.20.99.1:5050/v1/continue ipa-inspection-collectors=default,extra-hardware,numa-topology,logs systemd.journald.forward_to_console=yes BOOTIF=${mac} ipa-debug=1 ipa-inspection-dhcp-all-interfaces=1 ipa-collect-lldp=1 initrd=agent.ramdisk biosdevname=0 net.ifnames=0 || goto retry_boot
+initrd --timeout 60000 http://172.20.99.1:8088/agent.ramdisk || goto retry_boot
+boot
+
+
