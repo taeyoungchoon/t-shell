@@ -228,4 +228,56 @@ kernel --timeout 60000 http://172.20.99.1:8088/agent.kernel ipa-inspection-callb
 initrd --timeout 60000 http://172.20.99.1:8088/agent.ramdisk || goto retry_boot
 boot
 
+* ifup after login 
+
+kernel --timeout 60000 http://172.20.99.1:8088/agent.kernel ipa-inspection-callback-url=http://172.20.99.1:5050/v1/continue ipa-inspection-collectors=default,extra-hardware,numa-topology,logs systemd.journald.forward_to_console=yes BOOTIF=${mac} ipa-debug=1 ipa-inspection-dhcp-all-interfaces=1 ipa-collect-lldp=1 initrd=agent.ramdisk biosdevname=1 net.ifnames=1 rootpwd="$1$uVGS6zM2$czw00JaqsC.y7.99QoZKd1" || goto retry_boot
+
+login: root
+password:
+
+ip a
+ifup eth1
+ip a
+
+Jul 12 11:15:01 s001 dnsmasq-dhcp[10900]: 2623500141 available DHCP range: 172.20.99.100 -- 172.20.99.120
+Jul 12 11:15:04 s001 dnsmasq-dhcp[10900]: 2623500141 DHCPDISCOVER(br-ctlplane) 10:60:4b:9c:82:ee
+Jul 12 11:15:04 s001 dnsmasq-dhcp[10900]: 2623500141 tags: ctlplane-subnet, known, br-ctlplane
+Jul 12 11:15:04 s001 dnsmasq-dhcp[10900]: 2623500141 DHCPOFFER(br-ctlplane) 172.20.99.100 10:60:4b:9c:82:ee
+Jul 12 11:15:04 s001 dnsmasq-dhcp[10900]: 2623500141 requested options: 1:netmask, 28:broadcast, 2:time-offset, 121:classless-static-route,
+Jul 12 11:15:04 s001 dnsmasq-dhcp[10900]: 2623500141 requested options: 15:domain-name, 6:dns-server, 12:hostname,
+Jul 12 11:15:04 s001 dnsmasq-dhcp[10900]: 2623500141 requested options: 40:nis-domain, 41:nis-server, 42:ntp-server,
+Jul 12 11:15:04 s001 dnsmasq-dhcp[10900]: 2623500141 requested options: 26:mtu, 119:domain-search, 3:router
+Jul 12 11:15:04 s001 dnsmasq-dhcp[10900]: 2623500141 bootfile name: undionly.kpxe
+Jul 12 11:15:04 s001 dnsmasq-dhcp[10900]: 2623500141 server name: localhost.localdomain
+Jul 12 11:15:04 s001 dnsmasq-dhcp[10900]: 2623500141 next server: 172.20.99.1
+Jul 12 11:15:04 s001 dnsmasq-dhcp[10900]: 2623500141 sent size:  1 option: 53 message-type  2
+Jul 12 11:15:04 s001 dnsmasq-dhcp[10900]: 2623500141 sent size:  4 option: 54 server-identifier  172.20.99.1
+Jul 12 11:15:04 s001 dnsmasq-dhcp[10900]: 2623500141 sent size:  4 option: 51 lease-time  10m
+Jul 12 11:15:04 s001 dnsmasq-dhcp[10900]: 2623500141 sent size:  4 option: 58 T1  5m
+Jul 12 11:15:04 s001 dnsmasq-dhcp[10900]: 2623500141 sent size:  4 option: 59 T2  8m45s
+Jul 12 11:15:04 s001 dnsmasq-dhcp[10900]: 2623500141 sent size:  4 option:  1 netmask  255.255.255.0
+Jul 12 11:15:04 s001 dnsmasq-dhcp[10900]: 2623500141 sent size:  4 option: 28 broadcast  172.20.99.255
+Jul 12 11:15:04 s001 dnsmasq-dhcp[10900]: 2623500141 sent size:  2 option: 26 mtu  1500
+Jul 12 11:15:04 s001 dnsmasq-dhcp[10900]: 2623500141 sent size:  4 option:  3 router  172.20.99.1
+Jul 12 11:15:04 s001 dnsmasq-dhcp[10900]: 2623500141 available DHCP range: 172.20.99.100 -- 172.20.99.120
+Jul 12 11:15:04 s001 dnsmasq-dhcp[10900]: 2623500141 DHCPREQUEST(br-ctlplane) 172.20.99.100 10:60:4b:9c:82:ee
+Jul 12 11:15:04 s001 dnsmasq-dhcp[10900]: 2623500141 tags: ctlplane-subnet, known, br-ctlplane
+Jul 12 11:15:04 s001 dnsmasq-dhcp[10900]: 2623500141 DHCPACK(br-ctlplane) 172.20.99.100 10:60:4b:9c:82:ee
+Jul 12 11:15:04 s001 dnsmasq-dhcp[10900]: 2623500141 requested options: 1:netmask, 28:broadcast, 2:time-offset, 121:classless-static-route,
+Jul 12 11:15:04 s001 dnsmasq-dhcp[10900]: 2623500141 requested options: 15:domain-name, 6:dns-server, 12:hostname,
+Jul 12 11:15:04 s001 dnsmasq-dhcp[10900]: 2623500141 requested options: 40:nis-domain, 41:nis-server, 42:ntp-server,
+Jul 12 11:15:04 s001 dnsmasq-dhcp[10900]: 2623500141 requested options: 26:mtu, 119:domain-search, 3:router
+Jul 12 11:15:04 s001 dnsmasq-dhcp[10900]: 2623500141 bootfile name: undionly.kpxe
+Jul 12 11:15:04 s001 dnsmasq-dhcp[10900]: 2623500141 server name: localhost.localdomain
+Jul 12 11:15:04 s001 dnsmasq-dhcp[10900]: 2623500141 next server: 172.20.99.1
+Jul 12 11:15:04 s001 dnsmasq-dhcp[10900]: 2623500141 sent size:  1 option: 53 message-type  5
+Jul 12 11:15:04 s001 dnsmasq-dhcp[10900]: 2623500141 sent size:  4 option: 54 server-identifier  172.20.99.1
+Jul 12 11:15:04 s001 dnsmasq-dhcp[10900]: 2623500141 sent size:  4 option: 51 lease-time  10m
+Jul 12 11:15:04 s001 dnsmasq-dhcp[10900]: 2623500141 sent size:  4 option: 58 T1  5m
+Jul 12 11:15:04 s001 dnsmasq-dhcp[10900]: 2623500141 sent size:  4 option: 59 T2  8m45s
+Jul 12 11:15:04 s001 dnsmasq-dhcp[10900]: 2623500141 sent size:  4 option:  1 netmask  255.255.255.0
+Jul 12 11:15:04 s001 dnsmasq-dhcp[10900]: 2623500141 sent size:  4 option: 28 broadcast  172.20.99.255
+Jul 12 11:15:04 s001 dnsmasq-dhcp[10900]: 2623500141 sent size:  2 option: 26 mtu  1500
+Jul 12 11:15:04 s001 dnsmasq-dhcp[10900]: 2623500141 sent size:  4 option:  3 router  172.20.99.1
+
 
