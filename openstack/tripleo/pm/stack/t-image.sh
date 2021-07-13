@@ -1,3 +1,9 @@
+#!/usr/bin/env bash
+
+cd ../
+source stackrc
+openstack image list
+
 ## image first
 # https://docs.openstack.org/project-deploy-guide/tripleo-docs/latest/deployment/install_overcloud.html
 # download images
@@ -13,4 +19,3 @@ tar xf overcloud-full.tar -C images
 cd images
 openstack overcloud image upload
 openstack image list
-cd ..
