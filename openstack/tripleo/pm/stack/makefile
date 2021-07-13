@@ -12,6 +12,6 @@ undercloud:
 deploy: overcloud
 
 overcloud:
-	echo 'not yet'
+	sh t-image.sh
 clean:
 	rm *~
