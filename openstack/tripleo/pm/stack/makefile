@@ -3,9 +3,9 @@ all: install
 install: pkg config undercloud
 
 pkg:
-	sh pkg.sh
+	sh t-pkg.sh
 config:
-	sh config.sh
+	sh t-config.sh
 undercloud:
 	cd ~/
 	openstack undercloud install
