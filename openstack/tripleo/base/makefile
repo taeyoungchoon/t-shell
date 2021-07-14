@@ -12,4 +12,4 @@ disable-ipv6:
 	# ip a
 
 essential: 
-	yum install bash-completion bind-utils psmisc git -y
+	yum install bash-completion bind-utils psmisc emacs-nox -y
