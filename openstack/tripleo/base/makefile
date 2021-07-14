@@ -1,8 +1,8 @@
 all: essential disable-selinux disable-ipv6
 
 disable-selinux:
-	sed -i 's/=enforcing/=permissive/' /etc/selinux/config
-	setenforce Permissive
+	@sed -i 's/=enforcing/=permissive/' /etc/selinux/config
+	@setenforce Permissive
 	sestatus | egrep 'SELinux status|Current mode'
 
 disable-ipv6:
