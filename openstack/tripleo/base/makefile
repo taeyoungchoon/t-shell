@@ -6,10 +6,10 @@ disable-selinux:
 	@sestatus | egrep 'SELinux status|Current mode'
 
 disable-ipv6:
-	cp -f disable-ipv6.conf /etc/sysctl.d/
-	sysctl --system
-	sysctl -a --pattern disable_ipv6
-	pifconfig
+	@cp -f disable-ipv6.conf /etc/sysctl.d/
+	@sysctl --system
+	@sysctl -a --pattern disable_ipv6
+	@pifconfig
 
 essential: 
 	@yum install -y bash-completion bind-utils psmisc 
