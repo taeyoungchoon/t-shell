@@ -18,6 +18,10 @@ essential:
 
 timezone:
 	@timedatectl set-timezone Asia/Seoul
+	@date
 
 ntp:
 	@yum install ntp ntpdate -y
+	@systemctl enable ntpd
+	@systemctl start ntpd
+	@ntpq -p
