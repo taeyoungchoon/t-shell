@@ -12,7 +12,7 @@ disable-ipv6:
 	pifconfig
 
 essential: 
-	yum install -y bash-completion bind-utils psmisc 
-	yum install -y vim emacs-nox 
-	yum install -y python-ethtool 
+	@yum install -y bash-completion bind-utils psmisc 
+	@yum install -y vim emacs-nox 
+	@yum install -y python-ethtool 
 
