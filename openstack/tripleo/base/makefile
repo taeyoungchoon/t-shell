@@ -15,3 +15,9 @@ essential:
 	@yum install -y bash-completion bind-utils psmisc 
 	@yum install -y vim emacs-nox 
 	@yum install -y python-ethtool 
+
+timezone:
+	@timedatectl set-timezone Asia/Seoul
+
+ntp:
+	@yum install ntp ntpdate -y

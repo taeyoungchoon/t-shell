@@ -19,8 +19,9 @@ make install-commandmode
 
 make install-webconf
 make install-exfoliation
+# make install-classicui
 
-htpasswd -c /usr/local/nagios/etc/htpasswd.users nagiosadmin
+htpasswd -c -b /usr/local/nagios/etc/htpasswd.users nagiosadmin 1234qwer
 
 systemctl restart httpd
 systemctl enable httpd
