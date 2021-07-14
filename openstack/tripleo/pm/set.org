@@ -51,7 +51,7 @@
   - root / 1234qwer
   - jack / 1234qwer
 
-* TODO s004 will be compute
+* DONE s004 will be compute
 
 - F9(ROM-Based Setup Utitity)
   - System Options
@@ -71,6 +71,32 @@
   - root / 1234qwer
   - jack / 1234qwer
     
+* TODO t001 will be compute
+
+- hostname : t001.foo.com
+- network : 
+  - enp3s0f0 : 192.168.25.211/24 .1 8.8.88
+  - enp3s0f0 : 172.20.99.211/24
+- disk
+  - /boot : 1g
+  - / : all left behind, 278.36g
+- user
+  - root / 1234qwer
+  - jack / 1234qwer
+    
+* TODO t002 will be compute
+
+- hostname : t002.foo.com
+- network : 
+  - enp3s0f0 : 192.168.25.212/24 .1 8.8.88
+  - enp3s0f0 : 172.20.99.212/24
+- disk
+  - /boot : 1g
+  - / : all left behind, 278.36g
+- user
+  - root / 1234qwer
+  - jack / 1234qwer
+    
 * TODO todo or to know
 
 - [ ] auto install using cobbler like
@@ -80,3 +106,28 @@
   - F11 : Boot Override
 - [ ] know about pxe, ipxe
 - [ ] know about ipmi
+
+* TODO vmware esxi using vSphere Client
+
+** spec
+
+- network :
+  - nic1 : VM Network - E1000E
+  - nic2 : VM Network 2 - E1000E
+- disk
+  - 256g
+- cpu : 2 x 2
+- memory : 8g
+
+** build howto
+
+1. spec
+2. next boot to bios
+3. attach iso
+4. boot
+5. install
+
+* TODO vmware esxi server
+
+
+
