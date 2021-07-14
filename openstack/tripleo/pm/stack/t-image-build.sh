@@ -5,3 +5,5 @@ export STABLE_RELEASE="queens"
 
 mkdir image_built
 cd image_built
+
+openstack overcloud image build
