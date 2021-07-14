@@ -9,7 +9,8 @@ disable-ipv6:
 	@cp -f disable-ipv6.conf /etc/sysctl.d/
 	@sysctl --system &>/dev/null
 	@sysctl -a --pattern disable_ipv6
-	@pifconfig
+	@echo ''
+	@ip -br a
 
 essential: 
 	@yum install -y bash-completion bind-utils psmisc 
