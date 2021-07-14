@@ -13,6 +13,8 @@ undercloud:
 deploy: overcloud
 
 overcloud:
-	bash t-image.sh
+	bash t-image-download.sh
+	bash t-image-build.sh
+	bash t-imageup.sh
 clean:
 	rm *~
