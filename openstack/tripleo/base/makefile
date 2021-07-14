@@ -3,13 +3,15 @@ all: essential disable-selinux disable-ipv6
 disable-selinux:
 	sed -i 's/=enforcing/=permissive/' /etc/selinux/config
 	setenforce Permissive
-	# sestatus
+	sestatus | egrep 'SELinux status|Current mode'
 
 disable-ipv6:
-	cp disable-ipv6.conf /etc/sysctl.d/
-	sysctl -p /etc/sysctl.conf
-	# sysctl -a 2>/dev/null | grep disable_ipv6
-	# ip a
+	cp -f disable-ipv6.conf /etc/sysctl.d/
+	sysctl --system
+	sysctl -a --pattern disable_ipv6
+	pifconfig
 
 essential: 
-	yum install bash-completion bind-utils psmisc emacs-nox -y
+	yum install bash-completion bind-utils psmisc emacs-nox python-ethtool -y
+
+check:
