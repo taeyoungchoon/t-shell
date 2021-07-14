@@ -7,7 +7,7 @@ disable-selinux:
 
 disable-ipv6:
 	@cp -f disable-ipv6.conf /etc/sysctl.d/
-	@sysctl --system
+	@sysctl --system &>/dev/null
 	@sysctl -a --pattern disable_ipv6
 	@pifconfig
 
