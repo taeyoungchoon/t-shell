@@ -18,3 +18,9 @@ start:
 
 config:
 	sh config.sh
+
+check:
+	echo "not yet"
+
+clean:
+	echo "not yet"

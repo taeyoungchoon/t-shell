@@ -1,7 +1,7 @@
-systemctl enable httpd
-systemctl restart httpd
-#systemctl status httpd
+service='httpd';
+systemctl is-enabled $service || systemctl enable $service
+systemctl is-active $service || systemctl start $service
 
-systemctl enable nagios
-systemctl restart nagios
-#systemctl status nagios
+service='nagios';
+systemctl is-enabled $service || systemctl enable $service
+systemctl is-active $service || systemctl start $service
