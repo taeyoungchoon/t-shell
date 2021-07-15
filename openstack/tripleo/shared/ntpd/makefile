@@ -15,3 +15,4 @@ check:
 	ntpdate -q 127.0.0.1
 less-restricted:
 	sh less-restricted.sh
+	systemctl restart ntpd
