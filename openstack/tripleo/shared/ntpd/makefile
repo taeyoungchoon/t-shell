@@ -1,8 +1,8 @@
 all: fireall pkg start check
 
 firewall:
-	firewallcmd --add-service=ntp --permanent
-	firewallcmd --reload
+	sh firewall.sh
+
 pkg:
 	yum install -y ntp ntpdate
 start:
