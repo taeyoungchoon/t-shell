@@ -4,8 +4,9 @@ pkg:
 	yum install -y httpd
 
 firewall:
-	firewall-cmd --add-service=http --permanent
-	firewall-cmd --reload
+	sh firewall.sh
+	# firewall-cmd --add-service=http --permanent
+	# firewall-cmd --reload
 
 overcloud-image:
 	mkdir /var/www/html/overcloud-image
