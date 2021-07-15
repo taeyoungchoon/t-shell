@@ -1,8 +1,8 @@
 all: firewall pkg
 
 firewall:
-	sh firewall.sh
+	@sh firewall.sh
 
 pkg:
-	yum install -y bind
+	@yum install -y bind -q
 
