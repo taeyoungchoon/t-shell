@@ -1,4 +1,4 @@
-all: fireall pkg start check
+all: firewall pkg start check
 
 firewall:
 	sh firewall.sh
