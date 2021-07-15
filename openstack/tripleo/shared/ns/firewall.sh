@@ -6,8 +6,8 @@ function activate {
 	if firewall-cmd --list-ports | grep -w $port &>/dev/null; then
 		echo "$port port opened";
 	else
-		firewall-cmd --permanent --add-port=$port
-		firewall-cmd --reload
+		firewall-cmd --permanent --add-port=$port -q
+		firewall-cmd --reload -q
 	fi
 }
 

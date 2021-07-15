@@ -1,4 +1,4 @@
-all:
+all: firewall pkg
 
 firewall:
 	sh firewall.sh
