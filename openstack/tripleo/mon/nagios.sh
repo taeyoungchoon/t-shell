@@ -1,8 +1,34 @@
 # users and groups part 1
-useradd nagios
-groupadd nagcmd
-usermod -a -G nagcmd nagios
-usermod -a -G nagcmd apache
+
+user='nagios'
+if getent passwd $user &>/dev/null; then
+	echo "user $user exist";
+else
+	useradd $user;
+fi
+
+group='nagcmd'
+if getent group $group &>/dev/null; then
+	echo "group $group exist";
+else
+	groupadd $group;
+fi
+
+user='nagios'
+group='nagcmd'
+if groupmems -l -g $group | grep -w $user &>/dev/null; then
+	echo "user $user belongs to $group group";
+else
+	usermod -a -G $group $user
+fi
+
+user='apache'
+group='nagcmd'
+if groupmems -l -g $group | grep -w $user&>/dev/null; then
+	echo "user $user belongs to $group group";
+else
+	usermod -a -G $group $user
+fi
 
 # install nagios only
 cd /tmp/
