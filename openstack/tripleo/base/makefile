@@ -1,4 +1,4 @@
-all: essential disable-selinux disable-ipv6
+all: essential disable-selinux disable-ipv6 timezone ntp
 
 disable-selinux:
 	@sed -i 's/=enforcing/=permissive/' /etc/selinux/config
@@ -12,7 +12,7 @@ disable-ipv6:
 	@ip -br a
 
 essential: 
-	@yum install -y bash-completion bind-utils psmisc 
+	@yum install -y bash-completion bind-utils psmisc tmux
 	@yum install -y vim emacs-nox 
 	@yum install -y python-ethtool 
 
