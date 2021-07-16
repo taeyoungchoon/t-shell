@@ -4,7 +4,6 @@ disable-selinux:
 	@sed -i 's/=enforcing/=permissive/' /etc/selinux/config
 	@setenforce Permissive
 
-
 disable-ipv6:
 	@cp -f disable-ipv6.conf /etc/sysctl.d/
 	@sysctl --system &>/dev/null
@@ -18,19 +17,19 @@ timezone:
 	@timedatectl set-timezone Asia/Seoul
 
 ntp:
-	yum -y -q install ntp ntpdate
-	systemctl -q is-enabled ntpd || systemctl -q enable ntpd
-	systemctl -q is-active ntpd || systemctl -q start ntpd
+	@yum -y -q install ntp ntpdate
+	@systemctl -q is-enabled ntpd || systemctl -q enable ntpd
+	@systemctl -q is-active ntpd || systemctl -q start ntpd
 
 check: check-selinux check-ipv6 check-time
 
 check-selinux:
-	sestatus | egrep 'SELinux status|Current mode'
+	@sestatus | egrep 'SELinux status|Current mode'
 
 check-ipv6:
-	sysctl -a --pattern disable_ipv6
-	ip -br a
+	@sysctl -a --pattern disable_ipv6
+	@ip -br a
 
 check-time:
-	ntpq -pn
-	date
+	@ntpq -pn
+	@date
