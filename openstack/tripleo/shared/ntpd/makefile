@@ -4,11 +4,11 @@ firewall:
 	sh firewall.sh
 
 pkg:
-	yum install -y ntp ntpdate
+	yum -y -q install ntp ntpdate
 
 start:
-	@systemctl is-enabled ntpd &>/dev/null || systemctl enable ntpd
-	@systemctl is-active ntpd &>/dev/null  || systemctl start ntpd
+	@systemctl -q is-enabled ntpd  || systemctl -q enable ntpd
+	@systemctl -q is-active ntpd   || systemctl -q start ntpd
 
 stop:
 	systemctl stop ntpd
@@ -19,4 +19,4 @@ check:
 
 less-restricted:
 	sh less-restricted.sh
-	systemctl restart ntpd
+	systemctl -q restart ntpd
