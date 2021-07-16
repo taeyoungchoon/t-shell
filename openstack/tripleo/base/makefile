@@ -32,4 +32,5 @@ check-ipv6:
 
 check-time:
 	@ntpq -pn
+	@timedatectl | grep "Time zone"
 	@date
