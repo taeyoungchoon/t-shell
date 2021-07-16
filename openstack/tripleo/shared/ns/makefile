@@ -20,7 +20,6 @@ config-add-zone:
 	fi
 
 config-add-db:
-	unalias cp
 	cp -f foo.com.zone /etc/named/
 	chown root.named /etc/named/foo.com.zone
 	cp -f foo.com.db /var/named/
