@@ -1,0 +1,18 @@
+$TTL 1D
+$ORIGIN foo.com.
+@             IN  SOA    ns1.foo.com. root.foo.com. ( 1 1D 1H 1W 3H )
+              IN  NS     ns1
+              IN  MX 10  mail
+              IN  A      192.168.25.211
+mail          IN  A      192.168.25.211
+ns1           IN  A      192.168.25.211
+ntp           IN  CNAME  ns1
+time          IN  CNAME  ns1
+nameserver    IN  CNAME  ns1
+fs            IN  A      192.168.25.212
+repo          IN  CNAME  fs
+cache         IN  CNAME  fs
+file          IN  CNAME  fs
+fileserver    IN  CNAME  fs
+mon           IN  A      192.168.25.213
+nagios        IN  CNAME  mon

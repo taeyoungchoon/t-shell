@@ -1,0 +1,5 @@
+zone "foo.com" IN {
+        type master;
+        file "foo.com.db";
+        allow-update { none; };
+};
