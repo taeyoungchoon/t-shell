@@ -1,4 +1,4 @@
-all: essential disable-selinux disable-ipv6 timezone ntp
+all: pkg disable-selinux disable-ipv6 timezone ntp
 
 disable-selinux:
 	@sed -i 's/=enforcing/=permissive/' /etc/selinux/config
@@ -12,17 +12,19 @@ disable-ipv6:
 	@sysctl -a --pattern disable_ipv6
 	@ip -br a
 
-essential: 
+pkg: 
 	@yum -y -q install bash-completion bind-utils psmisc tmux bc
 	@yum -y -q install vim emacs-nox 
 	@yum -y -q install python-ethtool 
 
 timezone:
 	@timedatectl set-timezone Asia/Seoul
-	@date
 
 ntp:
-	@yum install ntp ntpdate -y
-	@systemctl enable ntpd
-	@systemctl start ntpd
-	@ntpq -p
+	yum -y -q install ntp ntpdate
+	systemctl -q is-enabled ntpd || systemctl -q enable ntpd
+	systemctl -q is-active ntpd || systemctl -q start ntpd
+
+check:
+	date
+	ntpq -pn
