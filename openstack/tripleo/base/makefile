@@ -1,16 +1,13 @@
-all: pkg disable-selinux disable-ipv6 timezone ntp
+all: disable-selinux disable-ipv6 pkg timezone ntp
 
 disable-selinux:
 	@sed -i 's/=enforcing/=permissive/' /etc/selinux/config
 	@setenforce Permissive
-	@sestatus | egrep 'SELinux status|Current mode'
 
 
 disable-ipv6:
 	@cp -f disable-ipv6.conf /etc/sysctl.d/
 	@sysctl --system &>/dev/null
-	@sysctl -a --pattern disable_ipv6
-	@ip -br a
 
 pkg: 
 	@yum -y -q install bash-completion bind-utils psmisc tmux bc
@@ -25,6 +22,15 @@ ntp:
 	systemctl -q is-enabled ntpd || systemctl -q enable ntpd
 	systemctl -q is-active ntpd || systemctl -q start ntpd
 
-check:
-	date
+check: check-selinux check-ipv6 check-time
+
+check-selinux:
+	sestatus | egrep 'SELinux status|Current mode'
+
+check-ipv6:
+	sysctl -a --pattern disable_ipv6
+	ip -br a
+
+check-time:
 	ntpq -pn
+	date
