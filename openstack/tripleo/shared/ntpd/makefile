@@ -11,10 +11,10 @@ start:
 	@systemctl -q is-active ntpd   || systemctl -q start ntpd
 
 stop:
-	systemctl stop ntpd
+	systemctl -q stop ntpd
 
 check:
-	ntpq -p
+	ntpq -p -n
 	ntpdate -q 127.0.0.1
 
 less-restricted:
