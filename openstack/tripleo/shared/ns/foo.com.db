@@ -16,3 +16,12 @@ file          IN  CNAME  fs
 fileserver    IN  CNAME  fs
 mon           IN  A      192.168.25.213
 nagios        IN  CNAME  mon
+nagios        IN  CNAME  mon
+s001          IN  A      192.168.25.201
+deployer      IN  CNAME  s001
+s002          IN  A      192.168.25.202
+control       IN  CNAME  s002
+s003          IN  A      192.168.25.203
+compute       IN  CNAME  s003
+s004          IN  A      192.168.25.204
+storage       IN  CNAME  s004
