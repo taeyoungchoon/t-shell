@@ -1,4 +1,4 @@
-* DONE s001 will be director
+* DONE s001 will be deployer
 
 - [X] hostname : s001.foo.com
 - network : 
@@ -51,7 +51,7 @@
   - root / 1234qwer
   - jack / 1234qwer
 
-* DONE s004 will be compute
+* DONE s004 will be storage
 
 - F9(ROM-Based Setup Utitity)
   - System Options
@@ -71,7 +71,7 @@
   - root / 1234qwer
   - jack / 1234qwer
     
-* TODO t001 will be compute
+* DONE t001 will be time, ns
 
 - hostname : t001.foo.com
 - network : 
@@ -84,18 +84,26 @@
   - root / 1234qwer
   - jack / 1234qwer
     
-* TODO t002 will be compute
+* DONE t002 will be fs
 
 - hostname : t002.foo.com
 - network : 
   - enp3s0f0 : 192.168.25.212/24 .1 8.8.88
   - enp3s0f0 : 172.20.99.212/24
-- disk
-  - /boot : 1g
-  - / : all left behind, 278.36g
-- user
-  - root / 1234qwer
-  - jack / 1234qwer
+    
+* DONE t003 will be mon(nagios)
+
+- hostname : t003.foo.com
+- network : 
+  - enp3s0f0 : 192.168.25.213/24 .1 8.8.88
+  - enp3s0f0 : 172.20.99.213/24
+    
+* DONE t004 will be deployer, hmm
+
+- hostname : t004.foo.com
+- network : 
+  - enp3s0f0 : 192.168.25.214/24 .1 8.8.88
+  - enp3s0f0 : 172.20.99.214/24
     
 * TODO todo or to know
 
