@@ -1,0 +1,18 @@
+* can do or can't do
+* things to be done
+
+- [v] loop
+- [ ] string, parse
+- [ ] numbers
+- [ ] list
+- [ ] hash
+- [ ] test
+- [ ] if
+- [ ] case
+- [ ] select
+- [ ] coproc
+- [ ] eval
+- [ ] return vs exit
+- [ ] export
+  
+
