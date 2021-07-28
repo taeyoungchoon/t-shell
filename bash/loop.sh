@@ -30,6 +30,6 @@ trap "echo fine, thanks for using; exit" INT
 while true; do
     f_header;
     ${v_cmd};
-    sleep ${v_gap:-3};
     f_footer;
+    sleep ${v_gap:-3};
 done

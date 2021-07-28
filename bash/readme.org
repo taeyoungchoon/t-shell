@@ -1,18 +1,21 @@
-* can do or can't do
-* things to be done
+* TODO things to be done
 
 - [v] loop
-- [ ] string, parse
-- [ ] numbers
-- [ ] list
+- [X] string, parse
+- [X] numbers
+- [X] list
 - [ ] hash
-- [ ] test
+- [X] test
 - [ ] if
 - [ ] case
 - [ ] select
-- [ ] coproc
 - [ ] eval
 - [ ] return vs exit
 - [ ] export
+- [ ] subshell
+- [ ] coproc
+- [ ] read
+
+* TODO can do or can't do
   
 
