@@ -1,4 +1,4 @@
-all: hello
-
-hello:
-	echo hello
+all: df
+df:
+	df -Pk | \
+	grep dev
