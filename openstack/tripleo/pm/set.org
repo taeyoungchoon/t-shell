@@ -22,7 +22,7 @@
       - NIC 4 Boot Options : Disabled
 - hostname : s002.foo.com
 - network : 
-  - enp3s0f0 : 192.168.25.202/24 .1 8.8.88
+  - enp3s0f0 : 192.168.25.202/24 .1 8.8.8.8
   - enp3s0f0 : 172.20.99.202/24
 - disk
   - /boot : 1g
@@ -42,7 +42,7 @@
       - NIC 4 Boot Options : Disabled
 - hostname : s003.foo.com
 - network : 
-  - enp3s0f0 : 192.168.25.203/24 .1 8.8.88
+  - enp3s0f0 : 192.168.25.203/24 .1 8.8.8.8
   - enp3s0f0 : 172.20.99.203/24
 - disk
   - /boot : 1g
@@ -62,7 +62,7 @@
       - NIC 4 Boot Options : Disabled
 - hostname : s004.foo.com
 - network : 
-  - enp3s0f0 : 192.168.25.204/24 .1 8.8.88
+  - enp3s0f0 : 192.168.25.204/24 .1 8.8.8.8
   - enp3s0f0 : 172.20.99.204/24
 - disk
   - /boot : 1g
@@ -75,7 +75,7 @@
 
 - hostname : t001.foo.com
 - network : 
-  - enp3s0f0 : 192.168.25.211/24 .1 8.8.88
+  - enp3s0f0 : 192.168.25.211/24 .1 8.8.8.8
   - enp3s0f0 : 172.20.99.211/24
 - disk
   - /boot : 1g
@@ -88,22 +88,29 @@
 
 - hostname : t002.foo.com
 - network : 
-  - enp3s0f0 : 192.168.25.212/24 .1 8.8.88
+  - enp3s0f0 : 192.168.25.212/24 .1 8.8.8.8
   - enp3s0f0 : 172.20.99.212/24
     
 * DONE t003 will be mon(nagios)
 
 - hostname : t003.foo.com
 - network : 
-  - enp3s0f0 : 192.168.25.213/24 .1 8.8.88
+  - enp3s0f0 : 192.168.25.213/24 .1 8.8.8.8
   - enp3s0f0 : 172.20.99.213/24
     
 * DONE t004 will be deployer, hmm
 
 - hostname : t004.foo.com
 - network : 
-  - enp3s0f0 : 192.168.25.214/24 .1 8.8.88
+  - enp3s0f0 : 192.168.25.214/24 .1 8.8.8.8
   - enp3s0f0 : 172.20.99.214/24
+    
+* DONE t005 will be sdn related
+
+- hostname : t005.foo.com
+- network : 
+  - enp3s0f0 : 192.168.25.215/24 .1 8.8.8.8
+  - enp3s0f0 : 172.20.99.215/24
     
 * TODO todo or to know
 
@@ -136,6 +143,3 @@
 5. install
 
 * TODO vmware esxi server
-
-
-
