@@ -35,5 +35,6 @@ check: $(wildcard *~)
 clean: 
 ifeq ("$(FILE_EXISTS)","1")
 	$(RM) *~
-endif
+else
 	@echo nothing to clean
+endif
