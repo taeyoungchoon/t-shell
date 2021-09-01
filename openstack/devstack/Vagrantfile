@@ -1,0 +1,28 @@
+Vagrant.configure("2") do |config|
+
+  config.vm.provision "shell", path: "bootstrap.sh"
+  config.vm.synced_folder ".", "/vagrant", disabled: true
+
+  config.vm.define "prospero" do |prospero|
+    prospero.vm.hostname = "prospero"
+    prospero.vm.box = "bento/centos-7.7"
+    prospero.vm.box_version = "201912.14.0"
+    prospero.vm.network "private_network", ip: "10.0.99.100"
+    prospero.vm.provider "virtualbox" do |vm|
+      vm.memory = 4096
+      vm.cpus = 2
+    end  
+  end
+
+  config.vm.define "miranda" do |miranda|
+    miranda.vm.hostname = "miranda"
+    miranda.vm.box = "bento/centos-7.7"
+    miranda.vm.box_version = "201912.14.0"
+    miranda.vm.network "private_network", ip: "10.0.99.110"
+    miranda.vm.provider "virtualbox" do |vm|
+      vm.memory = 1024
+      vm.cpus = 1
+    end  
+  end
+
+end
