@@ -3,4 +3,3 @@ sh config.sh
 cp local.conf devstack/
 # cd devstack
 # ./stack.sh
-
