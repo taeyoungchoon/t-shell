@@ -6,4 +6,4 @@ chown -R stack.stack /opt/stack
 # one more thing before you go
 # yum install systemd-devel libibverbs -y
 # fine
-sudo su - stack
+# sudo su - stack
