@@ -1,9 +1,9 @@
 RM = rm
 
+all: m
+
 help:
 	@cat makefile | grep ^[a-z] | sed -e 's/://' -e 's/^/- /'
-
-all:
 
 m:
 	vagrant up
