@@ -1,0 +1,101 @@
+++extras.d/80-tempest.sh:source:3           is_service_enabled tempest
+++functions-common:is_service_enabled:1878  local xtrace
++++functions-common:is_service_enabled:1879  grep xtrace
++++functions-common:is_service_enabled:1879  set +o
+++functions-common:is_service_enabled:1879  xtrace='set -o xtrace'
+++functions-common:is_service_enabled:1880  set +o xtrace
+++functions-common:is_service_enabled:1908  return 1
++functions-common:run_phase:1696           [[ stack == \s\o\u\r\c\e ]]
++functions-common:run_phase:1699           [[ stack == \o\v\e\r\r\i\d\e\_\d\e\f\a\u\l\t\s ]]
++functions-common:run_phase:1702           run_plugins stack test-config
++functions-common:run_plugins:1661         local mode=stack
++functions-common:run_plugins:1662         local phase=test-config
++functions-common:run_plugins:1664         local plugins=
++functions-common:run_plugins:1665         local plugin
++./stack.sh:main:1452                      merge_config_group /opt/stack/as-stack/devstack/local.conf test-confi
+g
++inc/meta-config:merge_config_group:171    local localfile=/opt/stack/as-stack/devstack/local.conf
++inc/meta-config:merge_config_group:171    shift
++inc/meta-config:merge_config_group:172    local matchgroups=test-config
++inc/meta-config:merge_config_group:174    [[ -r /opt/stack/as-stack/devstack/local.conf ]]
++inc/meta-config:merge_config_group:176    local configfile group
++inc/meta-config:merge_config_group:177    for group in '$matchgroups'
+++inc/meta-config:merge_config_group:177    get_meta_section_files /opt/stack/as-stack/devstack/local.conf test-
+config
+++inc/meta-config:get_meta_section_files:63  local file=/opt/stack/as-stack/devstack/local.conf
+++inc/meta-config:get_meta_section_files:64  local matchgroup=test-config
+++inc/meta-config:get_meta_section_files:66  [[ -r /opt/stack/as-stack/devstack/local.conf ]]
+++inc/meta-config:get_meta_section_files:68  awk -v matchgroup=test-config '
+        /^\[\[.+\|.*\]\]/ {
+            gsub("[][]", "", $1);
+            split($1, a, "|");
+            if (a[1] == matchgroup)
+                print a[2]
+        }
+    ' /opt/stack/as-stack/devstack/local.conf
++./stack.sh:main:1457                      set +o xtrace
+
+=========================
+DevStack Component Timing
+ (times are in seconds)
+=========================
+run_process            1
+pip_install          251
+osc                   63
+wait_for_service       2
+yum_install          115
+git_timed             77
+dbsync                 6
+-------------------------
+Unaccounted time      98
+=========================
+Total runtime        613
+
+
+
+This is your host IP address: 10.0.99.100
+This is your host IPv6 address: ::1
+Keystone is serving at http://10.0.99.100/identity/
+The default users are: admin and demo
+The password: secret
+
+Services are running under systemd unit files.
+For more information see:
+https://docs.openstack.org/devstack/latest/systemd.html
+
+DevStack Version: queens
+Change: e80f0802e0324fb5b46f549366b947c87269b09e [stable-only] Use queens-eol for horizon 2021-08-17 20:11:47 +0
+200
+OS Version: CentOS 7.7.1908 Core
+
+2021-09-01 00:54:30.642 | stack.sh completed in 613 seconds.
+[stack@prospero devstack]$ curl http://10.0.99.100/identity/
+{"versions": {"values": [{"status": "stable", "updated": "2018-02-28T00:00:00Z", "media-types": [{"base": "appli
+cation/json", "type": "application/vnd.openstack.identity-v3+json"}], "id": "v3.10", "links": [{"href": "http://
+10.0.99.100/identity/v3/", "rel": "self"}]}]}}
+
+[stack@prospero devstack]$ curl http://10.0.99.100/identity/ | jq .
+{
+  "versions": {
+    "values": [
+      {
+        "status": "stable",
+        "updated": "2018-02-28T00:00:00Z",
+        "media-types": [
+          {
+            "base": "application/json",
+            "type": "application/vnd.openstack.identity-v3+json"
+          }
+        ],
+        "id": "v3.10",
+        "links": [
+          {
+            "href": "http://10.0.99.100/identity/v3/",
+            "rel": "self"
+          }
+        ]
+      }
+    ]
+  }
+}
+
