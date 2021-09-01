@@ -1,2 +1,2 @@
 all:
-	sh pre-for-debian.sh
+	sh pre-for-redhat.sh
