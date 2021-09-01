@@ -1,2 +1,2 @@
 all:
-	sh go-for-train.sh
+	sh go-for-queens.sh
