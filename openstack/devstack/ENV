@@ -1,0 +1,8 @@
+os: windows 10
+
+choco first
+choco install virtualbox vagrant
+choco install Cygwin?
+
+cygwin
+apt-cyg install make sshpass
