@@ -9,7 +9,7 @@ m:
 	vagrant up
 
 ssh:
-	sshpass -p vagrant ssh -l vagrant 10.0.99.100
+	echo 'sshpass -p vagrant ssh -l vagrant 10.0.99.100'
 
 clean:
 	vagrant destroy -f

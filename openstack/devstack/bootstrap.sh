@@ -6,7 +6,7 @@ sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd_
 systemctl reload sshd
 
 echo 'pkg: install essential packages'
-yum install -y git emacs-nox vim psmisc bash-completion strace procps-ng coreutils grep jq
+yum install -y git emacs-nox vim psmisc bash-completion strace procps-ng coreutils grep 
 
 echo 'man: rel'
 yum update -y pam
