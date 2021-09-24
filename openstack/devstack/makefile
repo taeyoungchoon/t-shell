@@ -9,7 +9,11 @@ m:
 	vagrant up
 
 ssh:
-	echo 'sshpass -p vagrant ssh -l vagrant 10.0.99.100'
+	@echo 'sshpass -p vagrant ssh -l vagrant 10.0.99.100'
+	@echo 'sudo su - stack'
+	@echo 'cd as-stack/devstack'
+	@echo 'vi local.conf'
+	@echo 'make unstack; make clean; make stack'
 
 clean:
 	vagrant destroy -f
