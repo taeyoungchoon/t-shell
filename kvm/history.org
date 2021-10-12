@@ -1,0 +1,43 @@
+* desktop with hyperv vs virtualbox
+
+- nmcli connection down "Wired connection 1"
+- nmcli connection up "Wired connection 1"
+
+* kvm with virsh and more
+
+- kvm
+- virt-manager
+- systemctl enable serial-getty@ttyS0.service
+- systemctl start serial-getty@ttyS0.service
+- dnf install bash-completion -y
+- hostnamectl set-hostname conn1
+- virsh list --all
+- virsh console zeus1
+- ip
+
+| name   |             ip | status |
+|--------+----------------+--------|
+| zeus1  | 192.168.99.100 | t      |
+| conn1  | 192.168.99.110 | t      |
+| logos1 | 192.168.99.120 |        |
+| repo1  | 192.168.99.130 |        |
+
+- nmcli connection modify ens3 ipv4.ipaddresses 192.168.99.100
+- nmcli connection modify ens3 ipv4.gateway 192.168.99.1
+- nmcli connection modify ens3 ipv4.method manual
+
+- sudo virsh list --name | sed '/^$/d' | sed 's/^/sudo virsh shutdown /'
+
+* ansible
+  
+- ansible-playbook test.yml -K 
+- ansible-playbook test.yml --extra-vars "ansible_sudo_pass=1113"
+- ansible-playbook test.yml -K -u jack
+  
+* ansible with hosts
+
+* ansible with role then that tree
+
+* ansible-console
+
+ansible-console -i hosts --become  -u root

@@ -1,0 +1,65 @@
+wget http://download.cirros-cloud.net/0.3.3/cirros-0.3.3-x86_64-disk.img
+yum -y install qemu-kvm
+cp cirros* /var/lib/libvirt
+cd /var/lib/libvirt
+cp cirros-0.3.3-x86_64-disk.img c2.img
+
+sudo virt-install --name=c2 --ram=256 --vcpus=1 --disk c2.img,format=qcow2 --import --nonetworks --nographics
+virsh --connect qemu:///system start c2
+virsh list
+virsh console 6
+
+* todo, the network
+
+https://hiseon.me/server/ubuntu-kvm-install/
+
+* virt viewer
+
+sudo virt-install --name=test-vm \
+--vcpus=1 \
+--memory=1024 \
+--cdrom=/data/utils/ubuntu-18.04.2-live-server-amd64.iso \
+--disk size=5
+
+* qemu-img?
+
+https://docs.huihoo.com/openstack/archive/image-guide/content/virt-install.html
+# qemu-img create -f qcow2 /data/centos-6.4.qcow2 10G
+# virt-install --virt-type kvm --name centos-6.4 --ram 1024 \
+--cdrom=/data/CentOS-6.4-x86_64-netinstall.iso \
+--disk path=/data/centos-6.4.qcow2,size=10,format=qcow2 \
+--network network=default\
+--graphics vnc,listen=0.0.0.0 --noautoconsole \
+--os-type=linux --os-variant=rhel6
+
+* lots of
+
+https://www.programmersought.com/article/27603732132/
+
+# virt-install \
+    --connect qemu:///system \
+    --virt-type kvm \
+    --name rhel6 \
+    --ram 1024 \
+    --vcpus 2 \
+    --network bridge=brnet0 \
+    --disk path=/VMs/images/rhel6.img,size=120,sparse \
+    --location ftp://172.16.0.1/rhel6/dvd \
+    --extra_args “ks=http://172.16.0.1/rhel6.cfg” \
+    --os-variant rhel6 \
+    --force 
+
+
+
+virsh dumpxml cirros > /etc/libvirt/qemu/cirros2.xml 
+
+# virsh create /etc/libvirt/qemu/cirros2.xml --console
+
+virsh iface-bridge eth0 br0 
+
+Check the directory of the network device and you can see that ifcfg-br0 is added automatically 
+# ls /etc/sysconfig/network-scripts/ 
+
+virt-manager
+
+
