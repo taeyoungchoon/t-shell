@@ -1,4 +1,4 @@
-dnf -y install libvirt
+dnf -y install libvirt virt-install
 systemctl --no-pager status libvirtd
 systemctl enable libvirtd
 systemctl start libvirtd
