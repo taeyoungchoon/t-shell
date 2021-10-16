@@ -7,10 +7,12 @@ virt-host-validate
 # dnf -y install epel-release
 dnf -y install libguestfs-tools
 osinfo-query os
+usermod -a -G kvm root
+usermod -a -G kvm vagrant
 virt-builder --note cirros0.4.0
-virt-builder fedora-27 --root-password password:123456
+virt-builder fedora-25 --root-password password:123456
 virt-install \
-   --name f27vm1 --ram 1024 \
-   --disk path=fedora-27.img,format=raw \
-   --os-variant fedora27 \
+   --name f25vm1 --ram 1024 \
+   --disk path=fedora-25.img,format=raw \
+   --os-variant fedora25 \
    --import
