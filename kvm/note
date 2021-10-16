@@ -1,3 +1,9 @@
+* 
+
+gg: virt-install cirros
+
+*
+
 https://ostechnix.com/how-to-enable-nested-virtualization-in-virtualbox/
 
 vboxmanage modifyvm "Ubuntu 20.04 Server" --nested-hw-virt on
