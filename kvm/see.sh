@@ -1,0 +1,1 @@
+virsh undefine c1

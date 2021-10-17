@@ -11,4 +11,6 @@ fi
 
 if test ! -d /root/t-shell; then
     cd /root; git clone https://github.com/taeyoungchoon/t-shell.git
+    cd /home/vagrant; git clone https://github.com/taeyoungchoon/t-shell.git
+    chown -R vagrant:vagrant t-shell
 fi
