@@ -8,6 +8,10 @@ statu:
 	vagrant status
 m:
 	vagrant up
+nested:
+	make halt
+	sh nested.sh
+	make m
 up:
 	vagrant up
 halt:
