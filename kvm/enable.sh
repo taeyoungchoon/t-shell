@@ -1,11 +1,9 @@
-dnf -y install libvirt virt-install
-systemctl --no-pager status libvirtd
-systemctl enable libvirtd
-systemctl start libvirtd
-virt-host-validate
+sudo dnf -y install libvirt virt-install libguestfs-tools
+# sudo dnf -y install epel-release
 
-# dnf -y install epel-release
-dnf -y install libguestfs-tools
-#osinfo-query os
-usermod -a -G kvm root
-#usermod -a -G kvm vagrant
+sudo systemctl --no-pager status libvirtd
+sudo systemctl enable libvirtd
+sudo systemctl start libvirtd
+sudo virt-host-validate
+
+# sudo usermod -a -G kvm vagrant
