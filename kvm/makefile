@@ -4,7 +4,7 @@ help:
 	@grep ^[a-z] makefile
 check:
 	vagrant status
-statu:
+status:
 	vagrant status
 m:
 	vagrant up
