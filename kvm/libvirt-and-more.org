@@ -1,0 +1,38 @@
+* virsh
+
+connect
+quit
+
+hostname
+iface-list
+net-list
+net-port-list
+nodedev-list
+pool-list
+vol-list
+vol-info
+
+list
+domhostname
+domid
+
+domstate
+domiflist
+domifaddr
+
+console
+start
+reboot
+shutdown
+destroy
+undefine
+
+domrename
+
+* virt-install
+
+--nographics
+
+* virt-manager
+
+View > Resize to VM

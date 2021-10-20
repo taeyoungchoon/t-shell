@@ -1,0 +1,8 @@
+https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/virtualization_deployment_and_administration_guide/sect-guest_virtual_machine_installation_overview-creating_guests_with_virt_install
+https://www.cyberciti.biz/faq/kvm-install-centos-redhat-using-kickstart-ks-cfg/
+http://www.allgoodbits.org/articles/view/56
+
+text
+
+halt
+reboot
