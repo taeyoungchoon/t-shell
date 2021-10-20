@@ -1,3 +1,9 @@
+* osinfo-query os
+
+- centos7.0
+- centos8
+- cirros0.4.0
+
 * virsh
 
 connect
@@ -29,10 +35,16 @@ undefine
 
 domrename
 
+** logs
+
+error: operation failed: Active console session exists for this domain
+
 * virt-install
 
 --nographics
+--noautoconsole
 
 * virt-manager
 
 View > Resize to VM
+Send Key > Ctrl+Alt+F3, journalctl -f
