@@ -12,9 +12,10 @@ import csv
 with open("input.tsv") as data:
         for tokens in csv.reader(data, dialect="excel-tab"):
                 interface_value, description_value, status_value, vlan_value = tokens
-                print(f'!')
-                print(f'interface {interface_value}')
-                print(f'description "{description_value}"')
-                print(f'switch access vlan {vlan_value}')
+                if status_value == 'up':
+                        print(f'!')
+                        print(f'interface {interface_value}')
+                        print(f'description "{description_value}"')
+                        print(f'switch access vlan {vlan_value}')
 
 print(f'!')
