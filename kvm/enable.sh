@@ -11,6 +11,6 @@ sudo virt-host-validate
 
 # sudo usermod -a -G kvm vagrant
 
-virsh pool-define-as --name default --type dir --target /var/lib/libvirt/images/
-virsh pool-autostart default
-virsh pool-start default
+sudo virsh pool-define-as --name default --type dir --target /var/lib/libvirt/images/
+sudo virsh pool-autostart default
+sudo virsh pool-start default
