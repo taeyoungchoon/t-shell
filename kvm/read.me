@@ -1,16 +1,24 @@
+# make vm on pm the underlay (virtualbox, vagrant)
 make status
 make m
 make nested
 make ssh
 
+# vm up2date to use as overlay platform
 sudo su -
 cd t-shell/kvm
 make post
 
-sh cirros-download.sh
-sh cirros.sh
-sh cirros-clean.sh
+# test centos vm
+cd cirros
+make download
+make check
+make install
+make clean
 
-sh centos8.sh-download.sh
-sh centos8.sh
-sh centos8-clean.sh
+# test centos8 vm
+cd centos8
+make download
+make check
+make install
+make clean
