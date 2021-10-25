@@ -1,11 +1,16 @@
 all: help
 
+read:
+	cat read.me
+
 help:
 	@grep ^[a-z] makefile
 check:
 	vagrant status
+	sh nested-status.sh
 status:
 	vagrant status
+	sh nested-status.sh
 m:
 	vagrant up
 nested:
