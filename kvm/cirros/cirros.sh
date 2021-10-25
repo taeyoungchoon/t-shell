@@ -3,8 +3,9 @@ virsh vol-list default
 
 virsh vol-create-as default ci0.qcow2 128M --format qcow2
 virsh vol-upload ci0.qcow2 cirros-0.4.0-x86_64-disk.qcow2 --pool default
-qemu-img info ci0.qcow2
 
+# later full bridge
+# https://linuxconfig.org/how-to-use-bridged-networking-with-libvirt-and-kvm
 ip a s dev virbr0
 cat /var/lib/libvirt/dnsmasq/default.conf
 
