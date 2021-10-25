@@ -1,0 +1,11 @@
+make m
+make nested
+make ssh
+sudo su -
+cd t-shell/kvm
+make post
+sh cirros.sh
+sh cirros-clean.sh
+sh centos8.sh-download.sh
+sh centos8.sh
+sh centos8-clean.sh

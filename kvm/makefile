@@ -18,5 +18,8 @@ halt:
 	vagrant halt
 ssh:
 	vagrant ssh meg
+
+post:
+	sh enable.sh
 clean:
 	vagrant destroy -f
