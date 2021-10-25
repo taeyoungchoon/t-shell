@@ -1,5 +1,7 @@
-all: download install
+all: help
 
+help:
+	grep ^[a-z] makefile
 download:
 	sh cirros-download.sh
 check:
