@@ -1,0 +1,23 @@
+#!/usr/bin/expect -f
+
+spawn virsh console ci0
+
+expect -exact "Escape character is"
+send -- "\r"
+
+expect -exact "cirros login: "
+send -- "cirros\r"
+
+expect -exact "Password: "
+send -- "gocubsgo\r"
+
+expect -exact "$ "
+send -- "ip a\r"
+
+expect -exact "$ "
+send -- "exit\r"
+
+expect -exact "login"
+send -- ""
+
+interact
