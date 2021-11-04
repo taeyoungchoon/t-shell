@@ -1,1 +1,1 @@
-apt install -y docker.io net-toolsoo
+apt install -y -q docker.io net-tools emacs-nox
