@@ -1,4 +1,3 @@
-docker stop ceos1
-docker stop ceos2
-docker network rm net1
-docker network rm net2
+docker container stop $(docker container ls -a -f "name=ceos[0-9]" -q)
+docker container rm   $(docker container ls -a -f "name=ceos[0-9]" -q)
+docker network   rm   $(docker network   ls    -f "name=net[0-9]"  -q)
