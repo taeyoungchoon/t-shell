@@ -5,7 +5,10 @@ help:
 check:
 	sh check.sh
 download:
-	echo arista.com
+	@echo 1. http://arista.com
+	@echo 2. Support > Software Download
+	@echo 3. EOS > Support Only Releases > 4.2.1 > EOS-4.21.0F > cEOS-lab
+	@echo 4. download cEOS-lab.tar.xz
 import:
 	sh import.sh
 start:
