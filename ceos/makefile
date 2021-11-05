@@ -4,6 +4,10 @@ help:
 	@grep ^[a-z] makefile
 check:
 	sh check.sh
+download:
+	echo arista.com
+import:
+	sh import.sh
 start:
 	sh start.sh
 conn1:
