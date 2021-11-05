@@ -1,0 +1,19 @@
+* pre
+
+- choco install docker-desktop
+
+* process
+
+1. http://arista.com
+2. Support > Software Download
+3. EOS > Support Only Releases > 4.2.1 > EOS-4.21.0F > cEOS-lab
+4. download cEOS-lab.tar.xz
+5. docker import cEOS-lab.tar.xz ceosimage:4.21.0F
+
+* and make
+
+1. make check
+2. make start
+3. make conn
+4. make stop
+5. make clean
