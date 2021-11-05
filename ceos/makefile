@@ -21,4 +21,3 @@ stop:
 	sh stop.sh
 clean:
 	sh clean.sh
-	rm *~
