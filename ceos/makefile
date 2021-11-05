@@ -3,7 +3,7 @@ all: help
 help:
 	@grep ^[a-z] makefile
 check:
-	sh check.sh
+	@sh check.sh
 download:
 	@echo 1. http://arista.com
 	@echo '2. Support > Software Download'
