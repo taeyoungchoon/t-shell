@@ -17,6 +17,8 @@ conn1:
 	docker exec -it ceos1 Cli
 conn2:
 	docker exec -it ceos2 Cli
+restart:
+	sh restart.sh
 stop:
 	sh stop.sh
 clean:
