@@ -1,0 +1,20 @@
+! Startup-config last modified at  Sat Nov  6 15:23:05 2021 by root
+! device: ceos2 (cEOSLab, EOS-4.21.0F)
+!
+transceiver qsfp default-mode 4x10G
+!
+hostname ceos2
+!
+spanning-tree mode mstp
+!
+no aaa root
+!
+interface Ethernet1
+   no switchport
+   ip address 10.0.0.2/24
+!
+interface Ethernet2
+!
+no ip routing
+!
+end

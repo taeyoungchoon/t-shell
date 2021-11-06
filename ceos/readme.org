@@ -1,6 +1,7 @@
 * pre
 
 - choco install docker-desktop
+- apt install docker.io make emacs-nox
 
 * process
 
@@ -17,3 +18,9 @@
 3. make conn
 4. make stop
 5. make clean
+
+* result
+
+- [v] ping works between on linux(mac (multipass ubuntu) docker) 
+- [v] ping works between on mac(mac docker)
+- [v] ping not works between on win(win docker)
