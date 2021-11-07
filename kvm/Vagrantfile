@@ -19,12 +19,12 @@ Vagrant.configure("2") do |config|
     meg.vm.network "private_network", ip: "172.20.99.101"
   end
 
-  # config.vm.define "jo" do |jo|
-  #   jo.vm.box = "bento/centos-8.4"
-  #   jo.vm.hostname = "jo"
-  #   jo.vm.network "private_network", ip: "172.20.99.200"
-  #   jo.vm.network "private_network", ip: "172.20.99.201"
-  # end
+  config.vm.define "jo" do |jo|
+    jo.vm.box = "bento/ubuntu-18.04"
+    jo.vm.hostname = "jo"
+    jo.vm.network "private_network", ip: "172.20.99.200"
+    jo.vm.network "private_network", ip: "172.20.99.201"
+  end
   
   # ---
   
