@@ -1,11 +1,13 @@
 all: help
 
 help:
-	@cat makefile | grep ^[a-z] | grep -v all | grep -v help | sed -e 's/://' -e 's/^/- /'
-check: check-pod log
+	@cat makefile | grep ^[a-z] | grep -v all | grep -v help | cut -d: -f1 | sed 's/^/- /' 
+check: pod log
 
-check-pod:
-	kubectl get pod jo
+pod:
+	kubectl get pod jo -o wide
+describe:
+	kubectl describe pod jo
 log:
 	kubectl logs jo 
 date:
@@ -14,16 +16,18 @@ bash:
 	kubectl exec -it jo -- bash
 start:
 	kubectl run jo --image nginx
+apply:
+	kubectl apply -f jo.yaml
 stop:
 	kubectl delete pod jo
 shot:
 	@make -s start
 	# ---
-	@make -s check-pod; sleep 1;
+	@make -s pod; sleep 1;
 	# ---
-	@make -s check-pod; sleep 3;
+	@make -s pod; sleep 3;
 	# ---
-	@make -s check-pod; 
+	@make -s pod; 
 	# ---
 	@make -s log; 
 	# ---
