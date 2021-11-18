@@ -1,11 +1,24 @@
-all:
+all: help
+
+help:
+	@grep ^[a-z] makefile-for-mac
 
 check:
 	brew list -1 --formula | grep -i minikube && minikube status
 install:
 	brew install kubernetes-cli minikube helm
+config:
+	minikube config set driver hyperkit
+	minikube config set cpus 2
+	minikube config set memory 2048
+	minikube config set container-runtime docker
 start:
-	minikube start
+	# minikube start
+	minikube start --network-plugin=cni --cni=flannel
+start-with-cni-flannel:
+	minikube start --network-plugin=cni --cni=flannel
+node:
+	minikube node add
 go:
 	minikube ip
 	kubectl cluster-info
