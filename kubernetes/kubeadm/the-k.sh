@@ -15,11 +15,11 @@ kubeadm init --pod-network-cidr=10.244.0.0/16
 
 export KUBECONFIG=/etc/kubernetes/admin.conf
 
-https://github.com/flannel-io/flannel#flannel
-
 kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
 
 kubectl taint nodes --all node-role.kubernetes.io/master-
 
+sleep 10
+kubectl get all
 kubectl run n1 --image nginx
 kubectl get all
