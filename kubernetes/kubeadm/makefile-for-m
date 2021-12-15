@@ -1,0 +1,10 @@
+help:
+	@cat makefile | grep ^[a-z]
+start:
+	vagrant up
+check:
+	vagrant status
+stop:
+	vagrant halt
+clean:
+	vagrant destroy -f
