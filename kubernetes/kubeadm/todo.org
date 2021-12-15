@@ -1,0 +1,5 @@
+* list
+
+- vm, 3 master and lots worker
+- test
+  - curl
