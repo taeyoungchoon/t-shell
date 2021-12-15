@@ -1,5 +1,5 @@
 swapoff -a
-apt install git psmisc -y
+apt install git make psmisc -y
 id
 cd /root
 git clone https://github.com/taeyoungchoon/t-shell.git
