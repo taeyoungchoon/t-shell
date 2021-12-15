@@ -1,3 +1,4 @@
+swapoff -a
 apt install git -y
 id
 cd /root
