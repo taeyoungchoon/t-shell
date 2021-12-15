@@ -4,7 +4,7 @@ help:
 m:
 	vagrant up
 check:
-	vagrant list
+	vagrant status
 stop:
 	vagrant halt
 clean:
