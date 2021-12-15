@@ -4,6 +4,8 @@ start:
 	vagrant up
 check:
 	vagrant status
+ssh:
+	vagrant ssh
 stop:
 	vagrant halt
 clean:
