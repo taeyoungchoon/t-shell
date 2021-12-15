@@ -6,3 +6,4 @@ cd ~/t-shell/kubernetes/kubeadm
 pwd
 sh os.sh
 sh pre-docker.sh
+sh the-k.sh
