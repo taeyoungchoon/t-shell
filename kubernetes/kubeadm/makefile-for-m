@@ -3,6 +3,7 @@ help:
 start:
 	vagrant up &>/dev/null
 check:
+	vagrant box list
 	vagrant status | grep \(
 ssh:
 	vagrant ssh
