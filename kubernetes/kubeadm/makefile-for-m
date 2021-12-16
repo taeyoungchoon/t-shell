@@ -8,6 +8,6 @@ check:
 ssh:
 	vagrant ssh
 stop:
-	vagrant halt &>/dev/null
+	vagrant halt 
 clean:
-	vagrant destroy -f &>/dev/null
+	vagrant destroy -f 

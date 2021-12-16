@@ -1,12 +1,12 @@
-sudo apt-get -qq update
-sudo apt-get -qq install -y apt-transport-https ca-certificates curl &>/dev/null
+sudo apt-get -q -y update
+sudo apt-get -q -y install -y apt-transport-https ca-certificates curl 
 
 sudo curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg
 
 echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
 
-sudo apt-get -qq update
-sudo apt-get -qq install -y kubelet kubeadm kubectl &>/dev/null
+sudo apt-get -q -y update
+sudo apt-get -q -y install kubelet kubeadm kubectl 
 sudo apt-mark hold kubelet kubeadm kubectl
 
 # kubeadm config images pull

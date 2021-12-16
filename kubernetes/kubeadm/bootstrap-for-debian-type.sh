@@ -1,6 +1,6 @@
 timedatectl set-timezone Asia/Seoul
 swapoff -a
-apt-get -qq install git make psmisc &>/dev/null
+apt-get -q -y install git make psmisc 
 # id
 cd /root
 git clone https://github.com/taeyoungchoon/t-shell.git
