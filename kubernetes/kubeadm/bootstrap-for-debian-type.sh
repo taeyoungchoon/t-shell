@@ -1,3 +1,4 @@
+timedatectl set-timezone Asia/Seoul
 swapoff -a
 apt-get -qq install git make psmisc &>/dev/null
 # id
