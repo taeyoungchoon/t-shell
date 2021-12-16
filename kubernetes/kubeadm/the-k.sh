@@ -9,7 +9,7 @@ sudo apt-get -q -y update
 sudo apt-get -q -y install kubelet kubeadm kubectl 
 sudo apt-mark hold kubelet kubeadm kubectl
 
-# kubeadm config images pull
+kubeadm config images pull
 kubeadm init --pod-network-cidr=10.244.0.0/16
 
 # mkdir -p $HOME/.kube
