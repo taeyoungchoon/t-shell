@@ -1,7 +1,7 @@
 help:
 	@cat makefile | grep ^[a-z]
 start:
-	vagrant up &>/dev/null
+	vagrant up
 check:
 	vagrant box list
 	vagrant status | grep \(
