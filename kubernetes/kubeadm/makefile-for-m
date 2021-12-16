@@ -1,12 +1,12 @@
 help:
 	@cat makefile | grep ^[a-z]
 start:
-	vagrant up
+	vagrant up &>/dev/null
 check:
-	vagrant status
+	vagrant status | grep \(
 ssh:
 	vagrant ssh
 stop:
-	vagrant halt
+	vagrant halt &>/dev/null
 clean:
-	vagrant destroy -f
+	vagrant destroy -f &>/dev/null

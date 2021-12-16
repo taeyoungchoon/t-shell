@@ -1,5 +1,5 @@
 swapoff -a
-apt-get -qq install git make psmisc
+apt-get -qq install git make psmisc &>/dev/null
 # id
 cd /root
 git clone https://github.com/taeyoungchoon/t-shell.git
@@ -11,6 +11,8 @@ make docker
 make the-k
 sleep 60
 make deploy
+make check
+sleep 60
 make check
 
 # sh os.sh
