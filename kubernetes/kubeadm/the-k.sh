@@ -19,9 +19,6 @@ kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documen
 
 kubectl taint nodes --all node-role.kubernetes.io/master-
 
-sleep 10
 kubectl get all -n kube-system
-kubectl run n1 --image nginx
-kubectl get all
 
 echo done
