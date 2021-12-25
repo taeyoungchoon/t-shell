@@ -16,6 +16,10 @@ make deploy
 make check
 sleep 60
 make check
+make dashboard
+sleep 3
+make check
+make bash
 
 # sh os.sh
 # sh docker.sh
