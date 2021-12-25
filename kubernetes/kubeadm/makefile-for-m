@@ -3,8 +3,11 @@ help:
 start:
 	vagrant up
 check:
-	vagrant box list
-	vagrant status | grep \(
+	@echo - box list
+	@vagrant box list --machine-readable | grep box-name | awk -F, '{ print $$4 }'
+
+	@echo - status
+	@vagrant status --machine-readable | grep state-human-short | awk -F, '{ print $$2, "is", $$4}'
 ssh:
 	vagrant ssh
 stop:
