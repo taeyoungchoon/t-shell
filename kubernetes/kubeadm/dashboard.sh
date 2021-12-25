@@ -9,10 +9,9 @@ kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.4.0/a
 #
 # http://192.168.56.100:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/#/login
 # kubectl edit service kubernetes-dashboard -n kubernetes-dashboard
-# KUBE_EDITOR="sed -i s/type: ClusterIP/type: NodePort/g" kubectl edit service kubernetes-dashboard -n kubernetes-dashboard
+# KUBE_EDITOR="sed -i 's/type: ClusterIP/type: NodePort/g'" kubectl edit service kubernetes-dashboard -n kubernetes-dashboard
 # NodePort
 # https://stackoverflow.com/questions/50227596/how-to-edit-a-kubernetes-resource-from-a-shell-script
-# KUBE_EDITOR="sed -i s/SOMETHING TO CHANGE/CHANGED/g" kubectl edit resource -n your-ns
 #
 # kubectl -n kubernetes-dashboard delete serviceaccount admin-user
 # kubectl -n kubernetes-dashboard delete clusterrolebinding admin-user
