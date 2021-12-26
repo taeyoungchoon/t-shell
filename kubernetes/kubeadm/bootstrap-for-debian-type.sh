@@ -19,6 +19,10 @@ make check
 make dashboard
 sleep 3
 make check
+<<<<<<< HEAD
+=======
+make bash
+>>>>>>> 05e7af40c289bea1aee8381a907b17d2c8a386c5
 
 # sh os.sh
 # sh docker.sh
