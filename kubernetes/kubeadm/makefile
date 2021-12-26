@@ -6,6 +6,8 @@ docker:
 	sh docker.sh
 the-k:
 	sh the-k.sh
+dashboard:
+	sh dashboard.sh
 test:
 	sh test.sh
 deploy:
