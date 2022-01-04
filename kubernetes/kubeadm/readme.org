@@ -1,4 +1,5 @@
 * steps
 
-- sh go.sh
-- sh back.sh
+1. sh go.sh
+2. sh back.sh
+
