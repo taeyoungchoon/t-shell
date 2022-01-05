@@ -1,5 +1,5 @@
 help:
-	@cat makefile | grep ^[a-z]
+	@cat makefile-for-m | grep ^[a-z]
 start:
 	vagrant up
 check:
