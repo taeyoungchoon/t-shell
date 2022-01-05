@@ -1,5 +1,5 @@
 help:
-	@cat makefile-for-m | grep ^[a-z]
+	@cat makefile-for-m | grep ^[a-z] | grep -v help | sed -e 's/://' -e 's/^/- /'
 start:
 	vagrant up
 check:

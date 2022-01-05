@@ -7,7 +7,7 @@ cd /root
 git clone https://github.com/taeyoungchoon/t-shell.git
 cd ~/t-shell/kubernetes/kubeadm
 
-# --0
+# ---
 make os
 make docker
 make the-k
