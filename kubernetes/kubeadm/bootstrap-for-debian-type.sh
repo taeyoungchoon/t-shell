@@ -1,6 +1,6 @@
 timedatectl set-timezone Asia/Seoul
 swapoff -a
-apt-get -q -y install git make psmisc 
+apt-get -q -y install git make psmisc emacs-nox
 apt-get -q -y install ethtool socat iptables ebtables conntrack
 # id
 cd /root
