@@ -1,0 +1,13 @@
+* TODO [2022-01-21 Fri] bash go.sh fail with No rule to make target
+
+$ bash go.sh
+'.  Stop. No rule to make target 'check
+'.  Stop. No rule to make target 'start
+'.  Stop. No rule to make target 'check
+
+jack@DESKTOP-73HP56K ~/tmp/t-shell/kubernetes/kubeadm
+$ cat go.sh
+make -f makefile-for-m check
+make -f makefile-for-m start
+make -f makefile-for-m check
+
