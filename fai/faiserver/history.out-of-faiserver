@@ -1,0 +1,500 @@
+   63  ls
+   64  cd disk_config/
+   65  ls -al
+   66  cat LVM
+   67  ls
+   68  cd ..
+   69  ls
+   70  ls -al
+   71  cd files/
+   72  ls
+   73  cat etc
+   74  cd etc
+   75  ls
+   76  ls -a
+   77  ls -al
+   78  cd motd/
+   79  ls
+   80  vi FAIBASE 
+   81  cat FAIBASE 
+   82  cat /etc/exports 
+   83  ls
+   84  cd ..
+   85  ls
+   86  cat selinux/
+   87  cd selinux/
+   88  ls
+   89  ls -a
+   90  cat config/
+   91  cd config/
+   92  ls
+   93  cat CENTOS 
+   94  cd ..
+   95  cd ..
+   96  ls
+   97  cd motd/
+   98  ls
+   99  cat FAIBASE 
+  100  cd ..
+  101  ls
+  102  ls
+  103  cd rc.local/
+  104  ls
+  105  cat CLOUD 
+  106  cat FAISERVER 
+  107  cd ..
+  108  ls
+  109  cd default/
+  110  ls
+  111  fai-chboot --help
+  112  man fai-chroot
+  113  man
+  114  apt install man
+  115  cd ..
+  116  cd ..
+  117  ls
+  118  ls
+  119  cd ..
+  120  ls
+  121  ls -apl
+  122  grep FAI_FLAGS *
+  123  clear
+  124  grep -r FAI_FLAGS *
+  125  cd ..
+  126  cd tft
+  127  ls
+  128  cd ..
+  129  cd tftp/
+  130  ls
+  131  cd fai/
+  132  grep -r FAI_FLAGS *
+  133  grep -r FAI_FLAGS * | cat -n 
+  134  clear
+  135  clear
+  136  grep -r FAI_FLAGS * | cat -n 
+  137  ls -tlr
+  138  cd pxelinux.cfg/
+  139  grep -r FAI_FLAGS * | cat -n 
+  140  clear
+  141  grep -r FAI_FLAGS * | cat -n 
+  142  cat bullseye.tmpl 
+  143  clear
+  144  cat bullseye.tmpl 
+  145  cat *.tmpl
+  146  cat *.disable
+  147  diff bullseye.tmpl *.disable
+  148  clear
+  149  diff bullseye.tmpl *.disable
+  150  vi *.disable
+  151  cat *.disable
+  152  ls
+  153  ls
+  154  mv C0A82164.disable C0A82164
+  155  man man
+  156  man fai-chboot
+  157  clear
+  158  ps -ef
+  159  uptime
+  160  ps -ef
+  161  history 
+  162  history  | less
+  163  pwd
+  164  cd ..
+  165  cd ..
+  166  cd ..
+  167  ls
+  168  cd fai/
+  169  ls
+  170  cd config/
+  171  ls
+  172  ls
+  173  clear
+  174  grep emacs *
+  175  grep -r emacs *
+  176  ls
+  177  cd fail
+  178  ls
+  179  cd files/
+  180  ls
+  181  cd etc
+  182  ls
+  183  cd motd/
+  184  ls
+  185  pwd
+  186  tcpdump -qtel broadcast and port bootpc
+  187  vi /etc/dhcp/dhcpd.conf 
+  188  vi /etc/dhcp/dhcpd.conf 
+  189  invoke-rc.d isc-dhcp-server restart
+  190  history  | grep dhcp
+  191  dhcp-edit morehost 52:54:00:a4:db:47
+  192  vi /etc/dhcp/dhcpd.conf 
+  193  ls
+  194  ls
+  195  ls
+  196  cd -
+  197  cd ..
+  198  cd ..
+  199  cd ..
+  200  ls
+  201  cd ..
+  202  ls
+  203  cd tftp/
+  204  ls
+  205  cd fai/
+  206  ls
+  207  ls -tlr
+  208  cd pxelinux.cfg/
+  209  ls
+  210  ls -tlr
+  211  rm -rf C*
+  212  ls
+  213  clear
+  214  ls
+  215  ls -tlr
+  216  rm C*
+  217  clear
+  218  cat default 
+  219  cat bullseye.tmpl 
+  220  vi bullseye.tmpl 
+  221  grep reboot *
+  222  ls
+  223  vi C0A82164 
+  224  cd /srv/fai/
+  225  ls
+  226  cd ..
+  227  cd tftp/
+  228  ls
+  229  cd fai/
+  230  ls
+  231  cd pxelinux.
+  232  cd pxelinux.cfg/
+  233  ls
+  234  ls -tlr
+  235  mv C0A82164.disable C0A82164
+  236  mv C0A82165.disable C0A82165
+  237  vi C*
+  238  poweroff
+  239  cd /etc
+  240  cd /srv/
+  241  ls
+  242  cd fai/
+  243  ls
+  244  cd config/
+  245  ls
+  246  cd ../../tftp/
+  247  ls
+  248  cd fai/
+  249  ls
+  250  cd pxelinux.e
+  251  cd pxelinux.cfg/
+  252  ls
+  253  ls -al
+  254  ls *.disable
+  255  for f (*.disable)
+  256  for f *.disable; echo $f; done
+  257  for f {*.disable}; echo $f; done
+  258  for f `ls *.disable`; echo $f; done
+  259  for f $(ls *.disable); echo $f; done
+  260  for f in $(ls *.disable); echo $f; done
+  261  for f in $(ls *.disable); echo $f; done
+  262  for f in $(ls *.disable); do echo $f; done
+  263  for f in $(ls *.disable); do echo $f; done
+  264  for f in $(ls *.disable); do echo $f | cut -d. -f 1; done
+  265  for f in $(ls *.disable); do echo $f | cut -d. -f 1; done
+  266  for f in $(ls *.disable); do n=$(echo $f | cut -d. -f 1); done
+  267  for f in $(ls *.disable); do n=$(echo $f | cut -d. -f 1); echo $n; done
+  268  for f in $(ls *.disable); do n=$(echo $f | cut -d. -f 1); echo $f $n; done
+  269  for f in $(ls *.disable); do n=$(echo $f | cut -d. -f 1); echo mv $f $n; done
+  270  ls
+  271  for f in $(ls *.disable); do n=$(echo $f | cut -d. -f 1); mv $f $n; done
+  272  ls
+  273  for f in $(ls *.disable); do n=$(echo $f | cut -d. -f 1); mv $f $n; done
+  274  uptime
+  275  ps -ef
+  276  poweroff
+  277  cd /srv/tftp/fai/pxelinux.cfg/
+  278  for f in $(ls *.disable); do n=$(echo $f | cut -d. -f 1); mv $f $n; done
+  279  ls
+  280  ls
+  281  journalctl  -f
+  282  ls
+  283  ls -tlr
+  284  ls
+  285  ls
+  286  clear
+  287  ls -tlr
+  288  poweroff
+  289  history  | grep for
+  290  cd /srv/tftp/fai/pxelinux.cfg/
+  291  for f in $(ls *.disable); do n=$(echo $f | cut -d. -f 1); mv $f $n; done
+  292  ls
+  293  journalctl  -f
+  294  ls
+  295  cd /srv/
+  296  ls
+  297  cd fai/
+  298  ls
+  299  cd config/
+  300  ls
+  301  ls -tlr
+  302  cd ..
+  303  ls
+  304  cd nfsroot/
+  305  ls
+  306  cd /var/log
+  307  ls
+  308  ls -t,r
+  309  cd fai
+  310  ls
+  311  ls -tlr
+  312  tail -f *
+  313  cd remote-logs/
+  314  ls
+  315  ls -al
+  316  cd demohost/
+  317  ls -tlr
+  318  ls -tlr
+  319  tail -f last-install
+  320  cd last-install
+  321  ls -tlr
+  322  tail -f *
+  323  ls -tlr
+  324  tail -f dmesg.log 
+  325  ls -tlr
+  326  tail fai
+  327  tail fai.log 
+  328  arp
+  329  arp -a 
+  330  apt install arp
+  331  apt search arp
+  332  apt search arp | less
+  333  ip 
+  334  ip link
+  335  ip a
+  336  ps -ef
+  337  cd /srv/
+  338  ls
+  339  cd fai/
+  340  ls
+  341  cd config/
+  342  ls
+  343  cd package_config/
+  344  ls
+  345  cd ..
+  346  ls
+  347  find .  -name DEMO
+  348  clear
+  349  find .  -name DEMO
+  350  cd scripts/
+  351  vi DE
+  352  ls
+  353  vi DEMO/
+  354  cd DEMO/
+  355  ls
+  356  ls -tlr
+  357  cat 10-misc 
+  358  clear
+  359  cat 10-misc 
+  360  dpkg -l | grep fai
+  361  dpkg -l fai-server
+  362  dpkg -L fai-server
+  363       ps -ef
+  364  reboot
+  365  cd /srv/
+  366  ls
+  367  cdc tftp/
+  368  ls
+  369  cd tftp/
+  370  ls
+  371  cd fai/
+  372  ls
+  373  cd pxelinux.cfg/
+  374  for f in $(ls *.disable); do n=$(echo $f | cut -d. -f 1); mv $f $n; done
+  375  ls
+  376  cd /srv/
+  377  ls
+  378  cd fai/
+  379  ls
+  380  cd config/
+  381  ls
+  382  ls -al
+  383  grep -r ssh *
+  384  clear
+  385  grep -r ssh *\
+  386  grep -r ssh *
+  387  cd scripts/
+  388  ls
+  389  ls -al
+  390  cd DE
+  391  cd DEMO
+  392  ls
+  393  ls -al
+  394  cat 10-misc 
+  395  cd ../C
+  396  cd ..
+  397  ls
+  398  cd ..
+  399  ls
+  400  cd files/
+  401  ls
+  402  cd etc
+  403  ls
+  404  ls -al
+  405  cat selinux/
+  406  cd selinux/
+  407  ls
+  408  cat config/
+  409  cd config/
+  410  ls
+  411  cat CENTOS 
+  412  cd ..
+  413  cd ..
+  414  ls
+  415  ls
+  416  ls -al
+  417  mc
+  418  apt install mc
+  419  emacs
+  420  apt install emacs-nox
+  421  mc
+  422  ps -ef
+  423  emacs
+  424  ps -ef
+  425  cd ..
+  426  cd /var/log
+  427  ls
+  428  cd fai
+  429  ls -tlr
+  430  cd remote-logs/
+  431  ls -tlr
+  432  cd demohost/
+  433  ls
+  434  cd last-install
+  435  ls
+  436  ls -tlr
+  437  tail -f *
+  438  cd ..
+  439  ls -tlr
+  440  cd install-20220122_092619/
+  441  ls -tlr
+  442  tail -f *
+  443  ls -tlr
+  444  date
+  445  cd ..
+  446  cd ..
+  447  cd -
+  448  ls
+  449  ls -tlr
+  450  ls -tlr
+  451  ls -tlr
+  452  ls -tlr
+  453  journalctl  -f
+  454  ls -tlr
+  455  cd last
+  456  ls
+  457  ls -tlr
+  458  grep DEMO *
+  459  clear
+  460  grep DEMO *
+  461  vi FAI_CLASSES 
+  462  vi shell.log 
+  463  cat shell.log  | grep shell
+  464  clear
+  465  cat shell.log  | grep shell
+  466  vi FAI_CLASSES 
+  467  cat FAI_CLASSES 
+  468  grep DEMO *
+  469  vi fai.log 
+  470  ls
+  471  grep DEMO *
+  472  vi variables.log 
+  473  ls
+  474  emacs
+  475  cd ..
+  476  ls
+  477  cd ..
+  478  ls
+  479  cd ..
+  480  ls
+  481  cd ..
+  482  cd /srv/
+  483  ls
+  484  cd fai/
+  485  ls
+  486  ls -al
+  487  cd config/
+  488  ls
+  489  ls -a
+  490  cd ..
+  491  ls
+  492  cd nfsroot/
+  493  ls
+  494  ls -al
+  495  cd ..
+  496  ls
+  497  cd config/
+  498  ls
+  499  ls -a
+  500  emacs
+  501  ps -ef
+  502  lks
+  503  ls -al
+  504  ls
+  505  ls -al
+  506  history 
+  507  ls
+  508  ls
+  509  ls -ap
+  510  su - fai
+  511  ls
+  512  uname -a
+  513  ps -ef
+  514  ls
+  515  history 
+  516  cd /srv/
+  517  ls
+  518  cd fai/
+  519  continue 
+  520  ls
+  521  cd config/
+  522  ls
+  523  cd ../nfsroot/
+  524  ls
+  525  cd ..
+  526  ls
+  527  cd config/
+  528  ls
+  529  cd
+  530  ls
+  531  cd /
+  532  ls -tlr
+  533  history  | grep cd
+  534  history  | grep cd | less
+  535  whereis pxelinux.cfg
+  536  whereis tftp
+  537  locatedb
+  538  locate
+  539  apt
+  540  apt search locate
+  541  apt-cache search locatedb
+  542  apt-cache search locate
+  543  apt-cache search locate | grep locate
+  544  apt install locate
+  545  apt-cache search locate | grep slocate
+  546  locate
+  547  dpkg -l locate
+  548  dpkg -L locate
+  549  /etc/cron.daily/locate 
+  550  whereis pxelinux.cfg
+  551  locate pxelinux.cfg
+  552  cd /srv/tftp/fai/pxelinux.
+  553  cd /srv/tftp/fai/pxelinux.cfg/
+  554  ls
+  555  ls -ltr
+  556  ls -al
+  557  ls -al
+  558  history  | grep sed
+  559  history t
+  560  history 
+  561  history  | grep sh
+  562  history > ~/history.out
