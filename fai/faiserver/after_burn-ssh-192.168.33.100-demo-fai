@@ -1,0 +1,25 @@
+root@faiserver:~/t-shell/fai/faiserver# ssh demo@192.168.33.100
+demo@192.168.33.100's password: 
+Linux demohost 5.10.0-11-amd64 #1 SMP Debian 5.10.92-1 (2022-01-18) x86_64
+
+
+Plan your installation, and FAI installs your plan. ^^
+
+demo@demohost:~$ exit
+logout
+Connection to 192.168.33.100 closed.
+root@faiserver:~/t-shell/fai/faiserver# 
+
+-----------
+
+root@faiserver:~/t-shell/fai/faiserver# sshpass -p fai ssh demo@192.168.33.100
+Linux demohost 5.10.0-11-amd64 #1 SMP Debian 5.10.92-1 (2022-01-18) x86_64
+
+
+Plan your installation, and FAI installs your plan. ^^
+
+Last login: Wed Feb 16 01:34:15 2022 from 192.168.33.250
+demo@demohost:~$ 
+
+
+

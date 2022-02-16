@@ -1,0 +1,24 @@
+root@faiserver:~/t-shell/fai/faiserver# invoke-rc.d isc-dhcp-server status
+● isc-dhcp-server.service - LSB: DHCP server
+     Loaded: loaded (/etc/init.d/isc-dhcp-server; generated)
+     Active: active (running) since Wed 2022-02-16 01:00:47 CET; 31min ago
+       Docs: man:systemd-sysv-generator(8)
+    Process: 626 ExecStart=/etc/init.d/isc-dhcp-server start (code=exited, status=0/SUCCESS)
+      Tasks: 4 (limit: 1150)
+     Memory: 7.4M
+        CPU: 110ms
+     CGroup: /system.slice/isc-dhcp-server.service
+             └─668 /usr/sbin/dhcpd -4 -q -cf /etc/dhcp/dhcpd.conf enp1s0
+
+Feb 16 01:30:35 faiserver dhcpd[668]: from the dynamic address pool for 192.168.33.0/24
+Feb 16 01:30:35 faiserver dhcpd[668]: DHCPREQUEST for 192.168.33.100 (192.168.33.250) from 52:54:00:af:eb:f8 via enp1s0
+Feb 16 01:30:35 faiserver dhcpd[668]: DHCPACK on 192.168.33.100 to 52:54:00:af:eb:f8 via enp1s0
+Feb 16 01:30:57 faiserver dhcpd[668]: DHCPDISCOVER from 52:54:00:af:eb:f8 via enp1s0
+Feb 16 01:30:57 faiserver dhcpd[668]: DHCPOFFER on 192.168.33.100 to 52:54:00:af:eb:f8 via enp1s0
+Feb 16 01:30:57 faiserver dhcpd[668]: Dynamic and static leases present for 192.168.33.100.
+Feb 16 01:30:57 faiserver dhcpd[668]: Remove host declaration demohost or remove 192.168.33.100
+Feb 16 01:30:57 faiserver dhcpd[668]: from the dynamic address pool for 192.168.33.0/24
+Feb 16 01:30:57 faiserver dhcpd[668]: DHCPREQUEST for 192.168.33.100 (192.168.33.250) from 52:54:00:af:eb:f8 via enp1s0
+Feb 16 01:30:57 faiserver dhcpd[668]: DHCPACK on 192.168.33.100 to 52:54:00:af:eb:f8 via enp1s0
+root@faiserver:~/t-shell/fai/faiserver# 
+

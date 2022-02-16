@@ -1,0 +1,8 @@
+git config --global credential.helper cache
+git push
+Username for 'https://github.com': taeyoungchoon@gmail.com
+Password for 'https://taeyoungchoon@gmail.com@github.com':
+
+git config --global credential.helper store
+
+but password came from else where
