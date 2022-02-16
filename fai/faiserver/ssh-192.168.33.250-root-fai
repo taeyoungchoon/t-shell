@@ -1,0 +1,9 @@
+root@jack:~/t-shell/fai/faiserver# ssh root@192.168.33.250
+root@192.168.33.250's password: 
+Linux faiserver 5.10.0-10-amd64 #1 SMP Debian 5.10.84-1 (2021-12-08) x86_64
+
+
+Plan your installation, and FAI installs your plan.
+
+Last login: Wed Feb 16 01:21:10 2022 from 192.168.33.1
+root@faiserver:~# 
