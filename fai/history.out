@@ -1,9 +1,11 @@
     1  visudo 
+    
     2  usermod -aG sudo jack
     3  sync
     4  reboot
     5  vi /etc/apt/sources.list
     6  apt update
+    
     7  apt-get install qemu-system-gui qemu-kvm qemu-utils bridge-utils
     8  ps -ef
     9  history 
@@ -28,6 +30,7 @@
    28  reboot
    29  passwd
    30  apt-cache search virt-manager
+   
    31  apt install virt-manager 
    32  ls
    33  ls
@@ -55,6 +58,7 @@
    55  uptime
    56  ps -ef
    57  ls
+   
    58  cp faicd64-small_5.10.3.iso /home/jack/Downloads/
    59  cd /home/jack/Downloads/
    60  ls
@@ -86,6 +90,7 @@
    86  system-config-printer
    87  ps -ef
    88  w
+   
    89  virsh list
    90  virsh dumpxml 1
    91  virsh dumpxml 1 | grep 192
