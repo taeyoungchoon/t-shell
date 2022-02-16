@@ -121,12 +121,16 @@
   183  cd motd/
   184  ls
   185  pwd
+  
   186  tcpdump -qtel broadcast and port bootpc
   187  vi /etc/dhcp/dhcpd.conf 
   188  vi /etc/dhcp/dhcpd.conf 
+  
   189  invoke-rc.d isc-dhcp-server restart
   190  history  | grep dhcp
+  
   191  dhcp-edit morehost 52:54:00:a4:db:47
+  
   192  vi /etc/dhcp/dhcpd.conf 
   193  ls
   194  ls
@@ -212,6 +216,7 @@
   274  uptime
   275  ps -ef
   276  poweroff
+  
   277  cd /srv/tftp/fai/pxelinux.cfg/
   278  for f in $(ls *.disable); do n=$(echo $f | cut -d. -f 1); mv $f $n; done
   279  ls
@@ -484,6 +489,7 @@
   546  locate
   547  dpkg -l locate
   548  dpkg -L locate
+  
   549  /etc/cron.daily/locate 
   550  whereis pxelinux.cfg
   551  locate pxelinux.cfg
