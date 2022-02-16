@@ -1,0 +1,232 @@
+    1  ip a
+    2  ping 8.8.8.8
+    3  ip a
+    4  df -h
+    5  sudo 
+    6  sudo date
+    7  su -
+    8  sudo apt-get install fonts-nanum
+    9  출처: https://ms-dev.tistory.com/62 [여다이따]
+   10  sudo su -
+   11  reboot
+   12  sudo reboot
+   13  dpkg -l | grep nanum
+   14  apt search nanum | grep font
+   15  sudo apt install fonts-nanum-coding
+   16  sudo apt install ibus-hangul
+   17  sudo reboot
+   18  apt search fai
+   19  apt search fai | grep kvm
+   20  apt-cache search fai | cat -n | less
+   21  apt-cache search fai | grep fai
+   22  sudo su -
+   23  ls -apl
+   24  uptime
+   25  ls
+   26  cd Do
+   27  ls
+   28  cd Downloads/
+   29  ls
+   30  ls -al
+   31  pstree
+   32  ip a
+   33  sudo -i
+   34  cd
+   35  ls
+   36  sudo su -i
+   37  ls
+   38  sudo -i
+   39  ip a
+   40  history 
+   41  ls
+   42  exit
+   43  sudo su -
+   44  systemctl -a
+   45  systemctl -a | grep -i fai
+   46  systemctl status isc-dhcp-server
+   47  systemctl start isc-dhcp-server
+   48  journalctl -xe
+   49  sudo poweroff
+   50  ls
+   51  cd Downloads/
+   52  ls
+   53  ls -al
+   54  ls
+   55  sudo su -
+   56  sudo -i
+   57  tmux
+   58  ip a
+   59  ls
+   60  cd Downloads/
+   61  ls
+   62  cp faicd64-small_5.10.3.iso /tmp/f.iso
+   63  exit
+   64  ls
+   65  cd /tmp
+   66  ls
+   67  exit
+   68  hostname
+   69  ps -ef
+   70  cd
+   71  ls
+   72  cat /etc/debian_version 
+   73  cat /etc/os-release 
+   74  virt-manager n
+   75  virt-manager 
+   76  ip a
+   77  ls
+   78  history 
+   79  ip a
+   80  cd Downloads/
+   81  ping 192.168.33.196
+   82  ssh demo@192.168.33.196
+   83  ip a
+   84  cd
+   85  virt-manager 
+   86  cd Downloads/
+   87  ls
+   88  ls -al
+   89  virt-manager 
+   90  top
+   91  ps -ef
+   92  clear
+   93  ps -ef
+   94  clear
+   95  ps -ef
+   96  ip a
+   97  virt-manager 
+   98  ssh root@192.168.33.250
+   99  virt-manager n
+  100  virt-manager 
+  101  reboot
+  102  sudo reboot
+  103  virt-manager 
+  104  ssh root@192.168.33.250
+  105  virt-manager 
+  106  ssh root@192.168.33.250
+  107  virt-manager 
+  108  ssh root@192.168.33.250
+  109  b c-q
+  110  bc -q
+  111  bc -q
+  112  sudo apt install bc 
+  113  bc 3 + 3
+  114  dc
+  115  sudo apt install dc octave
+  116  dc 3 + 3
+  117  dc
+  118  man dc
+  119  3
+  120  dc
+  121  octave 3 + 3
+  122  octave
+  123  man octave
+  124  ps -ef
+  125  clear
+  126  ps -ef
+  127  exit
+  128  bc -q
+  129  sudo reboot
+  130  sudo aptitude update
+  131  sudo su -
+  132  system-config-printer
+  133  sudo reboot
+  134  virt-manager 
+  135  virsh list
+  136  virsh list --list
+  137  virsh list --help
+  138  virsh list --help | more
+  139  virsh list --all
+  140  virsh list --inactive
+  141  sudo virsh list
+  142  sudo virsh list --inactive
+  143  virsh list --inactive
+  144  sudo virsh list --inactive
+  145  sudo virsh start fai0
+  146  sudo virsh console fai0
+  147  ssh root@192.168.33.250
+  148  sudo virsh list --inactive
+  149  sudo virsh start fai1
+  150  sudo virsh start fai2
+  151  sudo virsh console fai1
+  152  arp
+  153  ping 192.168.33.250
+  154  ping 192.168.33.100
+  155  ping 192.168.33.101
+  156  ping 192.168.33.102
+  157  ssh root@192.168.33.100
+  158  ping 192.168.33.250
+  159  history | grep ssh
+  160  ssh root@192.168.33.250
+  161  ps -ef
+  162  ping 8.8.8.8
+  163  ps -ef
+  164  cd 
+  165  ls
+  166  cd t-sh
+  167  ps -ef
+  168  git
+  169  sudo apt install git -y
+  170  tmux
+  171  ps -ef
+  172  clear
+  173  history 
+  174  git
+  175  git clone https://github.com/taeyoungchoon/t-shell.git
+  176  cd t-shell/
+  177  ls
+  178  git pull
+  179  git config pull.rebase false
+  180  git pull
+  181  git
+  182  ls
+  183  git push
+  184  ls
+  185  cat github-clone.sh 
+  186  git config --global user.email taeyoungchoon@gmail.com
+  187  git config --global user.name taeyoungchoon
+  188  git pull
+  189  git push
+  190  ps -ef
+  191  cd
+  192  ls
+  193  exit
+  194  ping 8.8.8.8
+  195  ps -ef
+  196  ip a
+  197  clearp
+  198  s -ef
+  199  ps -ef
+  200  clear
+  201  ps -ef
+  202  uptime
+  203  ps -ef
+  204  clear
+  205  tmux
+  206  screen
+  207  cat /etc/debian_version 
+  208  ps -ef
+  209  sudo -i
+  210  passwd
+  211  ping 8.8.8.8
+  212  ip a
+  213  ps -ef
+  214  uptime
+  215  ps -ef
+  216  nmap
+  217  ps -ef
+  218  startx
+  219  sudo poweroff
+  220  ip a
+  221  ip -4 a
+  222  ifconfig
+  223  ipficonfig
+  224  pifconfig
+  225  sudo su -
+  226  sudo -i
+  227  su -
+  228  exit
+  229  hisotry
+  230  history
+  231  ls
+  232  history > history.out

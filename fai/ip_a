@@ -1,0 +1,28 @@
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: enx88366cfc1b7c: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
+    link/ether 88:36:6c:fc:1b:7c brd ff:ff:ff:ff:ff:ff
+    inet 192.168.25.101/24 brd 192.168.25.255 scope global dynamic noprefixroute enx88366cfc1b7c
+       valid_lft 532sec preferred_lft 532sec
+3: wlp0s20f3: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default qlen 1000
+    link/ether 38:00:25:88:9c:df brd ff:ff:ff:ff:ff:ff
+    inet 192.168.123.101/24 brd 192.168.123.255 scope global dynamic noprefixroute wlp0s20f3
+       valid_lft 84843sec preferred_lft 84843sec
+    inet6 fe80::2ad6:ff90:9118:637d/64 scope link noprefixroute 
+       valid_lft forever preferred_lft forever
+4: virbr1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default qlen 1000
+    link/ether 52:54:00:62:82:25 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.33.1/24 brd 192.168.33.255 scope global virbr1
+       valid_lft forever preferred_lft forever
+5: vnet0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue master virbr1 state UNKNOWN group default qlen 1000
+    link/ether fe:54:00:77:36:2a brd ff:ff:ff:ff:ff:ff
+    inet6 fe80::fc54:ff:fe77:362a/64 scope link 
+       valid_lft forever preferred_lft forever
+6: vnet1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue master virbr1 state UNKNOWN group default qlen 1000
+    link/ether fe:54:00:af:eb:f8 brd ff:ff:ff:ff:ff:ff
+    inet6 fe80::fc54:ff:feaf:ebf8/64 scope link 
+       valid_lft forever preferred_lft forever

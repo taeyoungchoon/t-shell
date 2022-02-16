@@ -1,0 +1,328 @@
+    1  visudo 
+    2  usermod -aG sudo jack
+    3  sync
+    4  reboot
+    5  vi /etc/apt/sources.list
+    6  apt update
+    7  apt-get install qemu-system-gui qemu-kvm qemu-utils bridge-utils
+    8  ps -ef
+    9  history 
+   10  apt-cache search fai | grep quick
+   11  apt install fai-quickstart
+   12  fai-mk-network jack
+   13  ls -al
+   14  ls
+   15  ls
+   16  ls -al
+   17  ls
+   18  mv /home/jack/Downloads/faicd64-small_5.10.3.iso .
+   19  ls
+   20  fai-kvm -Vn -u 2 pxe
+   21  ls
+   22  fai-kvm -Vn -s20 -u 1 cd faicd64-small_5.10.3.iso 
+   23  apt-cache search fai | grep server
+   24  apt install fai-server
+   25  systemctl status fai-server
+   26  dpkg -l fai-server
+   27  dpkg -L fai-server
+   28  reboot
+   29  passwd
+   30  apt-cache search virt-manager
+   31  apt install virt-manager 
+   32  ls
+   33  ls
+   34  ls -aol
+   35  tmux
+   36  apt install tmux -y
+   37  ls
+   38  cd /mnt
+   39  ls
+   40  mount /dev/sda5 /mnt
+   41  cd /mnt
+   42  ls
+   43  ls -al
+   44  touch foo
+   45  ls
+   46  rm foo
+   47  cd tmp
+   48  ls
+   49  ls
+   50  cd
+   51  ls
+   52  cp faicd64-small_5.10.3.iso /mnt/tmp/
+   53  ping 8.8.8.8
+   54  ps -ef
+   55  uptime
+   56  ps -ef
+   57  ls
+   58  cp faicd64-small_5.10.3.iso /home/jack/Downloads/
+   59  cd /home/jack/Downloads/
+   60  ls
+   61  ls -al
+   62  chown jack.jack faicd64-small_5.10.3.iso 
+   63  ls
+   64  ls -al
+   65  ls
+   66  ls -al
+   67  cd /root/
+   68  ls
+   69  ls -al
+   70  rm faicd64-small_5.10.3.iso 
+   71  ls
+   72  cd -
+   73  ls
+   74  ls -al
+   75  rm faicd64-small_5.10.3.iso 
+   76  ls
+   77  ls -al
+   78  ls
+   79  ls -tlr
+   80  apt search skanlite
+   81  apt search cups
+   82  dpkg -l | grep scan
+   83  apt install skanlite cups cups-client cups-filters
+   84  apt install printer-driver-all
+   85  apt install system-config-printer
+   86  system-config-printer
+   87  ps -ef
+   88  w
+   89  virsh list
+   90  virsh dumpxml 1
+   91  virsh dumpxml 1 | grep 192
+   92  ip a
+   93  ip -4 -o a
+   94  ssh root@192.168.33.250
+   95  reboot
+   96  exit
+   97  ps -ef
+   98  apt search pifconfig
+   99  ifconfig
+  100  ipconfig
+  101  ip a
+  102  ping 192.168.25.1
+  103  ip r
+  104  route
+  105  apt search route
+  106  apt-cache search ifconfig
+  107  apt install net-tools
+  108  ifconfig
+  109  route
+  110  route -n
+  111  ps -ef
+  112  apt update
+  113  apt list --upgradable
+  114  apt upgrade
+  115  ip a
+  116  ip r
+  117  ip a
+  118  ip r
+  119  ping 8.8.8.8
+  120  ps -ef
+  121  uptime
+  122  route -n
+  123  nmcli 
+  124  ps -ef | grep -i network
+  125  nmcli 
+  126  nmcli a
+  127  nmcli connection 
+  128  nmcli general 
+  129  nmcli networking 
+  130  nmcli device 
+  131  nmcli connection down ylit2\ 1 
+  132  ip a
+  133  nmcli connection up Wired\ connection\ 1 
+  134  ip a
+  135  ping 8.8.8.8
+  136  route -n
+  137  host
+  138  cat /etc/resolv.conf 
+  139  host empas.com
+  140  host foo.com
+  141  nmcli connection 
+  142  exit
+  143  ls
+  144  ls
+  145  ls
+  146  ls -al
+  147  ls
+  148  ls
+  149  ls
+  150  git clone https://github.com/taeyoungchoon/t-shell.git
+  151  git clone https://github.com/taeyoungchoon/taeyoungchoon.github.io.git
+  152  ls
+  153  grep -r fai *
+  154  grep -r demo *
+  155  grep -r demohost *
+  156  clear
+  157  grep -r demohost *
+  158  vi taeyoungchoon.github.io/fai.org 
+  159  emacs taeyoungchoon.github.io/fai.org 
+  160  apt install emacs-nox -y
+  161  emacs taeyoungchoon.github.io/fai.org 
+  162  git
+  163  cd t-shell/
+  164  ls
+  165  cd fai
+  166  ls
+  167  mkdir fai
+  168  ls
+  169  cd fai
+  170  ls
+  171  cp ../../taeyoungchoon.github.io/fai.org .
+  172  ls
+  173  ls
+  174  ls -al
+  175  cd
+  176  ls
+  177  virsh list
+  178  id
+  179  ls
+  180  virsh list
+  181  cd t-shell/
+  182  ls
+  183  cd fai
+  184  ls
+  185  ls -apl
+  186  virsh list
+  187  virsh list > virsh-list
+  188  ls
+  189  ls -al
+  190  mv virsh-list virsh_list
+  191  ls
+  192  ip a
+  193  ip a
+  194  ip -4 a\
+  195  ip -4 a
+  196  nmcli connection down Wired\ connection\ 1 
+  197  nmcli connection up ylit2
+  198  nmcli connection up "ylit2 1" 
+  199  ip a
+  200  ls
+  201  ls
+  202  ls -all
+  203  clear
+  204  i pa
+  205  ip a
+  206  nmcli connection up Wired\ connection\ 1 
+  207  ip a
+  208  route -n
+  209  ls
+  210  ᄌᅠᆫ
+  211  ᄌᅠᆫ
+  212  ᄌᅠᆫ
+  213  ᄌᅠᆫ )ᄑᅠᆼㅈ
+  214  ls
+  215  ls -pal
+  216  uptime
+  217  ps -ef
+  218  ls
+  219  ls
+  220  ls -apl
+  221  git add *
+  222  git status
+  223  git commit -m d
+  224  cd ..
+  225  cd ..
+  226  ls
+  227  cd t-shell/
+  228  ls
+  229  cat init.lisp 
+  230  cat readme.org 
+  231  cat clean-clone.sh 
+  232  cd ../taeyoungchoon.github.io/
+  233  lw
+  234  ls
+  235  cat readme.
+  236  cat readme.o
+  237  cat readme.or
+  238  cat readme.1st 
+  239  ls
+  240  cat git.org 
+  241  cd ../
+  242  cd t-shell/
+  243  git push
+  244  git config --list
+  245  git push
+  246  git push
+  247  git config --global credential.helper cache
+  248  git push
+  249  git push
+  250  ls
+  251  ls 
+  252  ls -al
+  253  cd tae
+  254  ls
+  255  ls
+  256  ls
+  257  cd fai/
+  258  ls
+  259  ls
+  260  cat fai.org 
+  261  ls
+  262  mkdir faiserver
+  263  ls
+  264  cd faiserver/
+  265  ls
+  266  ssh root@192.168.33.250
+  267  ssh root@192.168.33.250
+  268  ls
+  269  ls
+  270  cd ..
+  271  ls
+  272  cd faiserver/
+  273  ls
+  274  cat > ssh
+  275  vi ssh 
+  276  mv ssh ssh-192.168.33.250-root-fai
+  277  ls
+  278  ls -al
+  279  ls
+  280  mv ssh ssh-192.168.33.250-root-fai
+  281  ssh root@192.168.33.250
+  282  ls
+  283  git add ssh-192.168.33.250-root-fai 
+  284  git status
+  285  git commit -m d
+  286  git push
+  287  git status
+  288  git add ssh-192.168.33.250-root-fai 
+  289  ssh root@192.168.33.250
+  290  ssh root@192.168.33.250
+  291  ls
+  292  git pull
+  293  ls
+  294  cd
+  295  ls
+  296  rm -rf taeyoungchoon.github.io/
+  297  ls
+  298  cd
+  299  ls
+  300  history 
+  301  virsh
+  302  virsh list
+  303  ls
+  304  ls
+  305  ls -al
+  306  cd t-shell/
+  307  ls
+  308  cd ..
+  309  ln -s t-shell/fai .
+  310  ls
+  311  cd fai
+  312  ls
+  313  ls -apl
+  314  cat virsh_list 
+  315  ls
+  316  ip a
+  317  ip a > ip_a
+  318  ip r
+  319  ip r > ip_r
+  320  route > route
+  321  ifconfig
+  322  ifconfig > ifconfig
+  323  ls
+  324  uptime
+  325  ps -ef
+  326  history q
+  327  history 
+  328  history > history.out
