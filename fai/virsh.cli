@@ -1,0 +1,10 @@
+root@light:~/t-shell/fai# virsh reset 2
+root@light:~/t-shell/fai# virsh dumpxml 4 | grep 'mac address'
+      <mac address='52:54:00:f2:d5:ab'/>
+virsh list --all
+virsh start fai2
+virsh destroy fai2
+# virsh domiflist fai2
+ Interface   Type      Source      Model    MAC
+---------------------------------------------------------------
+ vnet4       network   network33   virtio   52:54:00:f2:d5:ab

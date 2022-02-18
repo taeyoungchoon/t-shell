@@ -51,7 +51,7 @@ rc.local
    - dhcp range: disabled
    - forwarding: nat
 5. download fai-cd from https://fai-project.org/fai-cd/
-   - large
+   - large: https://fai-project.org/fai-cd/faicd64-large_5.10.3.iso
    - small
    - autodiscover
 6. open https://fai-project.org/fai-guide/
