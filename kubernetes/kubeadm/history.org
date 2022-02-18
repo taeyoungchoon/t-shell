@@ -52,3 +52,53 @@ Hit:4 http://deb.debian.org/debian-security bullseye-security InRelease
 Reading package lists...
 W: Failed to fetch https://apt.kubernetes.io/dists/kubernetes-xenial/InRelease  Invalid response from proxy: HTTP/1.0 403 CONNECT denied (ask the admin to allow HTTPS tunnels)     [IP: 192.168.33.250 3142]
 W: Some index files failed to download. They have been ignored, or old ones used instead.
+
+
+** so
+
+
+Package: kubeadm
+Version: 1.23.4-00
+Installed-Size: 44164
+Maintainer: Kubernetes Authors <kubernetes-dev+release@googlegroups.com>
+Architecture: amd64
+Depends: kubelet (>= 1.19.0), kubectl (>= 1.19.0), kubernetes-cni (>= 0.8.7), cri-tools (>= 1.19.0)
+Description: Kubernetes Cluster Bootstrapping Tool
+ The Kubernetes command line tool for bootstrapping a Kubernetes cluster.
+Homepage: https://kubernetes.io
+Filename: pool/kubeadm_1.23.4-00_amd64_0950936fcedab589d0b80fa38513837435205490196ed0a80badb7c68fae8753.deb
+Priority: optional
+SHA256: 0950936fcedab589d0b80fa38513837435205490196ed0a80badb7c68fae8753
+Section: misc
+Size: 8582916
+
+https://packages.cloud.google.com/apt/pool/kubelet_1.23.4-00_amd64_980f695075569605bb36bc1879988fad9b4f894ab598195bfb325c1c73163be0.deb
+
+kubelet (>= 1.19.0), kubectl (>= 1.19.0), kubernetes-cni (>= 0.8.7), cri-tools (>= 1.19.0)
+
+Version: 1.23.4-00
+
+
+  140  wget https://packages.cloud.google.com/apt/pool/kubeadm_1.23.4-00_amd64_0950936fcedab589d0b80fa38513837435205490196ed0a80badb7c68fae8753.deb
+  141  wget https://packages.cloud.google.com/apt/pool/kubelet_1.23.4-00_amd64_980f695075569605bb36bc1879988fad9b4f894ab598195bfb325c1c73163be0.deb
+  146  wget https://packages.cloud.google.com/apt/pool/kubectl_1.23.4-00_amd64_8665604e01fca125404270822c0a15e1964e397bbe411277f49a6eb13a9d6fef.deb
+  152  wget https://packages.cloud.google.com/apt/pool/kubernetes-cni_0.8.7-00_amd64_ca2303ea0eecadf379c65bad855f9ad7c95c16502c0e7b3d50edcb53403c500f.deb
+  154  wget https://packages.cloud.google.com/apt/pool/cri-tools_1.19.0-00_amd64_b6fdfd86c8a3665ab10b9bd9565354977cd5abbaefeb2ee953bc4a13fe7d3326.deb
+
+apt install socat ebtables ethtool conntrack
+
+
+* [2022-02-18 Fri] 
+
+root@fai5:~/t-shell/kubernetes/kubeadm# kubeadm init --pod-network-cidr=10.244.0.0/16
+[init] Using Kubernetes version: v1.23.4
+[preflight] Running pre-flight checks
+	[WARNING Swap]: swap is enabled; production deployments should disable swap unless testing the NodeSwap feature gate of the kubelet
+	[WARNING Hostname]: hostname "fai5" could not be reached
+	[WARNING Hostname]: hostname "fai5": lookup fai5 on 192.168.33.250:53: no such host
+
+error execution phase preflight: [preflight] Some fatal errors occurred:
+	[ERROR Mem]: the system RAM (975 MB) is less than the minimum 1700 MB
+[preflight] If you know what you are doing, you can make a check non-fatal with `--ignore-preflight-errors=...`
+To see the stack trace of this error execute with --v=5 or higher
+root@fai5:~/t-shell/kubernetes/kubeadm# 
