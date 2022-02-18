@@ -132,3 +132,5 @@ WARNING: could not determine runlevel - doing soft reboot
   (it's better to use shutdown instead of reboot from the command line)
 root@light:/var/lib/libvirt/images# 
 
+
+FAI_FLAGS=verbose,sshd,createvt,reboot
