@@ -8,3 +8,13 @@ virsh destroy fai2
  Interface   Type      Source      Model    MAC
 ---------------------------------------------------------------
  vnet4       network   network33   virtio   52:54:00:f2:d5:ab
+
+virsh define fai1.xml
+
+# virsh dumpxml fai1 | grep 'mac address' | cut -d\' -f 2
+52:54:00:cc:13:10
+
+
+root@light:~/t-shell/fai# sshpass -p fai scp fai1.mac demo@192.168.33.250:/tmp/
+root@light:~/t-shell/fai# sshpass -p fai ssh demo@192.168.33.250 cat /tmp/fai1.mac
+52:54:00:cc:13:10i
