@@ -18,3 +18,117 @@ virsh define fai1.xml
 root@light:~/t-shell/fai# sshpass -p fai scp fai1.mac demo@192.168.33.250:/tmp/
 root@light:~/t-shell/fai# sshpass -p fai ssh demo@192.168.33.250 cat /tmp/fai1.mac
 52:54:00:cc:13:10i
+
+root@light:~/t-shell/fai# sh sshpass.sh 
+demo@faiserver:~$ su - -c 'apt install sudo'
+Password: 
+demo@faiserver:~$ grep sudo /etc/group
+sudo:x:27:
+demo@faiserver:~$ su - -c 'usermod -aG sudo demo'
+Password: 
+demo@faiserver:~$ sudo date
+
+We trust you have received the usual lecture from the local System
+Administrator. It usually boils down to these three things:
+
+    #1) Respect the privacy of others.
+    #2) Think before you type.
+    #3) With great power comes great responsibility.
+
+[sudo] password for demo: 
+demo is not in the sudoers file.  This incident will be reported.
+demo@faiserver:~$ 
+logout
+Connection to 192.168.33.250 closed.
+root@light:~/t-shell/fai# sh sshpass.sh 
+demo@faiserver:~$ sudo date
+[sudo] password for demo: 
+Fri 18 Feb 2022 11:18:51 AM CET
+demo@faiserver:~$ 
+
+# ip -br link | grep -v ^lo | cut -d' ' -f 1
+enp1s0
+
+root@faiserver:~# cat /etc/default/isc-dhcp-server | grep Sv4
+INTERFACESv4=""
+
+root@faiserver:~# cat /etc/default/isc-dhcp-server | sed "s/INTERFACESv4=\"\"/INTERFACESv4=\"${IF}\"/"  | grep Sv4
+INTERFACESv4="enp1s0"
+
+sed -i "s/INTERFACESv4=\"\"/INTERFACESv4=\"${IF}\"/" /etc/default/isc-dhcp-server 
+
+root@faiserver:~# rm /var/run/dhcpd.pid 
+root@faiserver:~# systemctl restart isc-dhcp-server.service 
+
+root@faiserver:~# grep demo /etc/hosts
+192.168.33.100 demohost
+root@faiserver:~# grep demo /etc/dhcp/dhcpd.conf 
+root@faiserver:~# 
+
+root@faiserver:~# MAC=`cat /tmp/fai1.mac`
+root@faiserver:~# echo $MAC
+52:54:00:cc:13:10
+
+
+root@faiserver:~# grep demo /etc/hosts
+192.168.33.100 demohost
+root@faiserver:~# grep demo /etc/dhcp/dhcpd.conf 
+root@faiserver:~# cat /tmp/fai1.mac 
+52:54:00:cc:13:10
+root@faiserver:~# MAC=`cat /tmp/fai1.mac`
+root@faiserver:~# echo $MAC
+52:54:00:cc:13:10
+root@faiserver:~# dhcp-edit demohost $MAC
+Entry added: host demohost {hardware ethernet 52:54:00:cc:13:10;fixed-address demohost;}
+root@faiserver:~# fai-chboot -IFv -u nfs://faiserver/srv/fai/config demohost
+Booting kernel vmlinuz-5.10.0-11-amd64
+ append initrd=initrd.img-5.10.0-11-amd64 ip=dhcp  
+   FAI_FLAGS=verbose,sshd,createvt FAI_CONFIG_SRC=nfs://faiserver/srv/fai/config
+
+demohost has 192.168.33.100 in hex C0A82164
+Writing file /srv/tftp/fai/pxelinux.cfg/C0A82164 for demohost
+root@faiserver:~# ls /srv/tftp/fai/pxelinux.cfg/*
+/srv/tftp/fai/pxelinux.cfg/bullseye.tmpl  /srv/tftp/fai/pxelinux.cfg/C0A82167  /srv/tftp/fai/pxelinux.cfg/C0A8216B  /srv/tftp/fai/pxelinux.cfg/C0A8216F
+/srv/tftp/fai/pxelinux.cfg/C0A82164	  /srv/tftp/fai/pxelinux.cfg/C0A82168  /srv/tftp/fai/pxelinux.cfg/C0A8216C  /srv/tftp/fai/pxelinux.cfg/default
+/srv/tftp/fai/pxelinux.cfg/C0A82165	  /srv/tftp/fai/pxelinux.cfg/C0A82169  /srv/tftp/fai/pxelinux.cfg/C0A8216D
+/srv/tftp/fai/pxelinux.cfg/C0A82166	  /srv/tftp/fai/pxelinux.cfg/C0A8216A  /srv/tftp/fai/pxelinux.cfg/C0A8216E
+root@faiserver:~# 
+
+
+
+root@light:~/t-shell/fai# virsh start fai1
+error: Failed to start domain 'fai1'
+error: Cannot access storage file '/var/lib/libvirt/images/fai1.qcow2' (as uid:64055, gid:64055): No such file or directory
+
+root@light:~/t-shell/fai# 
+
+
+
+
+root@light:/var/lib/libvirt/images# qemu-img create -f qcow2 fai1.qcow2 10G
+Formatting 'fai1.qcow2', fmt=qcow2 cluster_size=65536 extended_l2=off compression_type=zlib size=10737418240 lazy_refcounts=off refcount_bits=16
+root@light:/var/lib/libvirt/images# ls -l
+total 5913496
+-rw------- 1 libvirt-qemu libvirt-qemu 21478375424 Feb 18 19:45 fai0.qcow2
+-rw-r--r-- 1 root         root              196768 Feb 18 19:45 fai1.qcow2
+-rw-r--r-- 1 libvirt-qemu libvirt-qemu  1263038464 Feb 17 22:51 f.iso
+root@light:/var/lib/libvirt/images# virsh start fai1
+Domain 'fai1' started
+
+root@light:/var/lib/libvirt/images# 
+
+root@light:/var/lib/libvirt/images# ssh demo@192.168.33.100 reboot
+The authenticity of host '192.168.33.100 (192.168.33.100)' can't be established.
+ECDSA key fingerprint is SHA256:XrAPOmsvwsSgjUVM+KM7k1Eq0X4OlU/HICMIXeqWZOE.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '192.168.33.100' (ECDSA) to the list of known hosts.
+demo@192.168.33.100's password: 
+Permission denied, please try again.
+demo@192.168.33.100's password: 
+
+root@light:/var/lib/libvirt/images# ssh root@192.168.33.100 reboot
+root@192.168.33.100's password: 
+WARNING: could not determine runlevel - doing soft reboot
+  (it's better to use shutdown instead of reboot from the command line)
+root@light:/var/lib/libvirt/images# 
+
