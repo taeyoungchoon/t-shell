@@ -44,7 +44,8 @@ rc.local
 1. lg gram
 2. dual boot to debian 11(bullseye)
    - wireless network
-3. install virt-manager
+3. install virt-manager, libvirt-client(for virsh)
+   - View: Resize to VM
 4. create network33
    - network: 192.168.33.0/24
    - dhcp range: disabled
@@ -57,12 +58,26 @@ rc.local
 7. fai0 with large, internal dhcpd and fixed ip
    1) enable sshd with 'PermitRootLogin yes'
    2) ssh fai0(192.168.33.250)
+      - ssh demo@192.168.33.250 , fai
+      - su - 
    3) invoke-rc.d isc-dhcp-server start
       - (optional) rm /var/run/dhcpd.pid
+      - pkill dhcpd
+      - add interface to /etc/default/isc-dhcp-server
    4) add demohost to /etc/hosts
-   5) dhcp-edit demohost 52:54:00:66:74:db
+      - added
+   5) create vm falled fai1
+      - manual
+      - Debian testing
+      - name as fai1
+      - network selection: network33
+      - Customize configuration before install
+	- Boot Options
+	  - Nic first
+   6) dhcp-edit demohost 52:54:00:66:74:db
       - gather mac address using tcpdump or virt-x
-   6) fai-chboot -IFv -u nfs://faiserver/srv/fai/config demohost
+	- virt-manager
+   7) fai-chboot -IFv -u nfs://faiserver/srv/fai/config demohost
 8. boot fai1 with autodiscover or network boot using pxe
 9. fai0 with one more thing
    1) cd /srv/fai/config/files/etc/motd/
