@@ -11,3 +11,44 @@ make -f makefile-for-m check
 make -f makefile-for-m start
 make -f makefile-for-m check
 
+* TODO [2022-02-18 Fri] install to fai1 / kvm and docker.sh fail 
+
+** issue
+
+W: Failed to fetch https://download.docker.com/linux/debian/dists/bullseye/InRelease  Invalid response from proxy: HTTP/1.0 403 CONNECT denied (ask the admin to allow HTTPS tunnels)     [IP: 192.168.33.250 3142]
+W: Some index files failed to download. They have been ignored, or old ones used instead.
+
+
+** using pkg format
+
+https://docs.docker.com/engine/install/debian/
+
+   84  apt install wget
+   85  wget https://download.docker.com/linux/debian/dists/bullseye/pool/stable/amd64/containerd.io_1.4.12-1_amd64.deb
+   86  wget https://download.docker.com/linux/debian/dists/bullseye/pool/stable/amd64/docker-ce-cli_20.10.12~3-0~debian-bullseye_amd64.deb
+   87  wget \https://download.docker.com/linux/debian/dists/bullseye/pool/stable/amd64/docker-ce-rootless-extras_20.10.12~3-0~debian-bullseye_amd64.deb
+   88  wget https://download.docker.com/linux/debian/dists/bullseye/pool/stable/amd64/docker-ce_20.10.12~3-0~debian-bullseye_amd64.deb
+   89  wge thttps://download.docker.com/linux/debian/dists/bullseye/pool/stable/amd64/docker-scan-plugin_0.12.0~debian-bullseye_amd64.deb
+
+dpkg -i *.deb
+
+https://download.docker.com/linux/debian/dists/bullseye/pool/stable/amd64/
+
+   97  apt install iptables -y
+   98  apt --fix-broken install
+
+역시나인가?
+
+* TODO [2022-02-18 Fri] install to fai1 / kvm and the-k.sh fail too
+
+** issue
+
+root@fai5:~/t-shell/kubernetes/kubeadm# sh the-k.sh 
+Err:1 https://apt.kubernetes.io kubernetes-xenial InRelease
+  Invalid response from proxy: HTTP/1.0 403 CONNECT denied (ask the admin to allow HTTPS tunnels)     [IP: 192.168.33.250 3142]
+Hit:2 http://deb.debian.org/debian bullseye InRelease
+Hit:3 http://fai-project.org/download bullseye InRelease
+Hit:4 http://deb.debian.org/debian-security bullseye-security InRelease
+Reading package lists...
+W: Failed to fetch https://apt.kubernetes.io/dists/kubernetes-xenial/InRelease  Invalid response from proxy: HTTP/1.0 403 CONNECT denied (ask the admin to allow HTTPS tunnels)     [IP: 192.168.33.250 3142]
+W: Some index files failed to download. They have been ignored, or old ones used instead.
