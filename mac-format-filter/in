@@ -1,0 +1,2 @@
+3: wlp0s20f3: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc noqueue state DOWN group default qlen 1000
+    link/ether 6a:b0:a2:7f:7e:fd brd ff:ff:ff:ff:ff:ff permaddr 38:00:25:88:9c:df
