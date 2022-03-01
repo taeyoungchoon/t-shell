@@ -13,5 +13,4 @@ print(randint(0, 4))
 sl = 'this:is:it'
 print(sl.split(':'))
 
-import requests
 
