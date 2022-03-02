@@ -1,0 +1,14 @@
+~/.Xresources
+
+Emacs*useXIM: false
+
+xrdb ~/.Xresources
+xrdb -merge ~/.Xresources
+
+---
+
+(when (eq system-type 'gnu/linux)
+  ;; (set-fontset-font t 'hangul (font-spec :name "D2coding ligature"))
+  (set-fontset-font t 'hangul (font-spec :name "NanumGothicCoding"))
+  ;; (set-fontset-font t 'hangul (font-spec :name "NanumGothic"))
+  )
