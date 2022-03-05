@@ -1,0 +1,4 @@
+* todo
+
+1. [ ] (loop (fai iso)) ;; enough
+2. [ ] (migrate (fai iso) (debian fai))
