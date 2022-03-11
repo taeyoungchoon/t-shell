@@ -1,0 +1,84 @@
+* DONE virsh sth
+  CLOSED: [2022-03-11 Fri 15:53]
+
+export LIBVIRT_DEFAULT_URI=qemu:///system
+
+jack@think:~$ virsh net-list
+ Name        State    Autostart   Persistent
+----------------------------------------------
+ network33   active   yes         yes
+
+* DONE /etc/apt/sources.list , make fast
+
+ftp.kr.debian.org
+
+* DONE /etc/default/isc-dhcp-server , interface
+
+INTERFACESv4="enp1s0"
+
+* DONE /etc/dhcp/dhcpd.conf , hmm , gw and dns
+
+   option routers 192.168.33.1;
+   option domain-name-servers 8.8.8.8;
+
+* DONE /etc/fai/fai.conf , general
+
+LOGUSER=fai
+
+* DONE /etc/fai/nfsroot.conf , if dns is nil
+
+# https://manpages.debian.org/testing/fai-server/nfsroot.conf.5.en.html                                                  
+NFSROOT_ETC_HOSTS="192.168.33.250 faiserver"
+
+* DONE /etc/hosts , faiserver
+
+192.168.33.100 demohost
+192.168.33.250 faiserver
+
+* DONE /srv/fai/config/class/FAIBASE.var , fai-chboot -d demohost
+
+LOGUSER=fai
+
+fai-chboot -l
+fai-chboot -e demohost
+fai-chboot -d demohost
+
+* DONE /srv/tftp/fai/pxelinux.cfg/C0A82164 
+* DONE /var/log/fai/fai-make-nfsroot.log
+* TODO steps
+
+nmcli show
+ip a
+vi /etc/apt/sources.list
+apt install fai-quickstart
+apt update
+timedatectl set-timezone Asia/Seoul 
+usermod -aG sudo jack
+newgrp
+groups
+apt install openssh-server -y
+systemctl restart isc-dhcp-server.service
+fai-setup -v
+  153  man fai-chboot
+  154  man fai-chboot | col -b | grep fai-chboot | grep IFv
+  155  fai-chboot -IFv -u nfs://faiserver/srv/fai/config demohost
+
+  263  fai-make-nfsroot -f
+
+* TODO nfs fail, maybe
+
+journalctl -f -u nfs-server.service -u nfs-mountd.service -u tftpd-hpa.service -u isc-dhcp-server.service 
+
+Mar 11 15:52:07 debian rpc.mountd[23972]: authenticated mount request from 192.168.33.100:680 for /srv/fai/nfsroot (/srv/fai/nfsroot)
+
+- fai-make-nfsroot then work but lots of errors
+
+/usr/lib/fai/subroutines: line 1247: /tmp/fai/fai-monitor.log: No cush file or direcotry
+
+E: Couldn't download packages: cpio
+Log file written to /var/log/fai/fai-make-nfsroot.log and /srv/fai/nfsroot/var/tmp
+ERROR when calling fai-make-nfsroot.
+Log file written to /var/log/fai/fai-setup.log
+root@debian:/etc/fai# vi /var/log/fai/fai-make-nfsroot.log
+root@debian:~# 
+
