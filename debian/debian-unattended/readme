@@ -1,0 +1,3 @@
+/etc/osinfo/install-script/debian.org
+
+virt-install --install debian11 --unattended admin-password-file=password-file,user-password-file=password-file,profile=jeos,user-login=jack
