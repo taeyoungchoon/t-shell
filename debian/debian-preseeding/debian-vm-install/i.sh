@@ -60,9 +60,11 @@ virt-install \
 --controller usb,model=none \
 --graphics none \
 --noautoconsole \
---network bridge=virbr0,mac=${MAC},model=virtio \
+--network bridge=virbr1,mac=${MAC},model=virtio \
 --extra-args="auto=true hostname="${1}" domain="${DOMAIN}" console=tty0 console=ttyS0,115200n8 serial"
 
 rm postinst.tar.gz
 
 # --os-variant ${LINUX_VARIANT} \
+# --extra-args="auto=true hostname="${1}" domain="${DOMAIN}" console=tty0 console=ttyS0,115200n8 serial"
+# ip=[ip]::[gateway]:[netmask]:[hostname]:[interface]:[autoconf]
