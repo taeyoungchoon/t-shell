@@ -1,8 +1,5 @@
 #!/bin/sh -e
  
-# A script to create debian VM as a KVM guest using virt-install in fully
-# automated way based on preseed.cfg
-
 # Domain is necessary in order to avoid debian installer to
 # require manual domain entry during the install.
 DOMAIN=`/bin/hostname -d` # Use domain of the host system
