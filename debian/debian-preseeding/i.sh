@@ -37,10 +37,10 @@ then
 fi
 
 # Fetch SSH key from github.
-wget -q https://github.com/pin.keys -O postinst/authorized_keys
+#wget -q https://github.com/pin.keys -O postinst/authorized_keys
 
 # Create tarball with some stuff we would like to install into the system.
-tar cvfz postinst.tar.gz postinst
+#tar cvfz postinst.tar.gz postinst
  
 virt-install \
 --connect=qemu:///system \
@@ -50,7 +50,6 @@ virt-install \
 --disk size=16,path=/var/lib/libvirt/images/${1}.img,bus=virtio,cache=none \
 --initrd-inject=preseed.cfg \
 --initrd-inject=postinst.sh \
---initrd-inject=postinst.tar.gz \
 --location /var/lib/libvirt/images/d.iso \
 --os-variant detect=on,require=on \
 --virt-type=kvm \
@@ -60,8 +59,8 @@ virt-install \
 --network bridge=virbr1,mac=${MAC},model=virtio \
 --extra-args="auto=true hostname="${1}" domain="${DOMAIN}" console=tty0 console=ttyS0,115200n8 serial"
 
-rm postinst.tar.gz
-
+# rm postinst.tar.gz
+# --initrd-inject=postinst.tar.gz \
 # --os-variant ${LINUX_VARIANT} \
 # --extra-args="auto=true hostname="${1}" domain="${DOMAIN}" console=tty0 console=ttyS0,115200n8 serial"
 # ip=[ip]::[gateway]:[netmask]:[hostname]:[interface]:[autoconf]
