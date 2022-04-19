@@ -1,5 +1,5 @@
 
-all: help
+all: ls upgrade
 
 help:
 	@cat makefile | egrep "^[a-z]+:"
