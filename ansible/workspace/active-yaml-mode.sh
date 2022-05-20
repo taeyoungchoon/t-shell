@@ -4,6 +4,8 @@ sudo mkdir -p /usr/local/share/emacs/site-lisp
 sudo make
 sudo make install
 
+touch ~/.emacs.d/init.el
+
 cat <<EOF >> ~/.emacs.d/init.el
 (add-to-list 'load-path "/usr/local/share/emacs/site-lisp/")
 (require 'yaml-mode)
