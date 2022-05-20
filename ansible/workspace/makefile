@@ -14,11 +14,11 @@ python3:
 	sudo yum -y install python3-pip
 
 env:
-	pip35 install virtualenv
-	mkdir workspace
-	python3 -m virtualenv workspace
-	source workspace/bin/activate
-	pip3 install ansible
+	pip3 install virtualenv; \
+	mkdir ws1; \
+	python3 -m virtualenv ws1; \
+	source workspace/bin/activate; \
+	pip3 install ansible;
 
 check:
 	python --version
