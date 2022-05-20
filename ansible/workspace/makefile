@@ -18,8 +18,9 @@ env:
 	mkdir ws1; \
 	python3 -m virtualenv ws1; \
 	source ws1/bin/activate; \
-	pip3 install ansible;
+	pip3 install ansible
 
 check:
-	python --version
+	source ws1/bin/activate; \
+	python --version; \
 	ansible --version
