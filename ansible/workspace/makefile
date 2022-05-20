@@ -1,3 +1,8 @@
+all: help
+
+help:
+	cat makefile | grep ^[a-z]
+
 pre:
 	sudo yum -y install epel-release
 	sudo yum -y install tree psmisc emacs-nox vim
