@@ -8,10 +8,9 @@ client = CvpClient()
 client.connect(['cv.t.com'], 'cvpadmin', '1234qwer')
 
 result = client.get('/cvpInfo/getCvpInfo.do')
-print(result)
+print("version: {}".format(result['version']))
 
 inventory = client.api.get_inventory()
-pprint(inventory)
-
+print("number of devices: {}".format( len(inventory) ))
 
 
