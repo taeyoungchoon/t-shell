@@ -23,6 +23,9 @@ status:
 	docker ps -a
 	docker network ls
 	docker images
+check: status
+go: import create network connect start
+back: stop rm rmi clean_network
 c1:
 	docker exec -it ceos1 Cli
 c2:
@@ -43,3 +46,6 @@ clean_network:
 log:
 	docker logs -n 10 ceos1 | grep Interface
 	docker logs -n 10 ceos2 | grep Interface
+
+watch:
+	watch make log
