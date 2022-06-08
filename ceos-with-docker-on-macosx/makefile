@@ -1,5 +1,5 @@
 help:
-	cat makefile | grep ^[a-z]
+	@cat makefile | grep ^[a-z]
 download:
 	@echo 'cEOS-lab-4.21.14M.tar.xz required'
 import:
@@ -24,8 +24,13 @@ status:
 	docker network ls
 	docker images
 check: status
+
+.PHONY: go
 go: import create network connect start
+
+.PHONY: back
 back: stop rm rmi clean_network
+
 c1:
 	docker exec -it ceos1 Cli
 c2:
