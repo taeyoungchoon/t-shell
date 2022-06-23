@@ -32,6 +32,8 @@ check:
 test:
 	source ws1/bin/activate; \
 	python p1.py
-
-
-
+        python p2.py
+        python j1.py
+        python vlan.py
+        python cvp.py
+        pip list | grep cvprac
