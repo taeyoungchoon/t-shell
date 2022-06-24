@@ -3,6 +3,7 @@ from pprint import pprint
 
 conn = pyeapi.connect_to('arista1')
 vlan = conn.api('vlans')
+out = conn.api('/cvpInfo/getCvpInfo.do')
 
 vlan.create(123)
 print("before : ", len(vlan.getall()))
