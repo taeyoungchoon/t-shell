@@ -31,11 +31,11 @@ check:
 
 python:
 	source ws1/bin/activate; \
-	python pure.py
-	python eapi_without_config.py
-	python eapi_with_config.py
-	python eapi_about_vlan.py
-	python cvp_without_config.py
+	python pure.py; \
+	python eapi_without_config.py; \
+	python eapi_with_config.py; \
+	python eapi_about_vlan.py; \
+	python cvp_without_config.py; \
 	pip list | grep cvprac
 
 ansible:
