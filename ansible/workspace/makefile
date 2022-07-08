@@ -37,3 +37,6 @@ test:
 	python vlan.py
 	python cvp.py
 	pip list | grep cvprac
+
+vlan:
+	python vlan.py
