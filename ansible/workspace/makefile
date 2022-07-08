@@ -29,14 +29,16 @@ check:
 	python --version; \
 	ansible --version
 
-test:
+python:
 	source ws1/bin/activate; \
-	python p1.py
-	python p2.py
-	python j1.py
-	python vlan.py
-	python cvp.py
+	python pure.py
+	python eapi_without_config.py
+	python eapi_with_config.py
+	python eapi_about_vlan.py
+	python cvp_without_config.py
 	pip list | grep cvprac
 
-vlan:
-	python vlan.py
+ansible:
+	source ws1/bin/activate; \
+	cd cvp_using_ansible; \
+	sh play.sh
