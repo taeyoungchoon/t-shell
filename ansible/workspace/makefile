@@ -25,7 +25,7 @@ env:
 	cp eapi.conf ~/.eapi.conf
 
 check:
-	source ws1/bin/activate; \
+	. ws1/bin/activate; \
 	python --version; \
 	ansible --version
 
