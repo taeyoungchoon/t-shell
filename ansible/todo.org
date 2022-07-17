@@ -1,0 +1,15 @@
+* to do and to be done, later on
+
+- register
+  - parsing
+- debug
+- fact
+- ansible shell cli
+- ansible command
+- ansible-playbook
+  - directory structure
+- ansible galaxy
+- ansible tower like
+- ping and pong
+- vs. python
+- ansible output to python to make it some, interact

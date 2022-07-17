@@ -1,6 +1,0 @@
----
-- hosts: localhost
-  gather_facts: no
-  tasks:
-    - debug: msg="Ansible is working!"
-    - debug: msg="Ansible is working2!"

@@ -1,0 +1,21 @@
+---
+- hosts: localhost
+  gather_facts: no
+  tasks:
+    - name: pingping
+      ping:
+
+    - name: get uptime
+      shell: uptime
+      register: result
+    - name: chk uptime
+      debug:
+        var: result.stdout
+        
+    - name: get python version
+      shell: python -V
+      register: python_version
+    - name: chk python version
+      debug:
+        var: python_version.stdout.split(' ')[1]
+        
