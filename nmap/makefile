@@ -8,6 +8,8 @@ howto:
 	@echo add target host\(s\) to \'target.lst\' file
 	@echo then type \'make ping\'
 	@echo -------------------------------------------
+config:
+	@nmap -n -sn -oG - 192.168.25.0/24 | grep ^Host | awk '{ print $$2 }' > target.lst 
 
 ping:
 	@nmap -n -sn -oG - -iL target.lst | grep ^Host | sed 's/()/  /'
