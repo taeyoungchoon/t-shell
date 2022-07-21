@@ -12,10 +12,10 @@ config:
 	@nmap -n -sn -oG - 192.168.25.0/24 | grep ^Host | awk '{ print $$2 }' > target.lst 
 
 ping:
-	@nmap -n -sn -oG - -iL target.lst | grep ^Host | sed 's/()/  /'
+	@nmap -n -sn -v -oG - -iL target.lst | grep ^Host | sed 's/()/  /'
 
 watch:
-	@watch -d "nmap -n -sn -oG - -iL target.lst | grep ^Host | sed 's/()/  /'"
+	@watch -b -c -n 5 -d "nmap -n -sn -v -oG - -iL target.lst | grep ^Host | sed 's/()/  /'"
 
 install_watch_on_macosx:
 	@brew install watch
