@@ -1,0 +1,17 @@
+---
+- name: Playbook to demonstrate cvp modules.
+  hosts: cv_server
+  connection: local
+  gather_facts: no
+  collections:
+    - arista.cvp
+  tasks:
+    - name: "Gather CVP image information facts {{inventory_hostname}}"
+      arista.cvp.cv_image_v3:
+         mode: image
+         action: get
+      register: image_data
+
+    - name: "Print out facts from {{inventory_hostname}}"
+      debug:
+        msg: "{{image_data}}"
