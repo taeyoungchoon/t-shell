@@ -1,0 +1,13 @@
+name: ceosonly01
+
+topology:
+  nodes:
+    ceos1:
+      kind: ceos
+      image: ceos:4.28.1.1F
+    ceos2:
+      kind: ceos
+      image: ceos:4.28.1.1F
+
+  links:
+    - endpoints: ["ceos1:eth1", "ceos2:eth1"]
