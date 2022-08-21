@@ -7,15 +7,23 @@
 
     - name: get uptime
       shell: uptime
-      register: result
+      register: uptime
+
     - name: chk uptime
       debug:
-        var: result.stdout
+        var: uptime.stdout
+      tags: [being]
+
+    - name: uptime with rc and when
+      debug:
+        var: uptime.rc
+      when: uptime.rc != 0
         
     - name: get python version
       shell: python -V
-      register: python_version
+      register: py
+
     - name: chk python version
       debug:
-        var: python_version.stdout.split(' ')[1]
+        var: py.stdout.split(' ')[1]
         
