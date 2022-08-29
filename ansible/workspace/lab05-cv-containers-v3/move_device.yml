@@ -1,0 +1,25 @@
+---
+- name: lab05 - cv_container_v3 lab
+  hosts: cv_server
+  connection: local
+  gather_facts: no
+  vars:
+    - CVP_CONTAINERS:
+        DC1:
+          parentContainerName: Tenant
+        spine:
+          parentContainerName: DC1
+        leaf:
+          parentContainerName: DC1
+    - DEVICES:
+        - fqdn: "leaf5.t.com"
+          parentContainerName: "leaf"
+  tasks:
+    - name: "Configure containers on {{inventory_hostname}}"
+      arista.cvp.cv_container_v3:
+        topology: "{{CVP_CONTAINERS}}"
+        state: present
+      register: CVP_CONTAINERS_RESULT
+    - name: "Display cv_configlet result"
+      debug:
+        msg: "{{CVP_CONTAINERS_RESULT}}"
