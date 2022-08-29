@@ -5,8 +5,12 @@
   gather_facts: no
   vars:
     - CVP_CONTAINERS:
-        TRAINING:
+        DC1:
           parentContainerName: Tenant
+        spine:
+          parentContainerName: DC1
+        leaf:
+          parentContainerName: DC1
   tasks:
     - name: "Configure containers on {{inventory_hostname}}"
       arista.cvp.cv_container_v3:
