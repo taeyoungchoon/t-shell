@@ -1,7 +1,7 @@
 all: help
 
 help:
-	cat makefile | grep ^[a-z
+	cat makefile | grep ^[a-z]
 
 create:
 	ansible-playbook -i inventory.ini create_topo.yml
