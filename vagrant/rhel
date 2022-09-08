@@ -1,0 +1,47 @@
+https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html-single/networking_guide/index
+
+nmcli connection reload
+nmcli con load /etc/sysconfig/network-scripts/ifcfg-ifname
+nmcli dev disconnect interface-name
+nmcli con up interface-name
+
+ifup
+
+To configure a network interface without using NetworkManager
+
+https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html-single/networking_guide/index#sec-Configuring_IP_Networking_with_nmcli
+
+nmcli con up id bond0
+nmcli con up id port0
+nmcli dev disconnect bond0
+nmcli dev disconnect ens3
+
+nmcli con edit type ethernet con-name ens3
+> describe ipv4.method
+> set ipv4.method auto
+> save
+> quit
+
+nmcli con add type ethernet con-name test-lab ifname ens9 ip4 10.10.10.10/24 gw4 10.10.10.254
+nmcli con mod test-lab ipv4.dns "8.8.8.8 8.8.4.4"
+nmcli -p con show test-lab
+
+connection.type
+nmcli c add connection.type bond
+connection.interface-name
+nmcli c add connection.interface-name enp1s0
+connection.id
+nmcli c add connection.id "My Connection"
+
+type (the connection.type property)
+nmcli c add type bond
+ifname (the connection.interface-name property)
+nmcli c add ifname enp1s0
+con-name (the connection.id property)
+nmcli c add con-name "My Connection"
+
+https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html-single/networking_guide/index#sec-Configuring_IP_Networking_with_ifcg_Files
+
+https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html-single/networking_guide/index#sec-Configuring_IP_Networking_with_ip_Commands
+
+Configuring IP Networking with ip Commands

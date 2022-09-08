@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-yum -y -q install emacs-nox git pstree tree
+yum -y -q install emacs-nox git psmisc tree bash-completion
 
 grep "PasswordAuthentication no" /etc/ssh/sshd_config >/dev/null 2>/dev/null
 if test $? -eq 0; then

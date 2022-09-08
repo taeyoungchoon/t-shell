@@ -1,0 +1,20 @@
+https://www.kernel.org/doc/Documentation/networking/bridge.txt
+https://wiki.linuxfoundation.org/networking/bridge
+
+ # ifconfig eth0 0.0.0.0
+ # ifconfig eth1 0.0.0.0
+ # brctl addbr mybridge
+ # brctl addif mybridge eth0
+ # brctl addif mybridge eth1 
+ # ifconfig mybridge up
+
+ # ifconfig mybridge 192.168.100.5 netmask 255.255.255.0
+
+ # ifconfig eth0 0.0.0.0
+ # ifconfig eth1 0.0.0.0
+ # brctl addbr mybridge
+ # brctl addif mybridge eth0
+ # brctl addif mybridge eth1 
+ # dhclient mybridge
+
+
