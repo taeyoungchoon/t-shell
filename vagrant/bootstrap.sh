@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-yum -y -q install emacs-nox git psmisc tree bash-completion
+yum -y -q install emacs-nox git psmisc tree bash-completion bridge-utils libvirt-client libvirt wget
 
 grep "PasswordAuthentication no" /etc/ssh/sshd_config >/dev/null 2>/dev/null
 if test $? -eq 0; then
