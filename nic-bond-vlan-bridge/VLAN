@@ -1,0 +1,9 @@
+https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/networking_guide/sec-configure_802_1q_vlan_tagging_using_the_command_line_tool_nmcli
+
+Assigning Addresses to VLAN Interfaces
+
+nmcli con add type vlan con-name VLAN20 dev enp1s0 id 20 ip4 10.10.10.10/24 \
+gw4 10.10.10.254
+
+nmcli con add type vlan con-name VLAN30 dev enp1s0 id 30
+

@@ -1,0 +1,3 @@
+$ sudo nmcli con modify br0 bridge.stp no
+$ nmcli con show
+$ nmcli -f bridge con show br0
