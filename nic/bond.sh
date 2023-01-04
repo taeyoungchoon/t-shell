@@ -35,7 +35,21 @@ function check {
 }
 
 function clean {
-    :
+     for interface in $( set | awk -F= '/bond[0-9]_ifname/ { print $2 }' ); do
+	ifname=${interface}_ifname
+	con_name=${interface}_con_name
+	# option=${interface}_option
+	declare -n option=${interface}_option
+	
+	echo nmcli con delete ${!con_name}
+		
+	slave0_ifname=${interface}_slave0_ifname
+	slave1_ifname=${interface}_slave1_ifname
+	
+	echo nmcli con delete ${!con_name}-slave-${!slave0_ifname}
+	echo nmcli con delete ${!con_name}-slave-${!slave1_ifname}
+    done
+   :
 }
 
 command=$1
