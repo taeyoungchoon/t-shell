@@ -1,0 +1,27 @@
+* to be done
+
+- [ ] option more
+- [ ] backup
+- [ ] check
+- [ ] clean
+- [ ] from usb or
+- [ ] and about ipv6, it is done or not yet
+- [ ] ipv4.dns
+- [ ] disable ever config
+
+cat bond.env | awk -F= '/slave[01]_ifname/ { print $2 }'
+
+nmcli device
+nmcli connection
+nmcli -g GENERAL.CONNECTION device show eth2
+nmcli connection delete "System eth2"
+
+* process
+
+1. insert usb
+2. edit bond.env
+3. sh bond.sh check
+4. sh bond.sh go
+5. edit ip.env
+6. sh ip.sh check
+7. sh ip.sh go
