@@ -27,10 +27,13 @@ function go {
 }
 
 function check {
-    cd /proc/net/bonding
-    for interface in *; do
-	echo about interface $interface
-	cat $interface | egrep "Bonding Mode|Slave Interface"
+    for interface in /proc/net/bonding/*; do
+	if [ ! -e $interface ]; then
+	    exit 1;
+	else
+	    echo about interface $interface
+	    cat $interface | egrep "Bonding Mode|Slave Interface"
+	fi
     done
 }
 
