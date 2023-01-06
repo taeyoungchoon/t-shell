@@ -26,6 +26,8 @@ function go {
 	    echo nmcli con mod $interface +ipv4.dns $s
 	done
 
+	printf "nmcli con up $interface\n"
+
     done
 }
 
@@ -35,7 +37,19 @@ function check {
 }
 
 function clean {
-    :
+    for interface in $( set | awk -F_ '/nic[0-9]_ip/ { print $1 }' ); do
+
+	ip=${interface}_ip
+	nm=${interface}_nm
+	gw=${interface}_gw
+	ns=${interface}_ns
+
+	# https://unix.stackexchange.com/questions/523020/differance-between-ip4-and-ipv4-addresses-nmcli
+	echo nmcli con mod $interface ipv4.dns ""
+	echo nmcli con mod $interface ipv4.addresses "" ipv4.gateway "" ipv4.method manual
+
+	printf "nmcli con up $interface\n"
+    done
 }
 
 command=$2
