@@ -49,8 +49,8 @@ function clean {
 	ns=${interface}_ns
 
 	# https://unix.stackexchange.com/questions/523020/differance-between-ip4-and-ipv4-addresses-nmcli
-	echo nmcli con mod $interface ipv4.dns ""
-	echo nmcli con mod $interface ipv4.addresses "" ipv4.gateway "" ipv4.method manual
+	echo nmcli con mod $interface ipv4.dns \"\"
+	echo nmcli con mod $interface ipv4.addresses \"\" ipv4.gateway \"\" ipv4.method manual
 
 	printf "nmcli con up $interface\n"
     done
