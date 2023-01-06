@@ -34,6 +34,11 @@ function go {
 }
 
 function check {
+    echo nmcli connection
+    nmcli connection
+    echo
+    echo nmcli device
+    nmcli device
     for interface in /proc/net/bonding/*; do
 	if [ ! -e $interface ]; then
 	    exit 1;
