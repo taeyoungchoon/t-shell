@@ -62,7 +62,7 @@ function clean {
    :
 }
 
-command=$1
+command=$2
 
 if [[ $command =~ go ]]; then 
     go
