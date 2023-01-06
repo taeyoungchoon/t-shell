@@ -46,6 +46,7 @@ function check {
 	if [ ! -e $interface ]; then
 	    exit 1;
 	else
+	    printf "\n"
 	    printf "* status of bond interface $interface\n\n"
 	    cat $interface | egrep "Bonding Mode|Slave Interface"
 	fi
