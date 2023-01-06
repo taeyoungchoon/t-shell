@@ -37,7 +37,7 @@ function check {
     echo \* nmcli connection
     nmcli connection
     echo
-    echo * nmcli device
+    printf "* nmcli device\n"
     nmcli device
     for interface in /proc/net/bonding/*; do
 	if [ ! -e $interface ]; then
