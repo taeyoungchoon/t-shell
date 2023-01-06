@@ -22,7 +22,8 @@ function go {
 }
 
 function check {
-    :
+    printf "* ip -br a\n"
+    ip -br a
 }
 
 function clean {
