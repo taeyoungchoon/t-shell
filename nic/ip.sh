@@ -62,6 +62,8 @@ if [[ $command =~ go ]]; then
     go
 elif [[ $command =~ check ]]; then
     check
+elif [[ $command =~ clean ]]; then
+    clean
 else
     echo function:
     echo ---
