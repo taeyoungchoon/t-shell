@@ -1,6 +1,13 @@
 #!/usr/bin/env bash
 
-source ./${0%.*}.env
+
+
+# source ./${0%.*}.env
+if [[ ! -e $1 ]]; then 
+    exit 1; 
+else
+    source ./$1;
+fi
 
 function go {
     for interface in $( set | awk -F= '/bond[0-9]_ifname/ { print $2 }' ); do
