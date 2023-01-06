@@ -32,7 +32,10 @@ function go {
 }
 
 function check {
-    printf "* ip -br a\n\n"
+	
+    printf "\n* nmcli device\n\n"
+    nmcli device
+    printf "\n* ip -br a\n\n"
     ip -br a
 }
 
