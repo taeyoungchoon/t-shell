@@ -36,7 +36,7 @@ function check {
     printf "\n* nmcli device\n\n"
     nmcli device
     printf "\n* ip -br a\n\n"
-    ip -br a
+    ip -4 -br a
     printf "\n"
 }
 
