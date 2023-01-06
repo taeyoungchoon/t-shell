@@ -34,7 +34,7 @@ function go {
 }
 
 function check {
-    echo * nmcli connection
+    echo \* nmcli connection
     nmcli connection
     echo
     echo * nmcli device
