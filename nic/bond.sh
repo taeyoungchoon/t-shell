@@ -10,6 +10,7 @@ else
 fi
 
 function go {
+
     for interface in $( set | awk -F= '/bond[0-9]_ifname/ { print $2 }' ); do
 	ifname=${interface}_ifname
 	con_name=${interface}_con_name
@@ -41,7 +42,8 @@ function check {
 
     for interface in /proc/net/bonding/*; do
 	if [ ! -e $interface ]; then
-	    exit 1;
+	    break;
+	    # exit 1;
 	else
 	    printf "\n* status of bond interface $interface\n\n"
 	    cat $interface | egrep "Bonding Mode|Slave Interface"
@@ -51,7 +53,8 @@ function check {
 }
 
 function clean {
-     for interface in $( set | awk -F= '/bond[0-9]_ifname/ { print $2 }' ); do
+
+    for interface in $( set | awk -F= '/bond[0-9]_ifname/ { print $2 }' ); do
 	ifname=${interface}_ifname
 	con_name=${interface}_con_name
 	# option=${interface}_option
