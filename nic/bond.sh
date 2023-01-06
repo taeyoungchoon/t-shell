@@ -13,13 +13,11 @@ function go {
     for interface in $( set | awk -F= '/bond[0-9]_ifname/ { print $2 }' ); do
 	ifname=${interface}_ifname
 	con_name=${interface}_con_name
-	# option=${interface}_option
 	declare -n option=${interface}_option
 	
 	echo nmcli con add type bond ifname ${!ifname} \
 	     con-name ${!con_name} \
 	     ${option}
-#	${!option}
 	
 	slave0_ifname=${interface}_slave0_ifname
 	slave1_ifname=${interface}_slave1_ifname
@@ -35,22 +33,21 @@ function go {
 
 function check {
 
-    printf "* nmcli connection\n\n"
+    printf "\n* nmcli connection\n\n"
     nmcli connection
 
-    printf "\n"
-    printf "* nmcli device\n\n"
+    printf "\n* nmcli device\n\n"
     nmcli device
 
     for interface in /proc/net/bonding/*; do
 	if [ ! -e $interface ]; then
 	    exit 1;
 	else
-	    printf "\n"
-	    printf "* status of bond interface $interface\n\n"
+	    printf "\n* status of bond interface $interface\n\n"
 	    cat $interface | egrep "Bonding Mode|Slave Interface"
 	fi
     done
+    printf "\n"
 }
 
 function clean {
