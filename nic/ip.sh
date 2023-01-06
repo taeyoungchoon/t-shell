@@ -1,6 +1,14 @@
 #!/usr/bin/env bash
 
-source ./${0%.*}.env
+
+
+# source ./${0%.*}.env
+if [[ ! -e $1 ]]; then
+    exit 1;
+else
+    source ./$1;
+fi
+
 
 function go {
     for interface in $( set | awk -F_ '/nic[0-9]_ip/ { print $1 }' ); do
@@ -30,7 +38,7 @@ function clean {
     :
 }
 
-command=$1
+command=$2
 
 if [[ $command =~ go ]]; then 
     go
