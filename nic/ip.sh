@@ -37,6 +37,7 @@ function check {
     nmcli device
     printf "\n* ip -br a\n\n"
     ip -br a
+    printf "\n"
 }
 
 function clean {
