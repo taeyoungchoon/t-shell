@@ -34,11 +34,14 @@ function go {
 }
 
 function check {
-    echo \* nmcli connection
+
+    printf "* nmcli connection\n\n"
     nmcli connection
-    echo
-    printf "* nmcli device\n"
+
+    printf "\n"
+    printf "* nmcli device\n\n"
     nmcli device
+
     for interface in /proc/net/bonding/*; do
 	if [ ! -e $interface ]; then
 	    exit 1;
