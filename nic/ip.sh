@@ -34,7 +34,7 @@ command=$1
 
 if [[ $command =~ go ]]; then 
     go
-elif [[ $command =~ status ]]; then
+elif [[ $command =~ check ]]; then
     check
 else
     echo function:
