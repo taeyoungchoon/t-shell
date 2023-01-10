@@ -44,6 +44,7 @@ function check {
 function clean {
     for interface in $( set | awk -F_ '/nic[0-9]_ip/ { print $1 }' ); do
 
+	if=${interface}_if
 	ip=${interface}_ip
 	nm=${interface}_nm
 	gw=${interface}_gw
