@@ -22,7 +22,7 @@ function go {
         if nmcli connection show ${!if} &>/dev/null; then
 	    :
 	else
-            nmcli connection add type ethernet ifname ${!if} con-name ${!if}
+            echo nmcli connection add type ethernet ifname ${!if} con-name ${!if}
         fi
 
 	echo nmcli con mod ${!if} ip4 ${!ip}/${!nm} gw4 ${!gw} ipv4.method manual
