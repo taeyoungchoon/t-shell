@@ -8,7 +8,8 @@
 - [ ] and about ipv6, it is done or not yet
 - [ ] ipv4.dns
 - [ ] disable ever config
-
+- [ ] mac os x using bash 3
+  
 cat bond.env | awk -F= '/slave[01]_ifname/ { print $2 }'
 
 nmcli device
