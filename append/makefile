@@ -1,10 +1,8 @@
+all: 
+	sh appending.sh
 help:
 	@cat makefile | grep ^[a-z]
-all: go
-go:
-	sh gen.sh
-	sh appending.sh
 check:
-	diff -u ever later
+	@[ -e after ] && diff -u before after && echo checking || echo 'nothing to do' || true
 clean:
-	rm data.out later 
+	@[ -e after ] && rm after && echo cleaning|| echo 'nothing to do' || true

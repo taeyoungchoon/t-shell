@@ -1,0 +1,5 @@
+* just in case, telegraf.conf
+
+- https://docs.influxdata.com/telegraf/v1.21/administration/configuration/
+  Use the --config-directory flag to include files ending with .conf in the specified directory in the Telegraf configuration.
+  On most systems, the default locations are /etc/telegraf/telegraf.conf for the main configuration file and /etc/telegraf/telegraf.d for the directory of configuration files.
