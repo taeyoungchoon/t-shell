@@ -1,0 +1,4 @@
+nmcli device
+nmcli connection
+ip -br a
+ls /proc/net/bonding/*

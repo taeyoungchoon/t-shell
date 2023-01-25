@@ -68,7 +68,6 @@ function clean {
 	echo nmcli con delete ${!con_name}-slave-${!slave0_ifname}
 	echo nmcli con delete ${!con_name}-slave-${!slave1_ifname}
     done
-   :
 }
 
 command=$2
