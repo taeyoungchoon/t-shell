@@ -3,12 +3,19 @@
 # name type member1 member2
 
 /pnic/ {
-    print "nmcli con add type ethernet ifname", $1, "con-name", $1
+    name=$1
+    type=$2
+    member1=$3
+    member2=$4
+    print "nmcli con add type ethernet ifname", member1, "con-name", name
 }
 
 /vnic/ {
-    print "nmcli con add type bond ifname", $1, "con-name", $1
-    print "nmcli con add type bond-slave ifname", $3, "con-name", $1 "-slave-" $3, "master", $1
-    print "nmcli con add type bond-slave ifname", $4, "con-name", $1 "-slave-" $4, "master", $1
+    name=$1
+    type=$2
+    member1=$3
+    member2=$4
+    print "nmcli con add type bond ifname", name, "con-name", name
+    print "nmcli con add type bond-slave ifname", member1, "con-name", name "-slave-" member1, "master", name
+    print "nmcli con add type bond-slave ifname", member2, "con-name", name "-slave-" member2, "master", name
 }
-

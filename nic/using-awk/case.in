@@ -1,4 +1,3 @@
 mgmt 	pnic	eno1	nil
 service	vnic	enp1f0	enp7f0
 backup	pnic	enp1f1	nil
-

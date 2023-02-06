@@ -1,1 +1,1 @@
-awk -f bond.awk bar.in
+awk -f bond.awk case.in
