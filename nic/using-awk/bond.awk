@@ -7,7 +7,12 @@ $2 ~ /pnic/ {
     type=$2
     member1=$3
     member2=$4
-    print "nmcli con add type ethernet ifname", member1, "con-name", name
+    mtu=$5
+    if ( mtu ~ /nil/ ) {
+	print "nmcli c add type ethernet ifname", member1, "con-name", name
+    } else {
+	print "nmcli c add type ethernet ifname", member1, "con-name", name, "802-3-ethernet.mtu", mtu
+    }
 }
 
 $2 ~ /vnic/ {
@@ -15,7 +20,12 @@ $2 ~ /vnic/ {
     type=$2
     member1=$3
     member2=$4
-    print "nmcli con add type bond ifname", name, "con-name", name
-    print "nmcli con add type bond-slave ifname", member1, "con-name", name "-slave-" member1, "master", name
-    print "nmcli con add type bond-slave ifname", member2, "con-name", name "-slave-" member2, "master", name
+    mtu=$5
+    if ( mtu ~ /nil/ ) {
+	print "nmcli c add type bond ifname", name, "con-name", name
+    } else {
+	print "nmcli c add type bond ifname", name, "con-name", name, "802-3-ethernet.mtu", mtu
+    }
+    print "nmcli c add type bond-slave ifname", member1, "con-name", name "-slave-" member1, "master", name
+    print "nmcli c add type bond-slave ifname", member2, "con-name", name "-slave-" member2, "master", name
 }
