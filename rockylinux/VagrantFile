@@ -13,7 +13,7 @@ Vagrant.configure("2") do |config|
   # ---
 
   config.vm.define "jo" do |jo|
-    jo.vm.box = "bento/rockylinux-8.7"
+    jo.vm.box = "bento/rockylinux-8.6"
     jo.vm.hostname = "jo"
     jo.vm.network "private_network", ip: "172.20.99.101"
     jo.vm.network "private_network", ip: "172.20.99.102"
