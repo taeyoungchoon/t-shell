@@ -22,4 +22,5 @@ $2 ~ /ip/ {
     if ( gw ~ "nil") {
         print "nmcli c m", name, "ipv4.addresses", ip "/" nm, "ipv4.method manual"
     }
+    print "nmcli c up", name
 }
