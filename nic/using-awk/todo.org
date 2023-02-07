@@ -1,7 +1,7 @@
 * to be done
 
-- [ ] route and metric, default gw issue, maybe
-- [ ] mtu 9600
+- [v] route and metric, default gw issue, maybe
+- [v] mtu 9600
 
 * mtu 9600
 
@@ -17,3 +17,7 @@ nmcli connection modify team1-port1 802-3-ethernet.mtu 9000
 nmcli connection modify team1 ipv4.addresses '172.16.45.22/16'
 nmcli connection modify team1 ipv4.method manual
 nmcli connection modify team1 ipv6.method disabled
+
+* metric
+
+nmcli connection modify <connection-name> ipv4.route-metric 1
