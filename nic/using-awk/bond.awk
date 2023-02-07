@@ -22,9 +22,9 @@ $2 ~ /vnic/ {
     member2=$4
     mtu=$5
     if ( mtu ~ /nil/ ) {
-	print "nmcli c add type bond ifname", name, "con-name", name
+	print "nmcli c add type bond ifname", name, "con-name", name, "mode 1 miimon 100 updelay 0 downdelay 0"
     } else {
-	print "nmcli c add type bond ifname", name, "con-name", name, "802-3-ethernet.mtu", mtu
+	print "nmcli c add type bond ifname", name, "con-name", name, "mode 1 miimon 100 updelay 0 downdelay 0", "802-3-ethernet.mtu", mtu
     }
     print "nmcli c add type bond-slave ifname", member1, "con-name", name "-slave-" member1, "master", name
     print "nmcli c add type bond-slave ifname", member2, "con-name", name "-slave-" member2, "master", name
