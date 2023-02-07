@@ -2,7 +2,7 @@
 
 # name type member1 member2
 
-/pnic/ {
+$2 ~ /pnic/ {
     name=$1
     type=$2
     member1=$3
@@ -10,7 +10,7 @@
     print "nmcli con add type ethernet ifname", member1, "con-name", name
 }
 
-/vnic/ {
+$2 ~ /vnic/ {
     name=$1
     type=$2
     member1=$3
