@@ -17,9 +17,9 @@ $2 ~ /ip/ {
     nm=$4
     gw=$5
     if ( gw !~ "nil") {
-        print "nmcli con mod", name, "ipv4", ip "/" nm, "gw4", gw, "ipv4.method manual"
+        print "nmcli con mod", name, "ipv4.addresses", ip "/" nm, "gw4", gw, "ipv4.method manual"
     }
     if ( gw ~ "nil") {
-        print "nmcli con mod", name, "ipv4", ip "/" nm, "ipv4.method manual"
+        print "nmcli con mod", name, "ipv4.addresses", ip "/" nm, "ipv4.method manual"
     }
 }
