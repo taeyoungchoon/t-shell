@@ -1,26 +1,28 @@
 #!/usr/bin/env bash
 
 function help {
-    # cat $0 | awk '/^function/ { print "- " $2 }'
-    echo check
+    echo - clean
+    echo - nic config
+    echo - net config
+    echo - check
+    echo "- (opt) init"
+    exit 1
 }
 
-[[ ! -e $1 ]] && help
+[[ $# -eq 0 ]] && help
 
-command=$1
+cmd=$1
 config=$2
 
-if [[ $command =~ help ]]; then
-    help
-elif [[ $command =~ check ]]; then
+if   [[ $cmd =~ check ]]; then
     sh check.sh
-elif [[ $command =~ clean ]]; then
+elif [[ $cmd =~ clean ]]; then
     sh clean.sh
-elif [[ $command =~ init ]]; then
+elif [[ $cmd =~ init ]]; then
     sh init.sh
-elif [[ $command =~ nic ]]; then
+elif [[ $cmd =~ nic ]]; then
     sh nic.sh $config
-elif [[ $command =~ net ]]; then
+elif [[ $cmd =~ net ]]; then
     sh net.sh $config
 
 fi
