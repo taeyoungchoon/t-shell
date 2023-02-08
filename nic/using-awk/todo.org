@@ -2,6 +2,8 @@
 
 - [v] route and metric, default gw issue, maybe
 - [v] mtu 9600
+- [X] comment
+- [ ] naming
 
 * mtu 9600
 
@@ -21,3 +23,16 @@ nmcli connection modify team1 ipv6.method disabled
 * metric
 
 nmcli connection modify <connection-name> ipv4.route-metric 1
+
+* naming
+
+- todo.org
+- sh awk env
+- nic.sh nic.awk nic.env
+- net.sh net.awk net.env
+- util
+- clean init check
+- make clean init check nic
+- make.sh clean init check 
+- make.sh nic jo.env
+- make.sh net jo.env
