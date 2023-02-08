@@ -1,9 +1,0 @@
-nmcli con mod mgmt ipv4 1.1.1.100/24 gw4 1.1.1.1 ipv4.method manual
-nmcli con mod mgmt +ipv4.dns 8.8.8.8
-nmcli con mod mgmt +ipv4.dns 8.8.4.4
-nmcli con up mgmt
-nmcli con mod backup ipv4 3.3.3.100/24 gw4 3.3.3.1 ipv4.method manual
-nmcli con up backup
-nmcli con mod service ipv4 2.2.2.100/24 gw4 2.2.2.1 ipv4.method manual
-nmcli con up service
-
