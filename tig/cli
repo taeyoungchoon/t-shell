@@ -1,0 +1,3 @@
+   24  docker exec -it influxdb bash
+   25  docker exec -it telegraf bash
+   32  docker exec -it grafana-server bash

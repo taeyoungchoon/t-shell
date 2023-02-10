@@ -7,17 +7,18 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", path: "bootstrap.sh"
   config.vm.provider "virtualbox" do |vb|
     vb.cpus = 1
-    vb.memory = 4096
+    vb.memory = 2048 
   end
 
   # ---
 
   config.vm.define "jo" do |jo|
     jo.vm.box = "bento/rockylinux-8.6"
+    # jo.vm.box = "generic/rocky8"
     jo.vm.hostname = "jo"
-    jo.vm.network "private_network", ip: "172.20.99.101"
-    jo.vm.network "private_network", ip: "172.20.99.102"
-    jo.vm.network "private_network", ip: "172.20.99.103"
+    #jo.vm.network "private_network", ip: "172.20.99.101"
+    #jo.vm.network "private_network", ip: "172.20.99.102"
+    #jo.vm.network "private_network", ip: "172.20.99.103"
   end
 
   # ---
