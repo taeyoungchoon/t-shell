@@ -1,0 +1,21 @@
+[influx_config]
+  url = "http://localhost:8086"
+  token = "VK5F0lQcBT8Ob7uT4alvwAtWwypuan9e695Hfvulqcea-JihCfNKT6bcK7udu0CMeRkDM6P-X1o_PTJdfjXfVw=="
+  # org = "37f8db21cd532477"
+  org = "cove" 
+  active = true
+# 
+# [eu-central]
+#   url = "https://eu-central-1-1.aws.cloud2.influxdata.com"
+#   token = "XXX"
+#   org = ""
+# 
+# [us-central]
+#   url = "https://us-central1-1.gcp.cloud2.influxdata.com"
+#   token = "XXX"
+#   org = ""
+# 
+# [us-west]
+#   url = "https://us-west-2-1.aws.cloud2.influxdata.com"
+#   token = "XXX"
+#   org = ""
