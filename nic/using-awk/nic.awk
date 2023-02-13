@@ -12,11 +12,7 @@ $1 !~ /^#/ && $2 ~ /pnic/ {
     member2=$4
     mtu=$5
 
-    if ( mtu ~ /nil/ ) {
-	print "nmcli con add type ethernet ifname", member1, "con-name", name
-    } else {
-	print "nmcli con add type ethernet ifname", member1, "con-name", name, "802-3-ethernet.mtu", mtu
-    }
+    print "nmcli con add type ethernet ifname", member1, "con-name", name
 }
 
 $1 !~ /^#/ && $2 ~ /vnic/ {
@@ -25,13 +21,13 @@ $1 !~ /^#/ && $2 ~ /vnic/ {
     type=$2
     member1=$3
     member2=$4
-    mtu=$5
+    mtu="9000"
     options="mode 1 miimon 100 updelay 0 downdelay 0"
     
-    if ( mtu ~ /nil/ ) {
-	print "nmcli con add type bond ifname", name, "con-name", name, options
-    } else {
+    if ( name ~ /rac/ ) {
 	print "nmcli con add type bond ifname", name, "con-name", name, "802-3-ethernet.mtu", mtu, options
+    } else {
+	print "nmcli con add type bond ifname", name, "con-name", name, options
     }
     profile1=name "-slave-" member1
     print "nmcli con add type bond-slave ifname", member1, "con-name", profile1, "master", name

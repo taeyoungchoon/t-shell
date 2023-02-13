@@ -1,6 +1,0 @@
-service	vnic	enp1f0	enp7f0
-backup	pnic	enp1f1	nil
-mgmt 	pnic	eno1	nil
-service	ip	192.168.101.41	24	192.168.101.252
-backup	ip	192.168.76.41	24	nil
-mgmt	ip	192.168.70.41	24	192.168.70.1
