@@ -8,8 +8,6 @@
 # written by t0spring
 #
 
-exit 1 if 
-
 for (<>) {
     if(/((\w+):(\w+):(\w+):(\w+):(\w+):(\w+))/){
 	$m1 = $1;
