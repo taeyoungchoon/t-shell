@@ -1,0 +1,25 @@
+/opt/homebrew/etc
+/opt/homebrew/opt/telegraf/bin/telegraf -config /opt/homebrew/etc/telegraf.conf -config-directory /opt/homebrew/etc/telegraf.d
+/opt/homebrew/opt/grafana/bin/grafana server --config /opt/homebrew/etc/grafana/grafana.ini --homepath /opt/homebrew/opt/grafana/share/grafana --packaging=brew cfg:default.paths.logs=/opt/homebrew/var/log/grafana cfg:default.paths.data=/opt/homebrew/var/lib/grafana cfg:default.paths.plugins=/opt/homebrew/var/lib/grafana/plugins
+Warning: The following may be influxdb configuration files and have not been removed!
+If desired, remove them manually with `rm -rf`:
+  /opt/homebrew/etc/influxdb2
+Uninstalling /opt/homebrew/Cellar/telegraf/1.26.2... (9 files, 170.5MB)
+
+Warning: The following may be telegraf configuration files and have not been removed!
+If desired, remove them manually with `rm -rf`:
+  /opt/homebrew/etc/telegraf.conf
+  /opt/homebrew/etc/telegraf.d
+Uninstalling /opt/homebrew/Cellar/grafana/9.4.7... (6,840 files, 289.3MB)
+
+Warning: The following grafana configuration files have not been removed!
+If desired, remove them manually with `rm -rf`:
+  /opt/homebrew/etc/grafana
+  /opt/homebrew/etc/grafana/grafana.ini
+  /opt/homebrew/etc/grafana/grafana.ini.example
+rm -rf /opt/homebrew/etc/influxdb2 ~/.influxdbv2/
+To restart grafana after an upgrade:
+  brew services restart grafana
+Or, if you don't want/need a background service you can just run:
+  /opt/homebrew/opt/grafana/bin/grafana server --config /opt/homebrew/etc/grafana/grafana.ini --homepath /opt/homebrew/opt/grafana/share/grafana --packaging=brew cfg:default.paths.logs=/opt/homebrew/var/log/grafana cfg:default.paths.data=/opt/homebrew/var/lib/grafana cfg:default.paths.plugins=/opt/homebrew/var/lib/grafana/plugins
+grafana-cli --config /opt/homebrew/etc/grafana/grafana.ini --homepath /opt/homebrew/opt/grafana/share/grafana admin  reset-admin-password 1234qwer
