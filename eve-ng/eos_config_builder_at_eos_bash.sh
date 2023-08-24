@@ -16,9 +16,9 @@ conf t
 hostname HOSTNAME
 clock timezone Asia/Seoul
 ntp server 192.168.25.21
-username admin secret 1234qwer
-username mon secret 1234qwer
-enable password 1234qwer
+username admin secret admin
+username mon secret admin
+enable password admin
 interface management 1
 ip address IP/24
 mac-address MAC
