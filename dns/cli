@@ -1,0 +1,7 @@
+systemctl stop firewalld
+dig +short @192.168.64.8 A foo.t.com
+ss -lntup | grep 53
+systemctl reload named
+nft list ruleset
+journalctl -u named -f &
+rndc reload

@@ -1,0 +1,24 @@
+[root@p2 etc]# diff named.conf.orig named.conf
+11c11
+< 	listen-on port 53 { 127.0.0.1; };
+---
+> 	listen-on port 53 { any; };
+19c19
+< 	allow-query     { localhost; };
+---
+> 	allow-query     { any; };
+58a59
+> include "/etc/named/t.com.zone";
+[root@p2 etc]# cat named/t.com.zone
+zone "t.com" {
+  type slave;
+  file "slaves/t.com.db";
+  allow-query { any; };
+  allow-transfer { none; };
+  masters { 192.168.64.8; };
+};
+[root@p2 etc]# ls /var/named/slaves/t.com.db
+/var/named/slaves/t.com.db
+[root@p2 etc]# file /var/named/slaves/t.com.db
+/var/named/slaves/t.com.db: Adobe Photoshop Color swatch, version 0, 2 colors; 1st RGB space (0), w 0x1, x 0x64f9, y 0xcb01, z 0; 2nd RGB space (0), w 0, x 0, y 0, z 0
+[root@p2 etc]#
