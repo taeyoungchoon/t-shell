@@ -1,0 +1,23 @@
+[root@p1 etc]# diff named.conf.orig named.conf
+11c11
+< 	listen-on port 53 { 127.0.0.1; };
+---
+> 	listen-on port 53 { any; };
+19c19
+< 	allow-query     { localhost; };
+---
+> 	allow-query     { any; };
+58a59
+> include "/etc/named/t.com.zone";
+[root@p1 etc]# cat /etc/named/t.com.zone
+zone "t.com" {
+  type primary;
+  file "t.com.db";
+  allow-transfer { 192.168.64.7; };
+  also-notify { 192.168.64.7; };
+};
+[root@p1 etc]# cat /var/named/t.com.db
+$TTL 1D
+@ in soa localhost. root 3 3H 15M 1W 1D
+  ns localhost.
+foo	A	1.1.1.1
