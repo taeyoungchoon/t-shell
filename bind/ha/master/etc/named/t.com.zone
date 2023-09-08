@@ -1,6 +1,6 @@
 zone "t.com" {
   type master;
   file "t.com.db";
-  allow-transfer { 192.168.64.7; };
-  also-notify { 192.168.64.7; };
+  allow-transfer { 172.20.0.102; };
+  also-notify { 172.20.0.102; };
 };
