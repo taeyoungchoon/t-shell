@@ -23,3 +23,6 @@ dig +short @127.0.0.1 A foo.t.com
 dig +short @172.20.0.101 A foo.t.com
 
 ** slave
+
+dig +short @172.20.0.101 A foo.t.com
+host -t axfr t.com 172.20.0.101
