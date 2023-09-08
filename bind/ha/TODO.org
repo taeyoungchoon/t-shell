@@ -1,0 +1,9 @@
+* slave
+
+** /etc/named.conf
+
+- [X] masterfile-format text;
+
+* all
+
+- [ ] chroot

@@ -1,0 +1,6 @@
+zone "t.com" {
+  type primary;
+  file "t.com.db";
+  allow-transfer { 192.168.64.7; };
+  also-notify { 192.168.64.7; };
+};
