@@ -1,0 +1,5 @@
+* slave
+
+** /etc/named.conf
+
+- [ ] masterfile-format text;
