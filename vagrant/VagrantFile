@@ -6,19 +6,76 @@ Vagrant.configure("2") do |config|
   config.vm.synced_folder ".", "/vagrant", disabled: true
   config.vm.provision "shell", path: "bootstrap.sh"
   config.vm.provider "virtualbox" do |vb|
-    vb.cpus = 2
+    vb.cpus = 1
     vb.memory = 2048
   end
 
   # ---
 
-  config.vm.define "jo" do |jo|
-    # jo.vm.box = "bento/centos-7.9"
-    jo.vm.box = "ubuntu/focal64"
-    jo.vm.hostname = "jo"
-    jo.vm.network "private_network", ip: "172.20.0.101"
+  config.vm.define "r6" do |r6|
+    r6.vm.box = "bento/centos-6.10"
+    r6.vm.hostname = "r6"
+    r6.vm.network "private_network", ip: "172.20.0.100"
   end
 
   # ---
-  
+
+  config.vm.define "r7" do |r7|
+    r7.vm.box = "bento/centos-7.9"
+    r7.vm.hostname = "r7"
+    r7.vm.network "private_network", ip: "172.20.0.101"
+    #r7.vm.network :forwarded_port, guest:22, host: 2201, auto_correct: false, id:"ssh"
+  end
+
+   # ---
+
+  config.vm.define "r81" do |r81|
+    r81.vm.box = "bento/rockylinux-8.8"
+    r81.vm.hostname = "r81"
+    r81.vm.network "private_network", ip: "172.20.0.102"
+  end
+
+   # ---
+
+
+  config.vm.define "r82" do |r82|
+    r82.vm.box = "bento/rockylinux-8.8"
+    r82.vm.hostname = "r82"
+    r82.vm.network "private_network", ip: "172.20.0.103"
+  end
+
+    # ---
+
+  config.vm.define "r9" do |r9|
+    r9.vm.box = "bento/rockylinux-9.2"
+    r9.vm.hostname = "r9"
+    r9.vm.network "private_network", ip: "172.20.0.105"
+  end
+ 
+    # ---
+
+  config.vm.define "s1" do |s1|
+    s1.vm.box = "bento/opensuse-leap-42.3"
+    s1.vm.hostname = "s1"
+    s1.vm.network "private_network", ip: "172.20.0.106"
+  end
+
+     # ---
+
+  config.vm.define "s2" do |s2|
+    s2.vm.box = "bento/opensuse-leap-15"
+    s2.vm.hostname = "s2"
+    s2.vm.network "private_network", ip: "172.20.0.107"
+  end
+
+     # ---
+
+  config.vm.define "u0" do |u0|
+    u0.vm.box = "bento/ubuntu-22.04"
+    u0.vm.hostname = "u0"
+    u0.vm.network "private_network", ip: "172.20.0.108"
+  end
+
+    # ---
+ 
 end
