@@ -1,0 +1,33 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+
+  config.vm.synced_folder ".", "/vagrant", disabled: true
+  config.vm.provision "shell", path: "bootstrap.sh"
+  config.vm.provider "virtualbox" do |vb|
+    vb.cpus = 1
+    vb.memory = 2048
+  end
+
+  # ---
+
+  config.vm.define "r81" do |r81|
+    r81.vm.box = "bento/rockylinux-8.6"
+    r81.vm.hostname = "r81"
+    r81.vm.network "private_network", ip: "172.20.0.101"
+  end
+
+   # ---
+
+
+  config.vm.define "r82" do |r82|
+    r82.vm.box = "bento/rockylinux-8.6"
+    r82.vm.hostname = "r82"
+    r82.vm.network "private_network", ip: "172.20.0.102"
+  end
+
+    # ---
+
+end
+

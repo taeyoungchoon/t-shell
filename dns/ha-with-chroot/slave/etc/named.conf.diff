@@ -1,0 +1,4 @@
+      listen-on port 53 { any; };
+      allow-query       { any; };
+      masterfile-format text; 
+include "/etc/named/t.com.zone";

@@ -1,0 +1,7 @@
+zone "t.com" {
+  type slave;
+  file "slaves/t.com.db";
+  allow-query { any; };
+  allow-transfer { none; };
+  masters { 172.20.0.101; };
+};

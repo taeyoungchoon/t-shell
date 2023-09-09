@@ -1,0 +1,71 @@
+* TODO stuff
+
+systemctl stop firewalld
+dig +short @192.168.64.8 A foo.t.com
+ss -lntup | grep 53
+systemctl reload named
+nft list ruleset
+journalctl -u named -f &
+rndc reload
+
+* DONE steps
+
+** master
+
+journalctl -u named -f &
+systemctl start named
+systemctl restart named
+systemctl reload named
+rndc reload
+rndc reload t.com
+
+dig +short @127.0.0.1 A foo.t.com
+dig +short @172.20.0.101 A foo.t.com
+
+** slave
+
+dig +short @172.20.0.101 A foo.t.com
+host -t axfr t.com 172.20.0.101
+
+* DONE steps up to date zone by let it 
+
+** master
+
+EDIT(add record) /var/named/t.com.db
+EDIT(increase serial) /var/named/t.com.db
+rndc reload t.com
+
+** slave
+
+nil
+
+* DONE steps up to date zone by force reload from slave
+
+- enough
+- reload from each side
+
+** master
+
+EDIT(add record) /var/named/t.com.db
+EDIT(increase serial) /var/named/t.com.db
+rndc reload t.com
+
+** slave
+
+rndc reload t.com
+
+* DONE steps up to date zone with notify from master only
+
+- [ ] also-notify only required
+- very fast, just after reload zone file
+
+** master
+
+EDIT(add record) /var/named/t.com.db
+EDIT(increase serial) /var/named/t.com.db
+rndc reload t.com
+
+** slave
+
+nil
+
