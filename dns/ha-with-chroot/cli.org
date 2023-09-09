@@ -12,10 +12,11 @@ rndc reload
 
 ** master
 
-journalctl -u named -f &
-systemctl start named
-systemctl restart named
-systemctl reload named
+journalctl -u named-chroot -f &
+systemctl start named-chroot
+systemctl restart named-chroot
+systemctl reload named-chroot
+
 rndc reload
 rndc reload t.com
 

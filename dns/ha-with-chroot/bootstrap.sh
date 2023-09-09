@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-yum -y -q install emacs-nox git psmisc tree bash-completion epel-release 
+yum -y -q install emacs-nox git psmisc tree bash-completion epel-release \
+	bind-chroot bind-utils
 
 grep "PasswordAuthentication no" /etc/ssh/sshd_config >/dev/null 2>/dev/null
 if test $? -eq 0; then
