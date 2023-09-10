@@ -70,3 +70,6 @@ rndc reload t.com
 
 nil
 
+* hack
+
+rndc retransfer t.com
