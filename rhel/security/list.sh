@@ -24,6 +24,9 @@ fi
 for severity in "${severities[@]}"; do
     printf -v cmd_string "%s%s" "$cli" "$severity"
     if [[ $option =~ 'eval' ]]; then
+	echo ------------------------------------------------------------------------
+	echo $cmd_string
+	echo ------------------------------------------------------------------------
 	eval $cmd_string
     elif [[ $option =~ 'echo' ]]; then
 	echo $cmd_string
