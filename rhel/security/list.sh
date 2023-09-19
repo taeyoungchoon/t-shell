@@ -14,7 +14,7 @@ if [[ $request =~ 'info' ]]; then
 elif [[ $request =~ 'without_kernel' ]]; then
     cli='yum updateinfo list updates --exclude=kernel* --sec-severity='
 elif [[ $request =~ 'update' ]]; then
-    cli='yum update --security --sec-severity='
+    cli='yum update --exclude=kernel* --security --sec-severity='
 elif [[ $request =~ 'download' ]]; then
     cli='yum update --exclude=kernel* --downloadonly --downloaddir=. --sec-severity='
 else
