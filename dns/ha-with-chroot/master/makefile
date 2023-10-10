@@ -26,7 +26,5 @@ check: checkconf checkzone
 debug:
 	dig +short @127.0.0.1 A foo.t.com
 	dig +short @172.20.0.101 A foo.t.com
-journal-on:
-	journalctl -u named-chroot -f &
-journal-off:
-	kill %1
+journal:
+	echo journalctl -u named-chroot -f &
