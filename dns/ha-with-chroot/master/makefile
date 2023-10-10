@@ -6,3 +6,8 @@ backup:
 conf:
 	sed -i '/listen-on port/s/127.0.0.1/any/' /etc/named.conf
 	sed -i '/allow-query/s/localhost/any/' /etc/named.conf
+start:
+	systemctl start named-chroot
+stop:
+	systemctl stop named-chroot
+restart: stop start
