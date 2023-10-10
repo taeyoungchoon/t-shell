@@ -6,6 +6,7 @@ backup:
 conf:
 	sed -i '/listen-on port/s/127.0.0.1/any/' /etc/named.conf
 	sed -i '/allow-query/s/localhost/any/' /etc/named.conf
+	grep t.com.zone /etc/named.conf || echo 'include "/etc/named/t.com.zone";' >> /etc/named.conf
 zone:
 	cp etc/named/t.com.zone /etc/named/
 	cp _var/named/t.com.db /var/named/
