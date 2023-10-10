@@ -1,2 +1,4 @@
-master 192.168.25.102
-slave 192.168.25.103
+bento/rockylinux-8.6
+
+    r81.vm.network "private_network", ip: "172.20.0.101"
+    r82.vm.network "private_network", ip: "172.20.0.102"
