@@ -28,3 +28,7 @@ debug:
 	dig +short @172.20.0.101 A foo.t.com
 journal:
 	echo journalctl -u named-chroot -f &
+reload:
+	rndc reload
+reload-t.com:
+	rndc reload t.com
