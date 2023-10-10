@@ -11,3 +11,6 @@ start:
 stop:
 	systemctl stop named-chroot
 restart: stop start
+
+status:
+	systemctl status named-chroot
