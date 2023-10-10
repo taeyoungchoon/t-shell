@@ -35,7 +35,7 @@ debug:
 axfr:
 	host -t axfr t.com 172.20.0.101
 journal:
-	echo journalctl -u named-chroot -f 
+	echo journalctl -u named-chroot -f
 reload:
 	rndc reload
 reload-t.com:
