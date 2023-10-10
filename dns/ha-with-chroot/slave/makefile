@@ -12,6 +12,8 @@ backup:
 conf:
 	sed -i '/listen-on port/s/127.0.0.1/any/' /etc/named.conf
 	sed -i '/allow-query/s/localhost/any/' /etc/named.conf
+	cat /etc/named.conf | grep masterfile || sed -i '/allow-query/a \
+        masterfile-format text;' /etc/named.conf
 	grep t.com.zone /etc/named.conf || echo 'include "/etc/named/t.com.zone";' >> /etc/named.conf
 zone:
 	cp etc/named/t.com.zone /etc/named/
