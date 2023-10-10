@@ -2,9 +2,12 @@ make install
 make backup
 make conf
 make zone
-make restart
+#make db
 make checkconf
+#make checkzone
+make restart
 #make reload
 #make reload-t.com
 make debug
+make debug-slave
 make axfr

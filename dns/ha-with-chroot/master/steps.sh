@@ -3,9 +3,11 @@ make backup
 make conf
 make zone
 make db
-make restart
 make checkconf
 make checkzone
+make restart
 make reload
 make reload-t.com
 make debug
+#make debug-slave
+#make axfr
