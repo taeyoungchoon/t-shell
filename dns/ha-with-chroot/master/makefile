@@ -21,6 +21,7 @@ conf:
 	grep t.com.zone /etc/named.conf || echo 'include "/etc/named/t.com.zone";' >> /etc/named.conf
 zone:
 	cp etc/named/t.com.zone /etc/named/
+db:
 	cp _var/named/t.com.db /var/named/
 start:
 	systemctl start named-chroot

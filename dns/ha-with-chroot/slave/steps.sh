@@ -1,6 +1,7 @@
 make install
 make backup
 make conf
+make zone
 make restart
 make checkconf
 #make reload

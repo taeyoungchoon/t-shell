@@ -2,6 +2,7 @@ make install
 make backup
 make conf
 make zone
+make db
 make restart
 make checkconf
 make checkzone
