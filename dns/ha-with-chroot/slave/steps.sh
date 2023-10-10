@@ -7,3 +7,4 @@ make checkconf
 #make reload
 #make reload-t.com
 make debug
+make axfr
