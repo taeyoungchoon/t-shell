@@ -1,9 +1,9 @@
 help:
 	cat makefile | grep ^[a-z]
 firewall-status:
-	systemctl status firewalld
 	iptables -nL
 	nft list ruleset
+	systemctl status firewalld
 port:
 	ss -lntup | grep 53
 install:
