@@ -8,6 +8,7 @@ conf:
 	sed -i '/allow-query/s/localhost/any/' /etc/named.conf
 zone:
 	cp etc/named/t.com.zone /etc/named/
+	cp _var/named/t.com.db /var/named/
 start:
 	systemctl start named-chroot
 stop:
