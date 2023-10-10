@@ -17,3 +17,8 @@ restart: stop start
 
 status:
 	systemctl --no-pager status named-chroot
+checkconf:
+	named-checkconf
+checkzone:
+	named-checkzone t.com /var/named/t.com.db
+check: checkconf checkzone
