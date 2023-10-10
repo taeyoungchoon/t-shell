@@ -1,5 +1,11 @@
 help:
 	cat makefile | grep ^[a-z]
+install:
+	yum install -y bind-chroot bind-utils
+uninstall:
+	yum remove -y bind-chroot bind-utils
+remove: uninstall
+
 backup:
 	mkdir backup
 	cp /etc/named.conf backup/named.conf-`date +%Y%m%d.%H%M%S`
