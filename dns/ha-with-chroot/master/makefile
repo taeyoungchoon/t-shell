@@ -6,6 +6,8 @@ backup:
 conf:
 	sed -i '/listen-on port/s/127.0.0.1/any/' /etc/named.conf
 	sed -i '/allow-query/s/localhost/any/' /etc/named.conf
+zone:
+	cp etc/named/t.com.zone /etc/named/
 start:
 	systemctl start named-chroot
 stop:
@@ -13,4 +15,4 @@ stop:
 restart: stop start
 
 status:
-	systemctl status named-chroot
+	systemctl --no-pager status named-chroot
