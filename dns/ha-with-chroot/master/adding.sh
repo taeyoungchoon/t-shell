@@ -4,4 +4,5 @@ ip=$(( ( RANDOM % 10 ) +1 )).$(( ( RANDOM % 10 ) +1 )).$(( ( RANDOM % 10 ) +1 ))
 5432    A       3.3.3.3
 printf "%s\tA\t%s" $hostname $ip >> /var/named/t.com.db
 rndc reload
+sleep 0.5
 host $hostname.t.com 172.20.0.102
