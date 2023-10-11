@@ -3,5 +3,5 @@ hostname=t$RANDOM
 ip=$(( ( RANDOM % 10 ) +1 )).$(( ( RANDOM % 10 ) +1 )).$(( ( RANDOM % 10 ) +1 )).$(( ( RANDOM % 10 ) +1 ))
 printf "%s\tA\t%s\n" $hostname $ip >> /var/named/t.com.db
 rndc reload
-sleep 1
+sleep 3
 host $hostname.t.com 172.20.0.102
