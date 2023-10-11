@@ -51,3 +51,4 @@ reload-t.com:
 	rndc reload t.com
 clean:
 	sed -i '5,$$d' /var/named/t.com.db
+	cat /var/named/t.com.db
