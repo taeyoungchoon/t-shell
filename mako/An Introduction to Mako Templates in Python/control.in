@@ -1,0 +1,9 @@
+% if credit:
+debug: credit: ${credit}
+credit to:
+<ul>
+% for item in credit:
+  <li> ${loop.index}: ${item} </li>
+% endfor
+</ul>
+% endif
