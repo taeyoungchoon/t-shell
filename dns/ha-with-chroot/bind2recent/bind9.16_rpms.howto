@@ -42,3 +42,70 @@ Installing dependencies:
  libuv                   x86_64        1:1.41.1-1.el8_4               appstream        155 k
  protobuf-c              x86_64        1.3.0-6.el8                    appstream         36 k
 
+
+--------------
+
+# rhel 8.6
+
+=============================================================================================
+ Package           Arch    Version                  Repository                          Size
+=============================================================================================
+Removing:
+ bind-chroot       x86_64  32:9.11.36-8.el8_8.2     @rhel-8-for-x86_64-appstream-rpms  4.7 k
+ bind-utils        x86_64  32:9.11.36-8.el8_8.2     @rhel-8-for-x86_64-appstream-rpms  1.3 M
+Removing unused dependencies:
+ bind              x86_64  32:9.11.36-8.el8_8.2     @rhel-8-for-x86_64-appstream-rpms  4.6 M
+ bind-libs         x86_64  32:9.11.36-8.el8_8.2     @rhel-8-for-x86_64-appstream-rpms  198 k
+ bind-libs-lite    x86_64  32:9.11.36-8.el8_8.2     @rhel-8-for-x86_64-appstream-rpms  3.1 M
+ bind-license      noarch  32:9.11.36-8.el8_8.2     @rhel-8-for-x86_64-appstream-rpms   29 k
+ fstrm             x86_64  0.6.1-2.el8              @AppStream                          47 k
+ geolite2-city     noarch  20180605-1.el8           @AppStream                          54 M
+ geolite2-country  noarch  20180605-1.el8           @AppStream                         3.3 M
+ libmaxminddb      x86_64  1.2.0-10.el8             @AppStream                          53 k
+ python3-bind      noarch  32:9.11.36-8.el8_8.2     @rhel-8-for-x86_64-appstream-rpms  178 k
+ python3-ply       noarch  3.9-9.el8                @anaconda                          430 k
+
+Transaction Summary
+=============================================================================================
+Remove  12 Packages
+
+[root@rh8-6c0 rpms]# yum install bind9.16-chroot bind9.16-utils --downloadonly --downloaddir=
+.
+Updating Subscription Management repositories.
+Last metadata expiration check: 0:15:59 ago on Tue 24 Oct 2023 02:22:33 PM KST.
+Dependencies resolved.
+=============================================================================================
+ Package               Arch   Version                 Repository                        Size
+=============================================================================================
+Installing:
+ bind9.16-chroot       x86_64 32:9.16.23-0.14.el8_8.2 rhel-8-for-x86_64-appstream-rpms 112 k
+ bind9.16-utils        x86_64 32:9.16.23-0.14.el8_8.2 rhel-8-for-x86_64-appstream-rpms 290 k
+Installing dependencies:
+ bind9.16              x86_64 32:9.16.23-0.14.el8_8.2 rhel-8-for-x86_64-appstream-rpms 604 k
+ bind9.16-libs         x86_64 32:9.16.23-0.14.el8_8.2 rhel-8-for-x86_64-appstream-rpms 1.4 M
+ bind9.16-license      noarch 32:9.16.23-0.14.el8_8.2 rhel-8-for-x86_64-appstream-rpms 108 k
+ fstrm                 x86_64 0.6.1-3.el8             rhel-8-for-x86_64-appstream-rpms  29 k
+ libmaxminddb          x86_64 1.2.0-10.el8            rhel-8-for-x86_64-appstream-rpms  33 k
+ libuv                 x86_64 1:1.41.1-1.el8_4        rhel-8-for-x86_64-appstream-rpms 156 k
+ python3-bind9.16      noarch 32:9.16.23-0.14.el8_8.2 rhel-8-for-x86_64-appstream-rpms 156 k
+ python3-pip           noarch 9.0.3-22.el8            rhel-8-for-x86_64-appstream-rpms  20 k
+ python3-ply           noarch 3.9-9.el8               rhel-8-for-x86_64-baseos-rpms    111 k
+ python36              x86_64 3.6.8-38.module+el8.5.0+12207+5c5719bc
+                                                      rhel-8-for-x86_64-appstream-rpms  19 k
+Installing weak dependencies:
+ bind9.16-dnssec-utils x86_64 32:9.16.23-0.14.el8_8.2 rhel-8-for-x86_64-appstream-rpms 245 k
+ geolite2-city         noarch 20180605-1.el8          rhel-8-for-x86_64-appstream-rpms  19 M
+ geolite2-country      noarch 20180605-1.el8          rhel-8-for-x86_64-appstream-rpms 1.0 M
+Enabling module streams:
+ python36                     3.6
+
+Transaction Summary
+=============================================================================================
+Install  15 Packages
+
+Total download size: 23 M
+Installed size: 64 M
+YUM will only download packages for the transaction.
+Is this ok [y/N]:
+
+
