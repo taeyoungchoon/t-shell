@@ -1,5 +1,5 @@
 #backup
-tar var_named.tar.gz /var/named
+tar cvfz var_named.tar.gz /var/named
 cp /etc/named.conf named.conf.orig
 cp -a /etc/named named.orig
 
