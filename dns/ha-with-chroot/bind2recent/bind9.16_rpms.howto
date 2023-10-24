@@ -5,5 +5,5 @@ cp -a /etc/named named.orig
 
 yum remove bind-chroot bind-utils
 yum install bind9.16-chroot bind9.16-utils --downloadonly --downloaddir=.
-yum localinstall --disablerepo=* bind9.16-chroot bind9.16-utils
-yum localinstall --disablerepo=* bind9.16-chroot bind9.16-utils
+#yum localinstall --disablerepo=* bind9.16-chroot bind9.16-utils
+yum localinstall --disablerepo=* *.rpm
