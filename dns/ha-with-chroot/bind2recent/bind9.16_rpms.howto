@@ -1,9 +1,44 @@
 #backup
+mkdir backup
+cd backup
 tar cvfz var_named.tar.gz /var/named
-cp /etc/named.conf named.conf.orig
-cp -a /etc/named named.orig
+cp /etc/named.conf .
+cp -a /etc/named .
 
+#bind 9.11.36-8
 yum remove bind-chroot bind-utils
+mkdir rpms
+cd rpms
 yum install bind9.16-chroot bind9.16-utils --downloadonly --downloaddir=.
 #yum localinstall --disablerepo=* bind9.16-chroot bind9.16-utils
 yum localinstall --disablerepo=* *.rpm
+
+#
+
+Removing:
+ bind-chroot            x86_64         32:9.11.36-8.el8_8.2         @appstream         4.7 k
+ bind-utils             x86_64         32:9.11.36-8.el8_8.2         @appstream         1.3 M
+Removing unused dependencies:
+ bind                   x86_64         32:9.11.36-8.el8_8.2         @appstream         4.6 M
+ bind-libs              x86_64         32:9.11.36-8.el8_8.2         @appstream         198 k
+ bind-libs-lite         x86_64         32:9.11.36-8.el8_8.2         @appstream         3.1 M
+ bind-license           noarch         32:9.11.36-8.el8_8.2         @appstream          29 k
+ fstrm                  x86_64         0.6.1-3.el8                  @appstream          47 k
+ protobuf-c             x86_64         1.3.0-6.el8                  @appstream          56 k
+ python3-bind           noarch         32:9.11.36-8.el8_8.2         @appstream         178 k
+ python3-ply            noarch         3.9-9.el8                    @baseos            430 k
+
+=============================================================================================
+ Package                 Architecture  Version                        Repository        Size
+=============================================================================================
+Installing:
+ bind9.16-chroot         x86_64        32:9.16.23-0.14.el8_8.2        appstream        111 k
+ bind9.16-utils          x86_64        32:9.16.23-0.14.el8_8.2        appstream        289 k
+Installing dependencies:
+ bind9.16                x86_64        32:9.16.23-0.14.el8_8.2        appstream        603 k
+ bind9.16-libs           x86_64        32:9.16.23-0.14.el8_8.2        appstream        1.4 M
+ bind9.16-license        noarch        32:9.16.23-0.14.el8_8.2        appstream        107 k
+ fstrm                   x86_64        0.6.1-3.el8                    appstream         28 k
+ libuv                   x86_64        1:1.41.1-1.el8_4               appstream        155 k
+ protobuf-c              x86_64        1.3.0-6.el8                    appstream         36 k
+
