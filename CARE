@@ -1,0 +1,9 @@
+jack@think ~/t-shell
+$ git add resolver/
+warning: in the working copy of 'resolver/arg.sh', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'resolver/host.sh', LF will be replaced by CRLF the next time Git touches it
+
+$ file resolver/*
+resolver/arg.sh:  ASCII text
+resolver/host.sh: Bourne-Again shell script, ASCII text executable
+
