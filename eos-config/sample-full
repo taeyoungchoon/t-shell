@@ -1,0 +1,62 @@
+hostname v3
+username admin secret admin
+username cvpadmin priv 15 role network-admin secret 1234qwer
+int ma 1
+ip addr 192.168.26.223/24
+mac-address 50:ac:84:26:02:23
+ip route 0.0.0.0/0 192.168.26.1
+ntp server 192.168.25.204 iburst
+
+wr
+copy running-config running-config.save
+---
+v3, input v3 then 3 + 220 = 223 (v15, 15 + 220 = 235)
+192.168.26.223
+
+3 + 20 = 23 (15 + 20 = 35)
+50:ac:84 + 26:02 + 23 (50:ac:84 + 26:02 + 35)
+
+192.168.25.211 ns
+192.168.25.204 ntp
+192.168.26.1 gw
+
+admin / admin
+cvpadmin / 1234qwer , priv 15, role network-admin
+---
+hostname 
+ip
+mac
+adm_username, adm_password
+usr1_username, usr1_password, usr1_priv, usr1_role
+ns1
+ntp1
+gw
+
+===
+
+
+hostname v1
+username admin secret admin
+username cvpadmin priv 15 role network-admin secret 1234qwer
+int ma 1
+ip addr 192.168.26.221/24
+mac-address 50:ac:84:26:02:21
+ip route 0.0.0.0/0 192.168.26.1
+ntp server 192.168.25.204 iburst
+
+wr
+copy running-config running-config.save
+
+
+hostname v2
+username admin secret admin
+username cvpadmin priv 15 role network-admin secret 1234qwer
+int ma 1
+ip addr 192.168.26.222/24
+mac-address 50:ac:84:26:02:22
+ip route 0.0.0.0/0 192.168.26.1
+ntp server 192.168.25.204 iburst
+
+wr
+copy running-config running-config.save
+
