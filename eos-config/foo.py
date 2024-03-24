@@ -1,4 +1,4 @@
-"""v3, input v3 then 3 + 220 = 223 (v15, 15 + 220 = 235)
+"""3, input v3 then 3 + 220 = 223 (v15, 15 + 220 = 235)
 192.168.26.223
 
 3 + 20 = 23 (15 + 20 = 35)
@@ -23,14 +23,31 @@ gw"""
 
 import sys
 
-hostname=""
-hostname="bar"
+ns  = "192.168.25.211"
+ntp = "192.168.25.204"
+gw  = "192.168.26.1"
+ip  = ""
+mac = ""
+id  = "admin"
+pw  = "admin"
+cid = "cvpadmin"
+cpw = "1234qwer"
+hn  = ""
+
+def printing():
+  print(hn)
 
 def processing():
-  hostname = sys.argv[1]
-  print(hostname)
+  salt = sys.argv[1]
+  ip_tail = 220 + int(salt)
+  ip = f"192.168.26.{ip_tail}"
+  mac_tail = 20 + int(salt)
+  mac = f"50:ac:84:26:02:{mac_tail}"
+  hn = f"v{salt}"
+  
+  print(f"hostname {hn}")
+  print(f:
 
 if len(sys.argv) == 2:
   processing()
-
-print(hostname)
+  # printing()
