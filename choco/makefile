@@ -7,7 +7,7 @@ help:
 
 .PHONY: ls
 ls:
-	@choco list -l | \
+	@choco list | \
 	egrep -v ".install|.app|.portable|.extension|vcredist|^KB|installed" | \
 	python -c "import sys; [print(line.split()[0]) for line in sys.stdin]"
 
