@@ -1,0 +1,52 @@
+https://www.kernel.org/doc/Documentation/networking/
+https://www.kernel.org/doc/Documentation/networking/bonding.txt
+
+/etc/sysconfig/network-scripts
+
+/etc/sysconfig/network-scripts/ifcfg-eth0
+
+DEVICE=eth0
+USERCTL=no
+ONBOOT=yes
+MASTER=bond0
+SLAVE=yes
+BOOTPROTO=none
+
+/etc/sysconfig/network-scripts/ifcfg-bondX
+
+DEVICE=bond0
+IPADDR=192.168.1.1
+NETMASK=255.255.255.0
+NETWORK=192.168.1.0
+BROADCAST=192.168.1.255
+ONBOOT=yes
+BOOTPROTO=none
+USERCTL=no
+
+3.3 Configuring Bonding Manually with iproute2
+
+it is /etc/init.d/boot.local and for initscripts it is /etc/rc.d/rc.local.
+
+modprobe bonding mode=balance-alb miimon=100
+modprobe e100
+ifconfig bond0 192.168.1.1 netmask 255.255.255.0 up
+ip link set eth0 master bond0
+ip link set eth1 master bond0
+
+To add a new bond foo:
+# echo +foo > /sys/class/net/bonding_masters
+
+To remove an existing bond bar:
+# echo -bar > /sys/class/net/bonding_masters
+
+To show all existing bonds:
+# cat /sys/class/net/bonding_masters
+
+To enslave interface eth0 to bond bond0:
+# ifconfig bond0 up
+# echo +eth0 > /sys/class/net/bond0/bonding/slaves
+
+To free slave eth0 from bond bond0:
+# echo -eth0 > /sys/class/net/bond0/bonding/slaves
+
+
